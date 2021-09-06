@@ -1,0 +1,83 @@
+<form class="{{cssClass}}" autocomplete="off">
+
+    <img src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="128" width="128" />
+
+    <h1><input name="name" type="text" value="{{actor.name}}" placeholder="Name" /></h1>
+
+
+
+    <!-- défense réaction init -->
+
+    <li>
+        <label>Défense
+        <input name="data.defense" type="text" value="{{data.defense}}" placeholder=""/>
+    </label>
+
+        <label>Réaction
+        <input name="data.reaction" type="text" value="{{data.reaction}}" placeholder=""/>
+    </label>
+
+        <label>Initiative
+        <input name="data.initiative" type="text" value="{{data.initiative}}" placeholder=""/>
+    </label>
+    </li>
+
+    <!-- carte d'identité -->
+
+    <label>Type
+            <input name="data.tipe" type="text" value="{{data.tipe}}" placeholder=""/>
+        </label>
+    </li>
+
+    <!-- tactique -->
+
+    <li>
+        <label>Tactique
+        <input name="data.tactique" type="text" value="{{data.tactique}}" placeholder=""/>
+    </label>
+    </li>
+
+    <!-- score de combat -->
+
+    <li>
+        <label>Cohésion
+            <input name="data.cohesionact" type="text" value="{{data.cohesionact}}" placeholder=""/>
+            <input name="data.cohesionmax" type="text" value="{{data.cohesionmax}}" placeholder=""/>
+        </label>
+
+        <label>Bouclier
+            <input name="data.bouclieract" type="text" value="{{data.bouclieract}}" placeholder=""/>
+            <input name="data.boucliermax" type="text" value="{{data.boucliermax}}" placeholder=""/>
+        </label>
+
+        <label>Armure
+            <input name="data.armureact" type="text" value="{{data.armureact}}" placeholder=""/>
+            <input name="data.armuremax" type="text" value="{{data.armuremax}}" placeholder=""/>
+        </label>
+    </li>
+    <!-- attribut et aspect exceptionnels -->
+    <li>
+        {{#each data.attributs as |attribut attnom|}}
+        <div>
+            <label>{{attnom}}</label>
+            <input name="data.attributs.{{attnom}}.valeur" type="text" value="{{attribut.valeur}}" placeholder="" />
+            <ul>
+                {{#each attribut.aspectex as |aspectexe aspnom|}}
+                <li>
+                    <label>{{aspnom}}</label>
+                    <input name="data.attributs.{{attnom}}.competence.{{aspnom}}.valeur" type="text" value="{{aspectexe.valeur}}" placeholder="" />
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+        {{/each}}
+    </li>
+    <!-- point faibles -->
+
+    <li>
+        <label>Points Faibles
+        <input name="data.pointsfaible" type="text" value="{{data.pointsfaible}}" placeholder=""/>
+    </label>
+    </li>
+
+</form>
