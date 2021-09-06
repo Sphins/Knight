@@ -33,10 +33,4 @@ export default class KnightActorSheet extends ActorSheet {
         const jetdede = event.currentTarget.dataset["liste1"];
 
     }
-
-    _selected(html) {
-        var liste1 = html.getElementById("liste1");
-        liste1.options[liste1.options.selectedIndex].selected = true;
-    }
-
 }
