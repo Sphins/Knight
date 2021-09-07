@@ -142,7 +142,11 @@ export default class KnightActorSheet extends ActorSheet {
             var capa1od=perod;
             var name1=capliste1;
         }
-        
+        else {
+            var capa1="0";
+            var capa1od="0";
+            var name1="";
+        }        
 
         if (capliste2=="Deplacement"){
             var capa2=depl;
@@ -218,6 +222,11 @@ export default class KnightActorSheet extends ActorSheet {
             var capa2=per;
             var capa2od=perod;
             var name2=capliste2;
+        }
+        else {
+            var capa2="0";
+            var capa2od="0";
+            var name2="";
         }
 
 
@@ -296,7 +305,11 @@ export default class KnightActorSheet extends ActorSheet {
             var capa3od=perod;
             var name3=capliste3;
         }
-
+        else {
+            var capa3="0";
+            var capa3od="0";
+            var name3="";
+        }
 
         if (capliste4=="Deplacement"){
             var capa4=depl;
@@ -373,9 +386,15 @@ export default class KnightActorSheet extends ActorSheet {
             var capa4od=perod;
             var name4=capliste4;
         }
+        else {
+            var capa4="0";
+            var capa4od="0";
+            var name4="";
+        }
         
-        var nbdd = capa1 + capa2 + capa3 + capa4 + capbm+"d2cs2";
-        var nbdod= capa1od + capa2od + capa3od + capa4od+" OD";
+        
+        var nbdod= Number(capa1od) + Number(capa2od) + Number(capa3od) + Number(capa4od)+" OD";
+        var nbdd = Number(capa1) + Number(capa2) + Number(capa3) + Number(capa4) + Number(capbm) + "d2cs2";
         var texte = "jet de : " + name1 + " - " + name2 + " - " + name3 + " - " + name4;
         let roll = new Roll(nbdd);
         roll.roll().toMessage({
