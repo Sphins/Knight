@@ -37,6 +37,12 @@ export default class KnightActorSheet extends ActorSheet {
         var modiesp = character.espoirmod
         var espmax = 50 + Number(modiesp)
         character.espoiremax = espmax
+        //initiative max
+        var masdismax = Number(character.attributs.Masque.competence.Discretion.valeur)+Number(character.attributs.Masque.competence.Discretion.od)
+        var masdexmax = Number(character.attributs.Masque.competence.Dexterite.valeur)+Number(character.attributs.Masque.competence.Dexterite.od)
+        var masparmax = Number(character.attributs.Masque.competence.Perception.valeur)+Number(character.attributs.Masque.competence.Perception.od)
+        var masquemax = Math.max(masdismax, masdexmax,masparmax)
+        character.initiative = masquemax;
 
         character.arme = dataf.items.filter(item => item.type === "arme"); //tri arme
         character.module = dataf.items.filter(item => item.type === "module"); // tri module
@@ -56,7 +62,8 @@ export default class KnightActorSheet extends ActorSheet {
         html.find('.jetdinit').click(this._onRollInit.bind(this));     //detection jet de dée hors combat
     }
 
-    _onRollInit(event) {
+    _onRollInit(event) {                                    // jet d init
+        console.log(event)
         const dataf = super.getData();
         console.log(dataf);
         const character = dataf.data

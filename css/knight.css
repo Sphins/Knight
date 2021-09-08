@@ -20,6 +20,7 @@
     min-width: 300px;
     display:flex;
     justify-content: space-around;
+    background-color: rgba(255, 255, 255, 1);
 }
 
 .jetdecss {
@@ -28,6 +29,7 @@
     padding: 10px;
     margin: 10PX;
     min-width: 300px;
+    background-color: rgba(255, 255, 255, 1);
 }
 
 .cdi {
@@ -37,7 +39,8 @@
     margin: 10PX;
     min-width: 100px;
     width: 47%;
-    order: 3
+    order: 3;
+    background-color: rgba(255, 255, 255, 1);
 }
 
 .motivation {
@@ -47,7 +50,8 @@
     margin: 10PX;
     min-width: 100px;
     width: 47%;
-    order: 4
+    order: 4;
+    background-color: rgba(255, 255, 255, 1);
 }
 
 .gestion {
@@ -57,7 +61,8 @@
     margin: 10PX;
     min-width: 100px;
     width: 47%;
-    order: 1
+    order: 1;
+    background-color: rgba(255, 255, 255, 1);
 }
 
 .attributs {
@@ -68,7 +73,8 @@
     min-width: 100px;
     width: 47%;
     float: right;
-    order: 2
+    order: 2;
+    background-color: rgba(255, 255, 255, 1);
 }
 
 .competence {
