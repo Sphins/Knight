@@ -33,6 +33,10 @@ export default class KnightActorSheet extends ActorSheet {
         var mactecmax = Number(character.attributs.Machine.competence.Technique.valeur)+Number(character.attributs.Machine.competence.Technique.od)
         var macmax = Math.max(mactirmax, macsavmax,mactecmax)
         character.reaction = Number(macmax);
+        //espoire max
+        var modiesp = character.espoirmod
+        var espmax = 50 + Number(modiesp)
+        character.espoiremax = espmax
 
         character.arme = dataf.items.filter(item => item.type === "arme"); //tri arme
         character.module = dataf.items.filter(item => item.type === "module"); // tri module
