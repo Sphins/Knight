@@ -1,5 +1,5 @@
 <form class="{{cssClass}}" autocomplete="off">
-
+    <header>
     <img src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="128" width="128" />
 
     <h1><input name="name" type="text" value="{{actor.name}}" placeholder="Name" /></h1>
@@ -14,9 +14,13 @@
         <input class="champ2" name="data.reaction" type="number" value="{{data.reaction}}" />
 
         <label class=label100>Initiative</label>
-        <input class="champ2" name="data.initiative" type="text" value="{{data.initiative}}" />
-
+        <input class="champ2" name="data.initiative" type="number" value="{{data.initiative}}" />
+        <a class="jetdinit" ><i class="fas fa-dice"></i></a>
     </div>
+
+    <!--menu-->
+
+
 
     <!--jet de dé-->
 
@@ -142,6 +146,8 @@
         data-Perception = "{{data.attributs.Masque.competence.Perception.valeur}}" 
         data-Perceptionod = "{{data.attributs.Masque.competence.Perception.od}}"><i class="fas fa-dice"></i></a>
     </div>
+</header>
+<body>
     <!-- attribut et competence -->
     <div class=attributs>
         {{#each data.attributs as |attribut attnom|}}
@@ -246,5 +252,5 @@
                     </ul>
                 </label>
     </div>
-
+</body>
 </form>

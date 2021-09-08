@@ -1,3 +1,4 @@
+
 .label100 {
     width: 100px;
     margin: 10PX;
@@ -12,15 +13,17 @@
 }
 
 .defense {
-    border: 10px rgba(0, 0, 0, 0.609) double;
+    border: 10px rgb(30, 50, 230) double;
     border-radius: 15px;
     padding: 10px;
     margin: 10PX;
     min-width: 300px;
+    display:flex;
+    justify-content: space-around;
 }
 
 .jetdecss {
-    border: 10px rgba(0, 0, 0, 0.609) double;
+    border: 10px rgb(30, 50, 230) double;
     border-radius: 15px;
     padding: 10px;
     margin: 10PX;
@@ -28,7 +31,7 @@
 }
 
 .cdi {
-    border: 10px rgba(0, 0, 0, 0.609) double;
+    border: 10px rgb(30, 50, 230) double;
     border-radius: 15px;
     padding: 10px;
     margin: 10PX;
@@ -38,7 +41,7 @@
 }
 
 .motivation {
-    border: 10px rgba(0, 0, 0, 0.609) double;
+    border: 10px rgb(30, 50, 230) double;
     border-radius: 15px;
     padding: 10px;
     margin: 10PX;
@@ -48,7 +51,7 @@
 }
 
 .gestion {
-    border: 10px rgba(0, 0, 0, 0.609) double;
+    border: 10px rgb(30, 50, 230) double;
     border-radius: 15px;
     padding: 10px;
     margin: 10PX;
@@ -58,7 +61,7 @@
 }
 
 .attributs {
-    border: 10px rgba(0, 0, 0, 0.609) double;
+    border: 10px rgb(30, 50, 230) double;
     border-radius: 15px;
     padding: 10px;
     margin: 10PX;
@@ -74,7 +77,8 @@
 
 .champ1 {
     max-width: 30px;
-    min-width: 29px
+    min-width: 29px;
+    border-inline-color: rgb(30, 50, 230);
 }
 
 .champ2 {
@@ -95,8 +99,14 @@
 
 .window-app .window-content {
     background: rgba(255, 255, 255, 1);
-    background-image: url(image/LOGO2.png);
+    background-image: url(image/Knight.png);
     background-position: top right;
     background-repeat: no-repeat;
-    background-size: 25%;
+    background-size: 80%;
+    
+}
+
+.jetdecss {
+    display:flex;
+    justify-content: space-around;
 }

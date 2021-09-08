@@ -6,28 +6,71 @@ export default class KnightActorSheet extends ActorSheet {
     }
 
     getData() {
-        const data = super.getData();
+        const dataf = super.getData();
 
-        console.log(data);
 
-        const character = data.data
+        console.log(dataf);
 
-        character.arme = data.items.filter(item => item.type === "arme");
-        character.module = data.items.filter(item => item.type === "module");
-        character.overdrive = data.items.filter(item => item.type === "overdrive");
-        character.metaarmure = data.items.filter(item => item.type === "meta-armure");
-        character.vehicule = data.items.filter(item => item.type === "vehicule");
+        const character = dataf.data
 
-        return data;
+
+
+        //calcule santé max
+        var chairdepmax = Number(character.attributs.Chair.competence.Deplacement.valeur)+Number(character.attributs.Chair.competence.Deplacement.od)
+        var chairformax = Number(character.attributs.Chair.competence.Force.valeur)+Number(character.attributs.Chair.competence.Force.od)
+        var chairendmax = Number(character.attributs.Chair.competence.Endurance.valeur)+Number(character.attributs.Chair.competence.Endurance.od)
+        var chairmax = Math.max(chairdepmax, chairformax,chairendmax)
+        character.santemax = 10+6*Number(chairmax);
+        //calcule defense
+        var betehagmax = Number(character.attributs.Bete.competence.Hargne.valeur)+Number(character.attributs.Bete.competence.Hargne.od)
+        var betecommax = Number(character.attributs.Bete.competence.Combat.valeur)+Number(character.attributs.Bete.competence.Combat.od)
+        var beteinsmax = Number(character.attributs.Bete.competence.Instinct.valeur)+Number(character.attributs.Bete.competence.Instinct.od)
+        var betemax = Math.max(betehagmax, betecommax,beteinsmax)
+        character.defense = Number(betemax);
+        //calcule reaction
+        var mactirmax = Number(character.attributs.Machine.competence.Tir.valeur)+Number(character.attributs.Machine.competence.Tir.od)
+        var macsavmax = Number(character.attributs.Machine.competence.Savoir.valeur)+Number(character.attributs.Machine.competence.Savoir.od)
+        var mactecmax = Number(character.attributs.Machine.competence.Technique.valeur)+Number(character.attributs.Machine.competence.Technique.od)
+        var macmax = Math.max(mactirmax, macsavmax,mactecmax)
+        character.reaction = Number(macmax);
+
+        character.arme = dataf.items.filter(item => item.type === "arme"); //tri arme
+        character.module = dataf.items.filter(item => item.type === "module"); // tri module
+        character.overdrive = dataf.items.filter(item => item.type === "overdrive"); // tri overdrive
+        character.metaarmure = dataf.items.filter(item => item.type === "meta-armure"); //tri meta armure
+        character.vehicule = dataf.items.filter(item => item.type === "vehicule"); // tri vehicule
+
+        return dataf;
     }
 
-    activateListeners(html) {
+
+
+    activateListeners(html) {               //capteur d evenement
         super.activateListeners(html);
 
-        html.find('.jetde').click(this._onRollNorm.bind(this));
+        html.find('.jetde').click(this._onRollNorm.bind(this));     //detection jet de dée hors combat
+        html.find('.jetdinit').click(this._onRollInit.bind(this));     //detection jet de dée hors combat
     }
 
-    _onRollNorm(event) {
+    _onRollInit(event) {
+        const dataf = super.getData();
+        console.log(dataf);
+        const character = dataf.data
+        var masdismax = Number(character.attributs.Masque.competence.Discretion.valeur)+Number(character.attributs.Masque.competence.Discretion.od)
+        var masdexmax = Number(character.attributs.Masque.competence.Dexterite.valeur)+Number(character.attributs.Masque.competence.Dexterite.od)
+        var masparmax = Number(character.attributs.Masque.competence.Perception.valeur)+Number(character.attributs.Masque.competence.Perception.od)
+        var masquemax = Math.max(masdismax, masdexmax,masparmax)
+        character.initiative = masquemax;
+        var forminit = "3D6+"+Number(masquemax);
+        var texte = "Initiative";
+        let roll = new Roll(forminit);
+        roll.roll().toMessage({
+            speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+            flavor: texte
+        });
+    }
+
+    _onRollNorm(event) {                                            // jet de dée hors combat
         console.log(event)
         var capliste1 = event.currentTarget.dataset["liste1"];
         var capliste2 = event.currentTarget.dataset["liste2"];
@@ -402,4 +445,5 @@ export default class KnightActorSheet extends ActorSheet {
             flavor: texte + nbdod
         });
     }
+    
 }
