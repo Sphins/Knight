@@ -11,14 +11,13 @@ export default class KnightActorSheet extends ActorSheet {
 
         console.log(dataf);
 
-        const character = dataf.data
-
-
+        const character = dataf.data.data
+        
 
         //calcule santé max
-        var chairdepmax = Number(character.attributs.Chair.competence.Deplacement.valeur)+Number(character.attributs.Chair.competence.Deplacement.od)
-        var chairformax = Number(character.attributs.Chair.competence.Force.valeur)+Number(character.attributs.Chair.competence.Force.od)
-        var chairendmax = Number(character.attributs.Chair.competence.Endurance.valeur)+Number(character.attributs.Chair.competence.Endurance.od)
+        var chairdepmax = Number(character.attributs.Chair.competence.Deplacement.valeur)
+        var chairformax = Number(character.attributs.Chair.competence.Force.valeur)
+        var chairendmax = Number(character.attributs.Chair.competence.Endurance.valeur)
         var chairmax = Math.max(chairdepmax, chairformax,chairendmax)
         character.santemax = 10+6*Number(chairmax);
         //calcule defense
@@ -44,6 +43,7 @@ export default class KnightActorSheet extends ActorSheet {
         var masquemax = Math.max(masdismax, masdexmax,masparmax)
         character.initiative = masquemax;
 
+
         character.arme = dataf.items.filter(item => item.type === "arme"); //tri arme
         character.module = dataf.items.filter(item => item.type === "module"); // tri module
         character.overdrive = dataf.items.filter(item => item.type === "overdrive"); // tri overdrive
@@ -66,7 +66,7 @@ export default class KnightActorSheet extends ActorSheet {
         console.log(event)
         const dataf = super.getData();
         console.log(dataf);
-        const character = dataf.data
+        const character = dataf.data.data
         var masdismax = Number(character.attributs.Masque.competence.Discretion.valeur)+Number(character.attributs.Masque.competence.Discretion.od)
         var masdexmax = Number(character.attributs.Masque.competence.Dexterite.valeur)+Number(character.attributs.Masque.competence.Dexterite.od)
         var masparmax = Number(character.attributs.Masque.competence.Perception.valeur)+Number(character.attributs.Masque.competence.Perception.od)
