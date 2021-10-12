@@ -106,7 +106,7 @@
     color: #000000
 }
 
-.window-app .window-content {
+.editable {
     background: rgba(255, 255, 255, 1);
     background-image: url(image/Knight.png);
     background-position: top right;
