@@ -1,0 +1,120 @@
+<header>
+    <img src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="128" width="128" />
+
+    <h1><input name="name" type="text" value="{{actor.name}}" placeholder="Name" /></h1>
+    
+    <!--menu-->
+
+
+ 
+    <!-- défense réaction init -->
+
+    <div class=defense>
+        <label class=label100>Défense</label>
+        <input class="champ2" name="data.defense" type="number" value="{{data.data.defense}}" />
+
+        <label class=label100>Réaction</label>
+        <input class="champ2" name="data.reaction" type="number" value="{{data.data.reaction}}" />
+
+        <label class=label100>Initiative</label>
+        <label class=label100>{{data.data.initiative}}</label>
+        <a class="jetdinit" ><i class="fas fa-dice"></i></a>
+    </div>
+
+
+    <!--jet de dé-->
+
+    <div class=jetdecss>
+        <label>Jet</label>
+        <select name="data.valeurde1" value="{{valeurde1}}">
+            {{#select data.data.valeurde1}}
+            <option value="0"></option>
+            <option value="Deplacement">Déplacement</option>
+            <option value="Force">Force</option>
+            <option value="Endurance">Endurance</option>
+            <option value="Hargne">Hargne</option>
+            <option value="Combat">Combat</option>
+            <option value="Instinct">Instinct</option>
+            <option value="Tir">Tir</option>
+            <option value="Savoir">Savoir</option>
+            <option value="Technique">Technique</option>
+            <option value="Aura">Aura</option>
+            <option value="Parole">Parole</option>
+            <option value="Sangfroid">Sangfroid</option>
+            <option value="Discretion">Discretion</option>
+            <option value="Dexterite">Dexterite</option>
+            <option value="Perception">Perception</option>
+            {{/select}}
+        </select>
+        <select name="data.valeurde2" value="{{valeurde2}}">
+            {{#select data.data.valeurde2}}
+            <option value="0"></option>
+            <option value="Deplacement">Déplacement</option>
+            <option value="Force">Force</option>
+            <option value="Endurance">Endurance</option>
+            <option value="Hargne">Hargne</option>
+            <option value="Combat">Combat</option>
+            <option value="Instinct">Instinct</option>
+            <option value="Tir">Tir</option>
+            <option value="Savoir">Savoir</option>
+            <option value="Technique">Technique</option>
+            <option value="Aura">Aura</option>
+            <option value="Parole">Parole</option>
+            <option value="Sangfroid">Sangfroid</option>
+            <option value="Discretion">Discretion</option>
+            <option value="Dexterite">Dexterite</option>
+            <option value="Perception">Perception</option>
+            {{/select}}
+        </select>
+        <select name="data.valeurde3" value="{{valeurde3}}">
+            {{#select data.data.valeurde3}}
+            <option value="0"></option>
+            <option value="Deplacement">Déplacement</option>
+            <option value="Force">Force</option>
+            <option value="Endurance">Endurance</option>
+            <option value="Hargne">Hargne</option>
+            <option value="Combat">Combat</option>
+            <option value="Instinct">Instinct</option>
+            <option value="Tir">Tir</option>
+            <option value="Savoir">Savoir</option>
+            <option value="Technique">Technique</option>
+            <option value="Aura">Aura</option>
+            <option value="Parole">Parole</option>
+            <option value="Sangfroid">Sangfroid</option>
+            <option value="Discretion">Discretion</option>
+            <option value="Dexterite">Dexterite</option>
+            <option value="Perception">Perception</option>
+            {{/select}}
+        </select>
+        <select name="data.valeurde4" value="{{valeurde4}}">
+            {{#select data.data.valeurde4}}
+            <option value="0"></option>
+            <option value="Deplacement">Déplacement</option>
+            <option value="Force">Force</option>
+            <option value="Endurance">Endurance</option>
+            <option value="Hargne">Hargne</option>
+            <option value="Combat">Combat</option>
+            <option value="Instinct">Instinct</option>
+            <option value="Tir">Tir</option>
+            <option value="Savoir">Savoir</option>
+            <option value="Technique">Technique</option>
+            <option value="Aura">Aura</option>
+            <option value="Parole">Parole</option>
+            <option value="Sangfroid">Sangfroid</option>
+            <option value="Discretion">Discretion</option>
+            <option value="Dexterite">Dexterite</option>
+            <option value="Perception">Perception</option>
+            {{/select}}
+        </select>
+
+        <label>Bonus/malus</label>
+        <input class="champ1" name="data.bonusmalus" type="number" value="{{data.data.bonusmalus}}"/>
+        <a class="jetde" 
+        data-liste1 = "{{data.data.valeurde1}}" 
+        data-liste2 = "{{data.data.valeurde2}}" 
+        data-liste3 = "{{data.data.valeurde3}}" 
+        data-liste4 = "{{data.data.valeurde4}}" 
+        data-bm = "{{data.data.bonusmalus}}" >
+        <i class="fas fa-dice"></i></a>
+    </div>
+</header>

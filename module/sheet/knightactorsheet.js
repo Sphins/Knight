@@ -1,12 +1,31 @@
 export default class KnightActorSheet extends ActorSheet {
     get template() {
-        console.log(`Knight | Récupération du fichier html ${this.actor.data.type}-sheet.`);
+        console.log(`Knight | Récupération du fichier html ${this.actor.data.type}-sheet.html`);
 
         return `systems/knight/template/sheets/${this.actor.data.type}-sheet.html`;
     }
 
     getData() {
         const dataf = super.getData();
+
+        /**
+ * Define a set of template paths to pre-load
+ * Pre-loaded templates are compiled and cached for fast access when rendering
+ * @return {Promise}
+ */
+
+ export const preloadHandlebarsTemplates = async function () {
+    // Define template paths to load
+    const templatePaths = [
+        // ACTOR
+        "systems\knight\template\sheets\pj-sheet.html",
+        "systems\knight\template\sheets\pj-composant\pj-header-sheet.html",
+        "systems\knight\template\sheets\pj-composant\pj-generale-sheet.html",
+    ];
+
+    // Load the template parts
+    return loadTemplates(templatePaths);
+};
 
 
         console.log(dataf);
@@ -492,6 +511,12 @@ export default class KnightActorSheet extends ActorSheet {
             speaker: ChatMessage.getSpeaker({ actor: this.actor }),
             flavor: texte + nbdod
         });
-    }
-    
+    };
+
+
+
+
+
 }
+
+    
