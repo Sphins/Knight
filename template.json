@@ -1,0 +1,364 @@
+{
+    "Actor": {
+        "types": [
+            "pj",
+            "pnj",
+            "creature",
+            "bande"
+        ],
+
+        "pj": {
+            "contact": "",
+            "valeurde1": "",
+            "valeurde2": "",
+            "valeurde3": "",
+            "valeurde4": "",
+            "bonusmalus": "",
+            "arme": [],
+            "module": [],
+            "overdrive": [],
+            "vehicule": [],
+            "defense": "",
+            "reaction": "",
+            "initiative": "",
+            "Surnom1": "",
+            "age": "",
+            "archetype": "",
+            "hautfait": "",
+            "metaarmure": [],
+            "sectiondorigine": "",
+            "blason": "",
+            "motivationmajeur": "",
+            "motivationmineur": {
+                "mo1": "",
+                "mo2": "",
+                "mo3": "",
+                "mo4": ""
+            },
+            "santemax": "",
+            "santeact": "",
+            "espoiremax": "",
+            "espoireact": "",
+            "espoirmod": "",
+            "armuremax": "",
+            "armureact": "",
+            "energiemax": "",
+            "energieact": "",
+            "cdf": "",
+            "attributs": {
+                "Chair": {
+                    "valeur": "2",
+                    "competence": {
+                        "Deplacement": {
+                            "valeur": "1",
+                            "od": "0"
+                        },
+                        "Force": {
+                            "valeur": "1",
+                            "od": "0"
+                        },
+                        "Endurance": {
+                            "valeur": "1",
+                            "od": "0"
+                        }
+                    }
+                },
+                "Bete": {
+                    "valeur": "2",
+                    "competence": {
+                        "Hargne": {
+                            "valeur": "1",
+                            "od": "0"
+                        },
+                        "Combat": {
+                            "valeur": "1",
+                            "od": "0"
+                        },
+                        "Instinct": {
+                            "valeur": "1",
+                            "od": "0"
+                        }
+                    }
+                },
+                "Machine": {
+                    "valeur": "2",
+                    "competence": {
+                        "Tir": {
+                            "valeur": "1",
+                            "od": "0"
+                        },
+                        "Savoir": {
+                            "valeur": "1",
+                            "od": "0"
+                        },
+                        "Technique": {
+                            "valeur": "1",
+                            "od": "0"
+                        }
+                    }
+                },
+                "Dame": {
+                    "valeur": "2",
+                    "competence": {
+                        "Aura": {
+                            "valeur": "1",
+                            "od": "0"
+                        },
+                        "Parole": {
+                            "valeur": "1",
+                            "od": "0"
+                        },
+                        "Sangfroid": {
+                            "valeur": "1",
+                            "od": "0"
+                        }
+                    }
+                },
+                "Masque": {
+                    "valeur": "2",
+                    "competence": {
+                        "Discretion": {
+                            "valeur": "1",
+                            "od": "0"
+                        },
+                        "Dexterite": {
+                            "valeur": "1",
+                            "od": "0"
+                        },
+                        "Perception": {
+                            "valeur": "1",
+                            "od": "0"
+                        }
+                    }
+                }
+            }
+        },
+        "pnj": {
+            "defense": "",
+            "reaction": "",
+            "initiative": "",
+            "Surnom": "",
+            "age": "",
+            "archetype": "",
+            "hautfait": "",
+            "armure": "",
+            "tipe": "",
+            "tactique": "",
+            "armuremax": "",
+            "armureact": "",
+            "energiemax": "",
+            "energieact": "",
+            "cdf": "",
+            "boucliermax": "",
+            "bouclieract": "",
+            "santemax": "",
+            "santeact": "",
+            "attributs": {
+                "chair": {
+                    "valeur": "",
+                    "aspectex": {
+                        "aspectexceptionnelsmin": "",
+                        "aspectexceptionnelsmaj": ""
+                    }
+                },
+                "bete": {
+                    "valeur": "",
+                    "aspectex": {
+                        "aspectexceptionnelsmin": "",
+                        "aspectexceptionnelsmaj": ""
+                    }
+                },
+                "machine": {
+                    "valeur": "",
+                    "aspectex": {
+                        "aspectexceptionnelsmin": "",
+                        "aspectexceptionnelsmaj": ""
+                    }
+                },
+                "dame": {
+                    "valeur": "",
+                    "aspectex": {
+                        "aspectexceptionnelsmin": "",
+                        "aspectexceptionnelsmaj": ""
+                    }
+                },
+                "masque": {
+                    "valeur": "",
+                    "aspectex": {
+                        "aspectexceptionnelsmin": "",
+                        "aspectexceptionnelsmaj": ""
+                    }
+                }
+            },
+            "pointsfaible": ""
+        },
+        "creature": {
+            "tipe": "",
+            "tactique": "",
+            "armuremax": "",
+            "armureact": "",
+            "boucliermax": "",
+            "bouclieract": "",
+            "santemax": "",
+            "santeact": "",
+            "attributs": {
+                "chair": {
+                    "valeur": "",
+                    "aspectex": {
+                        "aspectexceptionnelsmin": "",
+                        "aspectexceptionnelsmaj": ""
+                    }
+                },
+                "bete": {
+                    "valeur": "",
+                    "aspectex": {
+                        "aspectexceptionnelsmin": "",
+                        "aspectexceptionnelsmaj": ""
+                    }
+                },
+                "machine": {
+                    "valeur": "",
+                    "aspectex": {
+                        "aspectexceptionnelsmin": "",
+                        "aspectexceptionnelsmaj": ""
+                    }
+                },
+                "dame": {
+                    "valeur": "",
+                    "aspectex": {
+                        "aspectexceptionnelsmin": "",
+                        "aspectexceptionnelsmaj": ""
+                    }
+                },
+                "masque": {
+                    "valeur": "",
+                    "aspectex": {
+                        "aspectexceptionnelsmin": "",
+                        "aspectexceptionnelsmaj": ""
+                    }
+                }
+            },
+            "pointsfaible": ""
+        },
+        "bande": {
+            "tipe": "",
+            "tactique": "",
+            "armuremax": "",
+            "armureact": "",
+            "boucliermax": "",
+            "bouclieract": "",
+            "cohesionmax": "",
+            "cohesionact": "",
+            "debordement": {
+                "score": "",
+                "touractuel": ""
+            },
+            "attributs": {
+                "chair": {
+                    "valeur": "",
+                    "aspectex": {
+                        "aspectexceptionnelsmin": "",
+                        "aspectexceptionnelsmaj": ""
+                    }
+                },
+                "bete": {
+                    "valeur": "",
+                    "aspectex": {
+                        "aspectexceptionnelsmin": "",
+                        "aspectexceptionnelsmaj": ""
+                    }
+                },
+                "machine": {
+                    "valeur": "",
+                    "aspectex": {
+                        "aspectexceptionnelsmin": "",
+                        "aspectexceptionnelsmaj": ""
+                    }
+                },
+                "dame": {
+                    "valeur": "",
+                    "aspectex": {
+                        "aspectexceptionnelsmin": "",
+                        "aspectexceptionnelsmaj": ""
+                    }
+                },
+                "masque": {
+                    "valeur": "",
+                    "aspectex": {
+                        "aspectexceptionnelsmin": "",
+                        "aspectexceptionnelsmaj": ""
+                    }
+                }
+            },
+            "pointsfaible": ""
+        }
+    },
+    "Item": {
+        "types": [
+            "arme",
+            "module",
+            "overdrive",
+            "meta-armure",
+            "vehicule"
+        ],
+        "arme": {
+            "description": "",
+            "degats": "",
+            "violence": "",
+            "portee": "",
+            "energie": "",
+            "effet": "",
+            "pg": ""
+        },
+        "module": {
+            "description": "",
+            "slots": "",
+            "activation": "",
+            "duree": "",
+            "portee": "",
+            "énergie": "",
+            "pg": ""
+        },
+        "overdrive": {
+            "description": "",
+            "niv1": "",
+            "niv2": "",
+            "niv3": "",
+            "niv4": "",
+            "niv5": ""
+        },
+        "meta-armure": {
+            "slots": {
+                "tete": "",
+                "brasgauche": "",
+                "brasdroit": "",
+                "torse": "",
+                "jambegauche": "",
+                "jambedroite": ""
+            },
+            "overdrives": {
+                "od1": "",
+                "od2": "",
+                "od3": "",
+                "od4": ""
+            },
+            "pointdarmure": "",
+            "pointdenergie": "",
+            "champdeforce": "",
+            "description": ""
+        },
+        "vehicule": {
+            "description": "",
+            "defense": "",
+            "reaction": "",
+            "manoeuvrabilite": "",
+            "vitesse": "",
+            "equipage": "",
+            "armuremax": "",
+            "armureact": "",
+            "energiemax": "",
+            "energieact": "",
+            "cdf": ""
+        }
+    }
+}

@@ -1,0 +1,121 @@
+
+.form-fields{ 
+    background-color: rgba(255, 255, 255, 1);
+}
+.label100 {
+    width: 100px;
+    margin: 10PX;
+    max-width: 100px;
+    min-width: 99px
+}
+
+.label300 {
+    display: block;
+    width: 150px;
+    float: left;
+}
+
+.defense {
+    border: 10px rgb(30, 50, 230) double;
+    border-radius: 15px;
+    padding: 10px;
+    margin: 10PX;
+    min-width: 300px;
+    display:flex;
+    justify-content: space-around;
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.jetdecss {
+    border: 10px rgb(30, 50, 230) double;
+    border-radius: 15px;
+    padding: 10px;
+    margin: 10PX;
+    min-width: 300px;
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.cdi {
+    border: 10px rgb(30, 50, 230) double;
+    border-radius: 15px;
+    padding: 10px;
+    margin: 10PX;
+    min-width: 100px;
+    width: 47%;
+    order: 3;
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.motivation {
+    border: 10px rgb(30, 50, 230) double;
+    border-radius: 15px;
+    padding: 10px;
+    margin: 10PX;
+    min-width: 100px;
+    width: 47%;
+    order: 4;
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.gestion {
+    border: 10px rgb(30, 50, 230) double;
+    border-radius: 15px;
+    padding: 10px;
+    margin: 10PX;
+    min-width: 100px;
+    width: 47%;
+    order: 1;
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.attributs {
+    border: 10px rgb(30, 50, 230) double;
+    border-radius: 15px;
+    padding: 10px;
+    margin: 10PX;
+    min-width: 100px;
+    width: 47%;
+    float: right;
+    order: 2;
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.competence {
+    display: flex;
+}
+
+.champ1 {
+    max-width: 30px;
+    min-width: 29px;
+    border-inline-color: rgb(30, 50, 230);
+}
+
+.champ2 {
+    max-width: 150px;
+    min-width: 149px
+}
+
+.champ3 {
+    max-height: 10px;
+}
+
+.app,
+.chat-message,
+#chat-form textarea {
+    background: rgba(255, 255, 255, 0.6);
+    color: #000000
+}
+
+.editable {
+    background: rgba(255, 255, 255, 1);
+    background-image: url(image/Knight.png);
+    background-position: top right;
+    background-repeat: no-repeat;
+    background-size: 80%;
+    
+}
+
+.jetdecss {
+    display:flex;
+    justify-content: space-around;
+}
