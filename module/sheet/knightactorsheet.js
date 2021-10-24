@@ -105,9 +105,7 @@ export default class KnightActorSheet extends ActorSheet {
 
         //calcule armure
         var armmod = Number(character.armuremod)
-        var armmet = dataf.data.data.metaarmure.data.pointdarmure
-        var armmax = armmod + armmet
-        character.armuremax = armmax
+    
 
         return dataf;
     }
