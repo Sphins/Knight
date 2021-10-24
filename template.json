@@ -8,7 +8,46 @@
         ],
 
         "pj": {
-            "contact": "",
+            "expa":"",
+            "expu":"",
+            "expt":"",
+            "pga":"",
+            "pgu":"",
+            "pgt":"",
+            "iacdf":"",
+            "iaprop":"",
+            "iasurnom":"",
+            "iacarac":"",
+            "iaatout":"",
+            "iahand":"",
+            "ianote":"",
+            "iaicdf":"",
+            "iaisurnom":"",
+            "iaicarac":"",
+            "iaiatout":"",
+            "iaihand":"",
+            "iainote":"",
+            "iaiprop":"",
+            "avant": {
+                "av1":"",
+                "av2":"",
+                "av3":"",
+                "av4":""
+            },
+            "incon": {
+                "in1":"",
+                "in2":"",
+                "in3":"",
+                "in4":""
+            },
+            "langues":"",
+            "noteh":"",
+            "blesgr":"",
+            "traumas":"", 
+            "contact": {
+                "valeur":"",
+                "note":""
+            },
             "valeurde1": "",
             "valeurde2": "",
             "valeurde3": "",

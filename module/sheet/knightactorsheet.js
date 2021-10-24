@@ -11,6 +11,7 @@ export default class KnightActorSheet extends ActorSheet {
         console.log(dataf);
 
         const character = dataf.data.data
+
         var deplacement = Number(character.attributs.Chair.competence.Deplacement.valeur)
         var deplacementOD = Number(character.attributs.Chair.competence.Deplacement.od)
         var force = Number(character.attributs.Chair.competence.Force.valeur)
@@ -41,10 +42,14 @@ export default class KnightActorSheet extends ActorSheet {
         var dexteriteOD = Number(character.attributs.Masque.competence.Dexterite.od)
         var perception = Number(character.attributs.Masque.competence.Perception.valeur)
         var perceptionOD = Number(character.attributs.Masque.competence.Perception.od)
+        var expu = Number(character.expu)
+        var expt = Number(character.expt)
+        var pgu = Number(character.pgu)
+        var pgt = Number(character.pgt)
 
         //calcule santé max
         var chairmax = Math.max(deplacement, force,endurance)
-        character.santemax = 10+6*Number(chairmax);
+        character.santemax = 10+6*Number(chairmax);            //Todo kraken
 
 
         //calcule defense
@@ -71,12 +76,22 @@ export default class KnightActorSheet extends ActorSheet {
         character.initiative = masquemax;
 
         //contact max
-        character.contact = Math.max(aura, parole, sangfroid);
+        character.contact.valeur = Math.max(aura, parole, sangfroid);
 
         //espoire max
         var modiesp = character.espoirmod
         var espmax = 50 + Number(modiesp)
         character.espoiremax = espmax
+
+        //calcule exp
+
+        var expa = expt - expu
+        character.expa = expa
+
+        //calcule PG
+
+        var pga = pgt - pgu
+        character.pga = pga
 
 
         character.arme = dataf.items.filter(item => item.type === "arme"); //tri arme
@@ -84,6 +99,7 @@ export default class KnightActorSheet extends ActorSheet {
         character.overdrive = dataf.items.filter(item => item.type === "overdrive"); // tri overdrive
         character.metaarmure = dataf.items.filter(item => item.type === "meta-armure"); //tri meta armure
         character.vehicule = dataf.items.filter(item => item.type === "vehicule"); // tri vehicule
+
 
         return dataf;
     }
@@ -95,8 +111,86 @@ export default class KnightActorSheet extends ActorSheet {
 
         html.find('.jetde').click(this._onRollNorm.bind(this));     //detection jet de dée hors combat
         html.find('.jetdinit').click(this._onRollInit.bind(this));     //detection jet d init
+
+        
+        //navigation fiche pj
+
+        let generale = document.getElementById("generale");
+        let armure = document.getElementById("armure");
+        let ia = document.getElementById("ia");
+        let iai = document.getElementById("iai");
+        let historique = document.getElementById("historique");
+
+        let tab1 = document.getElementById("tab1");
+        let tab2 = document.getElementById("tab2");
+        let tab3 = document.getElementById("tab3");
+        let tab4 = document.getElementById("tab4");
+        let tab5 = document.getElementById("tab5");
+
+        generale.addEventListener("click", () =>{
+            if(getComputedStyle(tab1).display != "block"){
+                tab1.style.display = "block";
+                tab2.style.display = "none";
+                tab3.style.display = "none";
+                tab4.style.display = "none";
+                tab5.style.display = "none";
+            } else {
+                tab1.style.display = "none";
+            }
+        })
+
+        armure.addEventListener("click", () =>{
+            if(getComputedStyle(tab2).display != "block"){
+                tab2.style.display = "block";
+                tab1.style.display = "none";
+                tab3.style.display = "none";
+                tab4.style.display = "none";
+                tab5.style.display = "none";
+            } else {
+                tab2.style.display = "none";
+            }
+        })
+
+        ia.addEventListener("click", () =>{
+            if(getComputedStyle(tab3).display != "block"){
+                tab3.style.display = "block";
+                tab1.style.display = "none";
+                tab2.style.display = "none";
+                tab4.style.display = "none";
+                tab5.style.display = "none";
+            } else {
+                tab3.style.display = "none";
+            }
+        })
+
+        iai.addEventListener("click", () =>{
+            if(getComputedStyle(tab4).display != "block"){
+                tab4.style.display = "block";
+                tab1.style.display = "none";
+                tab2.style.display = "none";
+                tab3.style.display = "none";
+                tab5.style.display = "none";
+            } else {
+                tab4.style.display = "none";
+            }
+        })
+
+        historique.addEventListener("click", () =>{
+            if(getComputedStyle(tab5).display != "block"){
+                tab5.style.display = "block";
+                tab1.style.display = "none";
+                tab2.style.display = "none";
+                tab3.style.display = "none";
+                tab4.style.display = "none";
+            } else {
+                tab5.style.display = "none";
+            }
+        })
+
+
     }
 
+    
     _onRollInit(event) {                                    // jet d init
         console.log(event)
         const dataf = super.getData();
