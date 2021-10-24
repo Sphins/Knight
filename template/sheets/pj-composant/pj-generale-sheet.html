@@ -31,29 +31,21 @@
         <BR />
         <label class=label300>Armure</label>
         <input class="champ1" name="data.armureact" type="number" value="{{data.data.armureact}}" /> 
-        
-        {{#each data.data.metaarmure as |items key|}}
-        <label class=label100>/{{items.data.pointdarmure}}</label>
+        <label class=label100>/{{data.data.armuremax}}</label>
+        <input class="champ1" name="data.armuremod" type="number" value="{{data.data.armuremod}}" /> 
         </tr>
-        {{/each}}
-
         <BR />
         <label class=label300>Energie</label>
         <input class="champ1" name="data.energieact" type="number" value="{{data.data.energieact}}" /> 
-        
-        {{#each data.data.metaarmure as |items key|}}
-        <label class=label100>/{{items.data.pointdenergie}}</label>
+        <label class=label100>/{{data.data.energiemax}}</label>
+        <input class="champ1" name="data.energiemod" type="number" value="{{data.data.energiemod}}" /> 
         </tr>
-        {{/each}}
-
+       
         <BR />
         <label class=label300>Champs de force</label> 
-
-        {{#each data.data.metaarmure as |items key|}}
-        <label class=label100>{{items.data.champdeforce}}</label>
+        <label class=label100>{{data.data.cdfmax}}</label>
+        <input class="champ1" name="data.cdfmod" type="number" value="{{data.data.cdfmod}}" /> 
         </tr>
-        {{/each}}
-
         <BR />
     </div>
     <!-- carte d'identité -->

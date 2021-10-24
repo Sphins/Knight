@@ -46,7 +46,7 @@
             "traumas":"", 
             "contact": {
                 "valeur":"",
-                "note":""
+                "cnote":""
             },
             "valeurde1": "",
             "valeurde2": "",
@@ -79,11 +79,16 @@
             "espoiremax": "",
             "espoireact": "",
             "espoirmod": "",
+            "armmeta": "",
             "armuremax": "",
             "armureact": "",
+            "armuremod":"",
             "energiemax": "",
             "energieact": "",
+            "energiemod": "",
             "cdf": "",
+            "cdfmax":"",
+            "cdfmod": "",
             "attributs": {
                 "Chair": {
                     "valeur": "2",

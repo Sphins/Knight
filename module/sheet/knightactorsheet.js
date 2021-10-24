@@ -12,6 +12,8 @@ export default class KnightActorSheet extends ActorSheet {
 
         const character = dataf.data.data
 
+        const metaarmure = dataf.data.items.data
+
         var deplacement = Number(character.attributs.Chair.competence.Deplacement.valeur)
         var deplacementOD = Number(character.attributs.Chair.competence.Deplacement.od)
         var force = Number(character.attributs.Chair.competence.Force.valeur)
@@ -46,6 +48,7 @@ export default class KnightActorSheet extends ActorSheet {
         var expt = Number(character.expt)
         var pgu = Number(character.pgu)
         var pgt = Number(character.pgt)
+        
 
         //calcule santé max
         var chairmax = Math.max(deplacement, force,endurance)
@@ -93,13 +96,18 @@ export default class KnightActorSheet extends ActorSheet {
         var pga = pgt - pgu
         character.pga = pga
 
-
+        //tri
         character.arme = dataf.items.filter(item => item.type === "arme"); //tri arme
         character.module = dataf.items.filter(item => item.type === "module"); // tri module
         character.overdrive = dataf.items.filter(item => item.type === "overdrive"); // tri overdrive
         character.metaarmure = dataf.items.filter(item => item.type === "meta-armure"); //tri meta armure
         character.vehicule = dataf.items.filter(item => item.type === "vehicule"); // tri vehicule
 
+        //calcule armure
+        var armmod = Number(character.armuremod)
+        var armmet = dataf.data.data.metaarmure.data.pointdarmure
+        var armmax = armmod + armmet
+        character.armuremax = armmax
 
         return dataf;
     }
