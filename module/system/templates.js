@@ -12,6 +12,9 @@
                 "systems/Knight/template/sheets/pj-composant/pj-header-sheet.html",
                 "systems/knight/template/sheets/pj-composant/pj-generale-sheet.html",
                 "systems/knight/template/sheets/pj-composant/pj-armure-sheet.html",
+                "systems/knight/template/sheets/pj-composant/pj-ia-sheet.html",
+                "systems/knight/template/sheets/pj-composant/pj-iai-sheet.html",
+                "systems/knight/template/sheets/pj-composant/pj-historique-sheet.html",
             ];
         
             // Load the template parts

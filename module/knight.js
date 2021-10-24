@@ -11,6 +11,8 @@ Hooks.once("init", () => {
 
     Actors.unregisterSheet("core", ActorSheet);
     Actors.registerSheet("knight", KnightActorSheet, { makeDefault: true });
+
+
     
     preloadHandlebarsTemplates();
 })

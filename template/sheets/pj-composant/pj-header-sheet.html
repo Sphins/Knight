@@ -1,7 +1,7 @@
-<header>
+<body>
     <img src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="128" width="128" />
 
-    <h1><input name="name" type="text" value="{{actor.name}}" placeholder="Name" /></h1>
+    <h1 class="texte"><input name="name" type="text" value="{{actor.name}}" placeholder="Name" /></h1>
     
  
     <!-- défense réaction init -->
@@ -115,22 +115,38 @@
         <i class="fas fa-dice"></i></a>
     </div>
         <!--menu-->
-        <div>
+        <div class="content flex3">
             {{!-- Sheet Tab Navigation --}}
-            <nav class="sheet-navigation tabs" data-group="primary">
-                <a class="item" data-tab="generale">Générale</a>
-                <a class="item" data-tab="armure">Armure</a>
-            </nav>
+            
+            <button class="bouton" id="generale">Générale</button>
+            <button class="bouton" id="armure">Armure</button>
+            <button class="bouton" id="ia">IA</button>
+            <button class="bouton" id="iai">IA incarnée</button>
+            <button class="bouton" id="historique">Historique</button>
+         
+         
+         
     
             {{!-- Sheet Body --}}
-            <section class="sheet-body">
-                {{!-- Stats Tab --}}
-                <div class="tab stats" data-group="primary" data-tab="generale">
+            
+                <div id="tab1" class="tab" display="none">
                     {{> "systems/knight/template/sheets/pj-composant/pj-generale-sheet.html"}}
                 </div>
-                <div class="tab armure" data-group="primary" data-tab="armure">
+
+                <div id=tab2 class="tab" display="none">
                     {{> "systems/knight/template/sheets/pj-composant/pj-armure-sheet.html"}}
                 </div>
-            </section>
-        </div>
-</header>
+
+                <div id=tab3 class="tab" display="none">
+                    {{> "systems/knight/template/sheets/pj-composant/pj-ia-sheet.html"}}
+                </div>
+
+                <div id=tab4 class="tab" display="none">
+                    {{> "systems/knight/template/sheets/pj-composant/pj-iai-sheet.html"}}
+                </div>
+
+                <div id=tab5 class="tab" display="none">
+                    {{> "systems/knight/template/sheets/pj-composant/pj-historique-sheet.html"}}
+                </div>
+    </div>
+</body>
