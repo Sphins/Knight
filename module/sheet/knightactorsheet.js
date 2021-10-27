@@ -12,8 +12,6 @@ export default class KnightActorSheet extends ActorSheet {
 
         const character = dataf.data.data
 
-        const metaarmure = dataf.data.items.data
-
         var deplacement = Number(character.attributs.Chair.competence.Deplacement.valeur)
         var deplacementOD = Number(character.attributs.Chair.competence.Deplacement.od)
         var force = Number(character.attributs.Chair.competence.Force.valeur)
@@ -56,7 +54,7 @@ export default class KnightActorSheet extends ActorSheet {
 
 
         //calcule defense
-        var betehagmax = hargne + hargneOD
+        var betehagmax = hargne + hargneOD                      //Todo kraken
         var betecommax = combat + combatOD
         var beteinsmax = instinct + instinctOD
         var betemax = Math.max(betehagmax, betecommax,beteinsmax)
@@ -64,7 +62,7 @@ export default class KnightActorSheet extends ActorSheet {
 
 
         //calcule reaction
-        var mactirmax = tir + tirOD
+        var mactirmax = tir + tirOD                             //Todo kraken
         var macsavmax = savoir + savoirOD
         var mactecmax = technique + techniqueOD
         var macmax = Math.max(mactirmax, macsavmax,mactecmax)
@@ -72,7 +70,7 @@ export default class KnightActorSheet extends ActorSheet {
 
 
         //initiative max
-        var masdismax = discretion + discretionOD
+        var masdismax = discretion + discretionOD               
         var masdexmax = dexterite + dexteriteOD
         var masparmax = perception + perceptionOD
         var masquemax = Math.max(masdismax, masdexmax,masparmax)
@@ -103,9 +101,6 @@ export default class KnightActorSheet extends ActorSheet {
         character.metaarmure = dataf.items.filter(item => item.type === "meta-armure"); //tri meta armure
         character.vehicule = dataf.items.filter(item => item.type === "vehicule"); // tri vehicule
 
-        //calcule armure
-        var armmod = Number(character.armuremod)
-    
 
         return dataf;
     }
@@ -117,6 +112,7 @@ export default class KnightActorSheet extends ActorSheet {
 
         html.find('.jetde').click(this._onRollNorm.bind(this));     //detection jet de dée hors combat
         html.find('.jetdinit').click(this._onRollInit.bind(this));     //detection jet d init
+
 
         
         //navigation fiche pj

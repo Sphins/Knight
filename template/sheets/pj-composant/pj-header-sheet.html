@@ -7,11 +7,20 @@
     <!-- défense réaction init -->
 
     <div class=defense>
+
+        <label class=label100>CDF</label> 
+
+        {{#each data.data.metaarmure as |items key|}}
+        <label class=label100>{{items.data.champdeforce}}</label>
+        </tr>
+        {{/each}}
+
+
         <label class=label100>Défense</label>
-        <input class="champ2" name="data.defense" type="number" value="{{data.data.defense}}" />
+        <label class=label100>{{data.data.defense}}</label>
 
         <label class=label100>Réaction</label>
-        <input class="champ2" name="data.reaction" type="number" value="{{data.data.reaction}}" />
+        <label class=label100>{{data.data.reaction}}</label>
 
         <label class=label100>Initiative</label>
         <label class=label100>{{data.data.initiative}}</label>

@@ -41,11 +41,13 @@ input[type="text"]{
 .form-fields{ 
     background-color: #edf0f3;
 }
+
+
 .label100 {
     width: 100px;
     margin: 10PX;
     max-width: 100px;
-    min-width: 99px
+    min-width: 49px
 }
 
 .label200 {
