@@ -44,10 +44,11 @@ input[type="text"]{
 
 
 .label100 {
+    display:flexbox;
     width: 100px;
     margin: 10PX;
     max-width: 100px;
-    min-width: 49px
+    min-width: 10px
 }
 
 .label200 {
@@ -70,6 +71,7 @@ input[type="text"]{
     margin: 10PX;
     min-width: 300px;
     display:flex;
+
     justify-content: space-around;
     background-color: #3A3F44;
     color: #edf0f3
@@ -139,9 +141,11 @@ input[type="text"]{
 }
 
 .champ1 {
-    max-width: 30px;
-    min-width: 29px;
-    color:#f89406;
+    display:flexbox;
+    max-width: 40px;
+    min-width: 10px;
+    color:#f89406
+
 }
 
 .champ2 {

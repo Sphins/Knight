@@ -386,10 +386,23 @@
                 "od3": "",
                 "od4": ""
             },
-            "pointdarmure": "",
+            "pointdarmure": "", 
             "pointdenergie": "",
             "champdeforce": "",
-            "description": ""
+            "egide":"",
+            "description": "",
+            "capacite": "",
+            "evolutions": {
+                "150PG":"",
+                "200PG":"",
+                "250PG":"",
+                "Pour 50PG":"",
+                "pour 50PG2":"",
+                "pour 50PG3":"",
+                "pour 100PG4":""
+            } 
+                
+            
         },
         "vehicule": {
             "description": "",

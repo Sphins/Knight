@@ -8,35 +8,6 @@
     {{/each}}
     <BR />
 
-    <!--point d armure-->
-
-    <label class=label300>Armure</label>
-    <input class="champ1" name="data.armureact" type="number" value="{{data.data.armureact}}" /> 
-
-    {{#each data.data.metaarmure as |items key|}}
-    <label class=label100>/{{items.data.pointdarmure}}</label>
-    </tr>
-    {{/each}}
-
-    <!--energie-->
-
-    <BR />
-    <label class=label300>Energie</label>
-    <input class="champ1" name="data.energieact" type="number" value="{{data.data.energieact}}" /> 
-
-    {{#each data.data.metaarmure as |items key|}}
-    <label class=label100>/{{items.data.pointdenergie}}</label>
-    </tr>
-    {{/each}}
-
-    <!--cdf-->
-
-    <BR />
-    <label class=label300>Champs de force</label> 
-
-    {{#each data.data.metaarmure as |items key|}}
-    <label class=label100>{{items.data.champdeforce}}</label>
-    </tr>
-    {{/each}}
+    
 
 </div>

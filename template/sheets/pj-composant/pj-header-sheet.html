@@ -8,14 +8,6 @@
 
     <div class=defense>
 
-        <label class=label100>CDF</label> 
-
-        {{#each data.data.metaarmure as |items key|}}
-        <label class=label100>{{items.data.champdeforce}}</label>
-        </tr>
-        {{/each}}
-
-
         <label class=label100>Défense</label>
         <label class=label100>{{data.data.defense}}</label>
 
@@ -123,6 +115,41 @@
         data-bm = "{{data.data.bonusmalus}}" >
         <i class="fas fa-dice"></i></a>
     </div>
+
+       <!-- score de combat -->
+       <div class=defense>
+        <label class=label100>Santé</label>
+        <input class="champ1" name="data.santeact" type="number" value="{{data.data.santeact}}" />
+        <label class=label100>/{{data.data.santemax}}</label>
+
+        <label class=label100>Espoire</label>
+        <input class="champ1" name="data.espoireact" type="number" value="{{data.data.espoireact}}" />
+        <label class=label100>/{{data.data.espoiremax}}</label>
+        <input class="champ1" name="data.espoirmod" type="number" value="{{data.data.espoirmod}}" />
+
+        <label class=label100>Armure</label>
+        <input class="champ1" name="data.armureact" type="number" value="{{data.data.armureact}}" /> 
+        
+        {{#each data.data.metaarmure as |items key|}}
+        <label class=label100>/{{items.data.pointdarmure}}</label>
+        {{/each}}
+
+        <label class=label100>Energie</label>
+        <input class="champ1" name="data.energieact" type="number" value="{{data.data.energieact}}" /> 
+        
+        {{#each data.data.metaarmure as |items key|}}
+        <label class=label100>/{{items.data.pointdenergie}}</label>
+        {{/each}}
+
+        <label class=label100>CDF</label> 
+
+        {{#each data.data.metaarmure as |items key|}}
+        <label class=label100>{{items.data.champdeforce}}</label>
+        {{/each}}
+
+    </div>
+
+
         <!--menu-->
         <div class="content flex3">
             {{!-- Sheet Tab Navigation --}}

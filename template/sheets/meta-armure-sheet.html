@@ -2,61 +2,60 @@
     <img src="{{item.img}}" data-edit="img" title="{{item.name}}" height="128" width="128" />
     <h1><input name="name" type="text" value="{{item.name}}" placeholder="Name" /></h1>
 
-    <label>Déscription
-        <input name="data.description" type="text" value="{{data.data.description}}" placeholder=""/>
-    </label>
+ 
+
+       <!-- Slots -->
+
+
+       <div class=attributs >
+        <label>Slots</label>
+            <ul>
+                <label>Tête
+                    <input name="data.tete" type="text" value="{{data.data.tete}}" placeholder=""/>
+                </label>
+
+                <label>Bras gauche
+                    <input name="data.brasgauche" type="text" value="{{data.data.brasgauche}}" placeholder=""/>
+                </label>
+
+                <label>Bras droit
+                    <input name="data.brasdroit" type="text" value="{{data.data.brasdroit}}" placeholder=""/>
+                </label>
+
+                <label>Torse
+                    <input name="data.torse" type="text" value="{{data.data.torse}}" placeholder=""/>
+                </label>
+
+                <label>Jambe gauche
+                    <input name="data.jambegauche" type="text" value="{{data.data.jambegauche}}" placeholder=""/>
+                </label>
+
+                <label>Jambe droite
+                    <input name="data.jambedroite" type="text" value="{{data.data.jambedroite}}" placeholder=""/>
+                </label>
+            </ul>
+    </div>
 
     <!-- caracteristique -->
 
-    <li>
-        <label>Point d'armure
+    <li class=cdi>
+        <label>Point d'armure</label>
         <input name="data.pointdarmure" type="text" value="{{data.data.pointdarmure}}" placeholder=""/>
-    </label>
+    
 
-        <label>Point d'énergie
+        <label>Point d'énergie</label>
         <input name="data.pointdenergie" type="text" value="{{data.data.pointdenergie}}" placeholder=""/>
-    </label>
 
-        <label>Champ de force
+        <label>Champ de force</label>
         <input name="data.champdeforce" type="text" value="{{data.data.champdeforce}}" placeholder=""/>
-    </label>
-
     </li>
 
-    <!-- Slots -->
-
-    <label>Slots
-        <ul>
-            <label>Tête
-                <input name="data.tete" type="text" value="{{data.data.tete}}" placeholder=""/>
-            </label>
-
-    <label>Bras gauche
-                <input name="data.brasgauche" type="text" value="{{data.data.brasgauche}}" placeholder=""/>
-            </label>
-
-    <label>Bras droit
-                <input name="data.brasdroit" type="text" value="{{data.data.brasdroit}}" placeholder=""/>
-            </label>
-
-    <label>Torse
-                <input name="data.torse" type="text" value="{{data.data.torse}}" placeholder=""/>
-            </label>
-
-    <label>Jambe gauche
-                <input name="data.jambegauche" type="text" value="{{data.data.jambegauche}}" placeholder=""/>
-            </label>
-
-    <label>Jambe droite
-                <input name="data.jambedroite" type="text" value="{{data.data.jambedroite}}" placeholder=""/>
-            </label>
-    </ul>
-    </label>
+ 
 
     <!-- overdrive -->
 
-    <li>
-        <label>Overdrive
+    <div class=cdi>
+        <label>Overdrive</label>
         <ul>
 
             <input name="data.od1" type="text" value="{{data.data.od1}}" placeholder=""/>
@@ -69,6 +68,20 @@
 
         </ul>
 
-    </li>
+    </div>
 
+<!-- description -->
+
+    <label>Déscription</label>
+        </br>
+        <textarea rows=5 name="data.description">{{data.data.description}}</textarea>
+
+<!--Capacité-->
+    <label>Capacité</label>
+        </br>
+        <textarea rows=5 name="data.capacite">{{data.data.capacite}}</textarea>
+
+<!--evolution-->
+
+            
 </form>
