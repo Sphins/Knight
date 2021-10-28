@@ -15,4 +15,5 @@ Hooks.once("init", () => {
 
     
     preloadHandlebarsTemplates();
+
 })

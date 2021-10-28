@@ -11,34 +11,34 @@
         <label>Slots</label>
             <ul>
                 <label>Tête
-                    <input name="data.tete" type="text" value="{{data.data.tete}}" placeholder=""/>
+                    <input name="data.slots.tete" type="text" value="{{data.data.slots.tete}}" placeholder=""/>
                 </label>
 
                 <label>Bras gauche
-                    <input name="data.brasgauche" type="text" value="{{data.data.brasgauche}}" placeholder=""/>
+                    <input name="data.slots.brasgauche" type="text" value="{{data.data.slots.brasgauche}}" placeholder=""/>
                 </label>
 
                 <label>Bras droit
-                    <input name="data.brasdroit" type="text" value="{{data.data.brasdroit}}" placeholder=""/>
+                    <input name="data.slots.brasdroit" type="text" value="{{data.data.slots.brasdroit}}" placeholder=""/>
                 </label>
 
                 <label>Torse
-                    <input name="data.torse" type="text" value="{{data.data.torse}}" placeholder=""/>
+                    <input name="data.slots.torse" type="text" value="{{data.data.slots.torse}}" placeholder=""/>
                 </label>
 
                 <label>Jambe gauche
-                    <input name="data.jambegauche" type="text" value="{{data.data.jambegauche}}" placeholder=""/>
+                    <input name="data.slots.jambegauche" type="text" value="{{data.data.slots.jambegauche}}" placeholder=""/>
                 </label>
 
                 <label>Jambe droite
-                    <input name="data.jambedroite" type="text" value="{{data.data.jambedroite}}" placeholder=""/>
+                    <input name="data.slots.jambedroite" type="text" value="{{data.data.slots.jambedroite}}" placeholder=""/>
                 </label>
             </ul>
     </div>
 
     <!-- caracteristique -->
 
-    <li class=cdi>
+    <div class=cdi>
         <label>Point d'armure</label>
         <input name="data.pointdarmure" type="text" value="{{data.data.pointdarmure}}" placeholder=""/>
     
@@ -48,7 +48,7 @@
 
         <label>Champ de force</label>
         <input name="data.champdeforce" type="text" value="{{data.data.champdeforce}}" placeholder=""/>
-    </li>
+    </div>
 
  
 
@@ -58,13 +58,13 @@
         <label>Overdrive</label>
         <ul>
 
-            <input name="data.od1" type="text" value="{{data.data.od1}}" placeholder=""/>
+            <input name="data.overdrives.od1" type="text" value="{{data.data.overdrives.od1}}" placeholder=""/>
             
-            <input name="data.od2" type="text" value="{{data.data.od2}}" placeholder=""/>
+            <input name="data.overdrives.od2" type="text" value="{{data.data.overdrives.od2}}" placeholder=""/>
             
-            <input name="data.od3" type="text" value="{{data.data.od3}}" placeholder=""/>
+            <input name="data.overdrives.od3" type="text" value="{{data.data.overdrives.od3}}" placeholder=""/>
               
-            <input name="data.od4" type="text" value="{{data.data.od4}}" placeholder=""/>
+            <input name="data.overdrives.od4" type="text" value="{{data.data.overdrives.od4}}" placeholder=""/>
 
         </ul>
 
@@ -82,6 +82,18 @@
         <textarea rows=5 name="data.capacite">{{data.data.capacite}}</textarea>
 
 <!--evolution-->
+<div class=defense>
+    <label>Evolution</label>
+    <ul>
+        <label>150 PG accumulés</label>
+        <textarea rows=3 name="data.evolutions.150PG">{{data.data.evolutions.150PG}}</textarea>
+        <label>200 PG accumulés</label>
+        <textarea rows=3 name="data.evolutions.200PG">{{data.data.evolutions.200PG}}</textarea>
+        <label>250 PG accumulés</label>
+        <textarea rows=3 name="data.evolutions.250PG">{{data.data.evolutions.250PG}}</textarea>
+          
+    </ul>
 
+</div>
             
 </form>
