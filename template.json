@@ -1,4 +1,11 @@
 {
+    "dependencies": [
+        {
+            "name": "_CodeMirror",
+            "type": "module",
+            "manifest": "https://raw.githubusercontent.com/League-of-Foundry-Developers/codemirror-lib/master/module.json"	
+        }
+    ],
     "Actor": {
         "types": [
             "pj",
