@@ -2,7 +2,7 @@
    <body>
     <!-- attribut et competence -->
     <div class=attributs>
-        {{#each data.data.attributs as |attribut attnom|}}
+        {{#each actor.data.data.attributs as |attribut attnom|}}
         <label class=label100>{{attnom}}</label>
         <input class="champ1" name="data.attributs.{{attnom}}.valeur" type="number" value="{{attribut.valeur}}" />
         <ul>
@@ -15,7 +15,7 @@
             </li>
             {{/each}}
         </ul>
-        {{/each}}
+        {{/each}}  
     </div>
 
  
@@ -23,34 +23,48 @@
 
     <div class=cdi>
         <label class=label300>Surnom</label>
-        <input class="champ2" name="data.surnom1" type="text" value="{{data.data.surnom1}}" />
+        <input class="champ2" name="data.surnom1" type="text" value="{{actor.data.data.surnom1}}" />
         <BR />
 
         <label class=label300>Age</label>
-        <input class="champ2" name="data.age" type="text" value="{{data.data.age}}" />
+        <input class="champ2" name="data.age" type="text" value="{{actor.data.data.age}}" />
         <BR />
 
         <label class=label300>Archetype</label>
-        <input class="champ2" name="data.archetype" type="text" value="{{data.data.archetype}}" />
+        <input class="champ2" name="data.archetype" type="text" value="{{actor.data.data.archetype}}" />
         <BR />
 
         <label class=label300>Haut fait</label>
-        <input class="champ2" name="data.hautfait" type="text" value="{{data.data.hautfait}}" />
+        <input class="champ2" name="data.hautfait" type="text" value="{{actor.data.data.hautfait}}" />
         <BR />
 
         <label class=label300>Meta-armure</label> 
-        {{#each data.data.metaarmure as |items key|}}
+        {{#each actor.data.data.metaarmure as |items key|}}
         <p>{{items.name}}</p>
         </tr>
         {{/each}}
         <BR />
 
-        <label class=label300>Section d'origine</label>
-        <input class="champ2" name="data.sectiondorigine" type="text" value="{{data.data.sectiondorigine}}" />
+            <label class=label300>Section</label>
+            <select class=champ2 name="data.sectiondorigine" value="{{sectiondorigine}}">
+                {{#select actor.data.data.sectiondorigine}}
+                <option value="0"></option>
+                <option value="Ogre">Ogre</option>
+                <option value="Dragon">Dragon</option>
+                <option value="Giant">Giant</option>
+                <option value="Gargoyle">Gargoyle</option>
+                <option value="Korringan">Korringan</option>
+                <option value="Tarasque">Tarasque</option>
+                <option value="Griffon">Griffon</option>
+                <option value="Cyclope">Cyclope</option>
+                <option value="Kraken">Kraken</option>
+                <option value="Personnel">personnel</option>
+                {{/select}}
+            </select>
         <BR />
 
         <label class=label300>Blason</label>
-        <input class="champ2" name="data.blason" type="text" value="{{data.data.blason}}" />
+        <input class="champ2" name="data.blason" type="text" value="{{actor.data.data.blason}}" />
 
     </div>
 
@@ -59,19 +73,19 @@
     <div class=motivation>
         <label>Motivation majeur
                     <ul>
-                        <textarea rows=1 name="data.motivationmajeur">{{data.data.motivationmajeur}}</textarea>
+                        <textarea rows=1 name="data.motivationmajeur">{{actor.data.data.motivationmajeur}}</textarea>
                     </ul>
                 </label>
 
         <label>Motivation mineur
                     <ul>
-                        <textarea rows=1 name="data.mo1">{{data.data.mo1}}</textarea>
+                        <textarea rows=1 name="data.mo1">{{actor.data.data.mo1}}</textarea>
 
-                        <textarea rows=1 name="data.mo2">{{data.data.mo2}}</textarea>
+                        <textarea rows=1 name="data.mo2">{{actor.data.data.mo2}}</textarea>
 
-                        <textarea rows=1 name="data.mo3">{{data.data.mo3}}</textarea>
+                        <textarea rows=1 name="data.mo3">{{actor.data.data.mo3}}</textarea>
 
-                        <textarea rows=1 name="data.mo4">{{data.data.mo4}}</textarea>
+                        <textarea rows=1 name="data.mo4">{{actor.data.data.mo4}}</textarea>
                 
                     </ul>
                 </label>

@@ -1,0 +1,52 @@
+<form class="{{cssClass}}" autocomplete="off">
+    <img src="{{item.img}}" data-edit="img" title="{{item.name}}" height="128" width="128" />
+    <h1><input name="name" type="text" value="{{item.name}}" placeholder="Name" /> </h1>
+        
+
+    <div class=defense >
+        <label class=label300>PG</label>
+        <input class=champ2 name="data.pg" type="text" value="{{data.data.pg}}" placeholder=""/>
+    </div>
+
+
+    <div class=defense >
+    <label>Déscription</label>
+    </br>
+    <textarea rows=5 name="data.description">{{data.data.description}}</textarea>
+    </div>
+
+
+    <div class=defense>
+    <label>Dégats</label>
+        <input name="data.degats" type="text" value="{{data.data.degats}}" placeholder=""/>
+    
+
+    <label>Violence</label>
+        <input name="data.violence" type="text" value="{{data.data.violence}}" placeholder=""/>
+    
+    <label class=label300>Portée</label>
+    <select class=champ2 name="data.portee" value="{{data.data.portee}}">
+        {{#select data.data.portee}}
+        <option value="Contact">Contact (0-2m)</option>
+        <option value="Courte">Courte (2 à 15m)</option>
+        <option value="Moyenne">Moyenne (15 à 25m)</option>
+        <option value="Longue">Longue (50 à 300m)</option>
+        <option value="Lointaine">Lointaine (+ de 300m)</option>
+        {{/select}}
+    </select>
+   
+    <label>Énergie</label>
+        <input name="data.energie" type="text" value="{{data.data.energie}}" placeholder=""/>
+    </div>
+
+    <div class=effet>
+        <label class=label300>Effets</label>
+        <BR/>
+        <button class=champ2 name="data.data.effet.anti-anatheme" value={{data.data.effet.anti-anatheme.etat}}>Anti-anathème</button>
+        <button class=champ2 name="data.data.effet.anti-vehicule" value={{data.data.effet.anti-vehicule.etat}}>Anti-véhicule</button>
+        <button class=champ2 name="data.data.effet.artillerie" value={{data.data.effet.artillerie.etat}}>Artillerie</button>
+        <button class=champ2 name="data.data.effet.assasin" value={{data.data.effet.assasin.etat}}>Assassin</button>
+        <input class=champ1 name="data.data.effet.assasin" type="number" value="{{data.data.effet.assasin.valeur}}" placeholder=""/>
+    </div>
+   
+</form>

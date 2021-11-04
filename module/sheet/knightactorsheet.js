@@ -10,7 +10,7 @@ export default class KnightActorSheet extends ActorSheet {
 
         console.log(dataf);
 
-        const character = dataf.data.data
+        const character = dataf.actor.data.data
 
         var deplacement = Number(character.attributs.Chair.competence.Deplacement.valeur)
         var deplacementOD = Number(character.attributs.Chair.competence.Deplacement.od)
@@ -47,26 +47,36 @@ export default class KnightActorSheet extends ActorSheet {
         var pgu = Number(character.pgu)
         var pgt = Number(character.pgt)
         
-
+        //impacte section Kraken
+        var section = character.sectiondorigine
+        if (section != "Kraken"){
+            var modsant = 6;
+            var modkra = 0;
+        }
+        else{
+            var modsant = 8;
+            var modkra = 1;
+        }
+        
         //calcule santé max
         var chairmax = Math.max(deplacement, force,endurance)
-        character.santemax = 10+6*Number(chairmax);            //Todo kraken
+        character.santemax = 10+(Number(modsant)*Number(chairmax));            
 
 
         //calcule defense
-        var betehagmax = hargne + hargneOD                      //Todo kraken
+        var betehagmax = hargne + hargneOD                      
         var betecommax = combat + combatOD
         var beteinsmax = instinct + instinctOD
         var betemax = Math.max(betehagmax, betecommax,beteinsmax)
-        character.defense = Number(betemax);
+        character.defense = Number(betemax) + Number(modkra);
 
 
         //calcule reaction
-        var mactirmax = tir + tirOD                             //Todo kraken
+        var mactirmax = tir + tirOD                             
         var macsavmax = savoir + savoirOD
         var mactecmax = technique + techniqueOD
         var macmax = Math.max(mactirmax, macsavmax,mactecmax)
-        character.reaction = Number(macmax);
+        character.reaction = Number(macmax) + Number(modkra);
 
 
         //initiative max
@@ -115,6 +125,8 @@ export default class KnightActorSheet extends ActorSheet {
 
         html.find('.jetde').click(this._onRollNorm.bind(this));     //detection jet de dée hors combat
         html.find('.jetdinit').click(this._onRollInit.bind(this));     //detection jet d init
+        html.find('.item-edit').click(this._onItemEdit.bind(this));     //edition d objet
+        html.find('.item-delete').click(this._onItemDelete.bind(this));  //effacer objet
 
 
         
@@ -195,6 +207,34 @@ export default class KnightActorSheet extends ActorSheet {
 
     }
 
+    //repere l id de l item 
+    getItemFromEvent = (ev) => {        
+        const parent = $(ev.currentTarget).parents(".item");
+        return this.actor.items.get(parent.data("itemId"));
+    }
+
+    //edition d item
+    _onItemEdit(event) {
+        const item = this.getItemFromEvent(event);
+        console.log(item);
+        item.sheet.render(true);
+    }
+
+
+    //supression d item
+    _onItemDelete(event) {
+        const item = this.getItemFromEvent(event);
+        let d = Dialog.confirm({
+            title: "Suppression d'élément",
+            content: "<p>Confirmer la suppression de '" + item.name + "'.</p>",
+            yes: () => this.actor.deleteOwnedItem(item.id),
+            no: () => {},
+            defaultYes: false
+        });
+    }
+
+
+
     
     _onRollInit(event) {                                    // jet d init
         console.log(event)
@@ -222,9 +262,9 @@ export default class KnightActorSheet extends ActorSheet {
         var capliste3 = event.currentTarget.dataset["liste3"];
         var capliste4 = event.currentTarget.dataset["liste4"];
         var capbm = event.currentTarget.dataset["bm"];
-
+    
         const dataf = super.getData();
-        const character = dataf.data.data
+        const character = dataf.actor.data.data
         var deplacement = Number(character.attributs.Chair.competence.Deplacement.valeur)
         var deplacementOD = Number(character.attributs.Chair.competence.Deplacement.od)
         var force = Number(character.attributs.Chair.competence.Force.valeur)
@@ -255,7 +295,7 @@ export default class KnightActorSheet extends ActorSheet {
         var dexteriteOD = Number(character.attributs.Masque.competence.Dexterite.od)
         var perception = Number(character.attributs.Masque.competence.Perception.valeur)
         var perceptionOD = Number(character.attributs.Masque.competence.Perception.od)
-
+    
         if (capliste1=="Deplacement"){
             var capa1 = deplacement;
             var capa1od = deplacementOD;
@@ -336,7 +376,7 @@ export default class KnightActorSheet extends ActorSheet {
             var capa1od="0";
             var name1="";
         }        
-
+    
         if (capliste2=="Deplacement"){
             var capa2=deplacement;
             var capa2od=deplacementOD;
@@ -417,8 +457,8 @@ export default class KnightActorSheet extends ActorSheet {
             var capa2od="0";
             var name2="";
         }
-
-
+    
+    
         if (capliste3=="Deplacement"){
             var capa3=deplacement;
             var capa3od=deplacementOD;
@@ -499,7 +539,7 @@ export default class KnightActorSheet extends ActorSheet {
             var capa3od="0";
             var name3="";
         }
-
+    
         if (capliste4=="Deplacement"){
             var capa4=deplacement;
             var capa4od=deplacementOD;
@@ -591,11 +631,7 @@ export default class KnightActorSheet extends ActorSheet {
             flavor: texte + nbdod
         });
     };
-
-
-
-
-
+    
 }
 
     

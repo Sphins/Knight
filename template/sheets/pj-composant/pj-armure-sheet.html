@@ -1,15 +1,79 @@
-<div class=cdi>
 
-    <!--type armure-->
-    <label class=label300>Meta-armure</label> 
-    {{#each data.data.metaarmure as |items key|}}
-    <p>{{items.name}}</p>
-    </tr>
-    {{/each}}
-    <BR />
+<!--slots-->
+
+<div class=attributs >
+    <label>Slots</label>
+        <ul>
+            {{#each actor.data.data.metaarmure as |items key|}}
+            <label class=label300 >Tête</label>
+            <label class=label100 >{{items.data.slots.tete}}</label>
+            <BR />
+            <label class=label300 >Bras gauche</label>
+            <label class=label100 >{{items.data.slots.brasgauche}}</label>
+            <BR />
+            <label class=label300 >Bras droit</label> 
+            <label class=label100 >{{items.data.slots.brasdroit}}</label>
+            <BR />
+            <label class=label300 >Torse</label>
+            <label class=label100 >{{items.data.slots.torse}}</label>
+            <BR />
+            <label class=label300 >Jambe gauche</label>
+            <label class=label100 >{{items.data.slots.jambegauche}}</label>
+            <BR />
+            <label class=label300 >Jambe droite</label>
+            <label class=label100 >{{items.data.slots.jambedroite}}</label>
+            <BR />
+            {{/each}}
+        </ul>
 </div>
 
-{{#each data.data.metaarmure as |items key|}}
-<p>{{items.description}}</p>
-</tr>
-{{/each}}
+    <!--type armure-->
+
+<div class=midefense >
+    {{#each actor.data.data.metaarmure as |item key|}}
+        <div class=item data-item-id={{item._id}}>
+            <img src="{{item.img}}" data-edit="img" title="{{item.name}}" height="32" width="32" /> 
+            <p class=label100>{{item.name}}</p>
+            <a class="item-edit"  title="Edit Item"><i class="fas fa-edit"></i></a>
+            <a class="item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+        </div>
+    {{/each}}
+</div>
+
+    <!--overdrive-->
+
+<div class=midefense>
+    <label>Overdrive</label>
+    <ul>
+        {{#each actor.data.data.metaarmure as |items key|}}
+        <label class=label300 >{{items.data.overdrives.od1}}</label>
+        <BR />
+        <label class=label300 >{{items.data.overdrives.od2}}</label>
+        <BR />
+        <label class=label300 >{{items.data.overdrives.od3}}</label>
+        <BR />
+        <label class=label300 >{{items.data.overdrives.od4}}</label>
+        {{/each}}
+    </ul>
+
+</div>
+
+<div class=defense>
+
+    <label class=label200>Déscription</label> 
+    <BR/>
+    {{#each actor.data.data.metaarmure as |items key|}}
+    <p>{{items.data.description}}</p>
+    {{/each}}
+
+</div>
+
+<div class=defense>
+
+    <label class=label200>Capacité</label>
+    <BR/> 
+    {{#each actor.data.data.metaarmure as |items key|}}
+    <p>{{items.data.capacite}}</p>
+    {{/each}}
+    
+    </div>

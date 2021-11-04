@@ -52,10 +52,10 @@ input[type="text"]{
 }
 
 .label200 {
+    display:flexbox;
+    text-align: center;
     width: 1250px;
     margin: 10PX;
-    max-width: 100px;
-    min-width: 99px
 }
 
 .label300 {
@@ -71,7 +71,30 @@ input[type="text"]{
     margin: 10PX;
     min-width: 300px;
     display:flex;
+    justify-content: space-around;
+    background-color: #3A3F44;
+    color: #edf0f3
+}
 
+.effet {
+    border: 5px #edf0f3 groove;
+    border-radius: 0px;
+    padding: 10px;
+    margin: 10PX;
+    min-width: 300px;
+    display:flexbox;
+    justify-content: space-around;
+    background-color: #3A3F44;
+    color: #edf0f3
+}
+
+.midefense {
+    border: 5px #edf0f3 groove;
+    border-radius: 0px;
+    padding: 10px;
+    margin: 10PX;
+    width: 49%;
+    display:inline-flexbox;
     justify-content: space-around;
     background-color: #3A3F44;
     color: #edf0f3
@@ -208,26 +231,23 @@ table {
     width: 47%;
 }
 
-.bouton {
-    background-color: #3A3F44;
-    border:none;
-    color:#f89406;
-    width: 1250px;
-    margin: 10PX;
-    max-width: 100px;
-    min-width: 99px
-}
-
-
 button {
     background-color: #3A3F44;
     color:#f89406;
     border: hidden
 }
 
+button:active {
+    background-color: #f89406;
+    color:#3A3F44;
+    border: hidden
+}
+
+
+
 .texte {
     color:#edf0f3
-} 
+}
 
 .iia {
     border: 5px #edf0f3 groove;

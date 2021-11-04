@@ -340,20 +340,371 @@
     },
     "Item": {
         "types": [
-            "arme",
+            "arme_de_contact",
+            "arme_à_distance",
             "module",
             "overdrive",
             "meta-armure",
             "vehicule"
         ],
-        "arme": {
+        "arme_de_contact": {
             "description": "",
             "degats": "",
             "violence": "",
             "portee": "",
             "energie": "",
-            "effet": "",
-            "pg": ""
+            "effet":{
+                "anti-anatheme":{
+                    "etat": false
+                    },
+                "anti-vehicule":{
+                    "etat": false
+                    },
+                "artillerie":{
+                    "etat": false
+                    },
+                "assasin":{
+                    "etat": false,
+                    "valeur":"0"
+                    },
+                "assistance": {
+                    "etat": false
+                    },
+                "barrage":{
+                    "etat": false,
+                    "valeur":"0"
+                    },
+                "cadence":{
+                    "etat": false,
+                    "valeur":"0"
+                    },
+                "chargeur":{
+                    "etat": false,
+                    "valeur":"0"
+                    },
+                "choc":{
+                    "etat": false,
+                    "valeur":"0"
+                    },
+                "defense":{
+                    "etat": false,
+                    "valeur":"0"
+                    },
+                "degcon":{
+                    "etat": false,
+                    "valeur":"0"
+                    },
+                "2main":{
+                    "etat": false
+                    },
+                "demoralisant":{
+                    "etat": false
+                    },
+                "designation":{
+                    "etat": false
+                    },
+                "destructeur":{
+                    "etat": false
+                    },
+                "dispertion":{
+                    "etat": false,
+                    "valeur":"0"
+                    },
+                "chaine":{
+                    "etat": false
+                    },
+                "esperance":{
+                    "etat": false
+                    },
+                "fureur":{
+                    "etat": false
+                    },
+                "ignarm":{
+                    "etat": false
+                    },
+                "igncdf":{
+                    "etat": false
+                    },
+                "akimbo":{
+                    "etat": false
+                    },
+                "ambidex":{
+                    "etat": false
+                    },
+                "lesté":{
+                    "etat": false
+                    },
+                "lourd":{
+                    "etat": false
+                    },
+                "lumiere":{
+                    "etat": false,
+                    "valeur":"0"
+                    },
+                "meurtrier":{
+                    "etat": false
+                    },
+                "obliteration":{
+                    "etat": false
+                    },
+                "orfevrerie":{
+                    "etat": false
+                    },
+                "parasitage":{
+                    "etat": false,
+                    "valeur":"0"
+                    },
+                "penetrant":{
+                    "etat": false,
+                    "valeur":"0"
+                    },
+                "perarm":{
+                    "etat": false,
+                    "valeur":"0"
+                    },
+                "precision":false,
+                "réaction":{
+                    "etat": false,
+                    "valeur":"0"
+                    },
+                "silencieux":{
+                    "etat": false
+                    },
+                "soumission":{
+                    "etat": false
+                    },
+                "tenebricide":{
+                    "etat": false
+                    },
+                "tirraf":{
+                    "etat": false
+                    },
+                "tirsec":{
+                    "etat": false
+                    },
+                "ultraviolence":{
+                    "etat": false
+                    }
+                },
+            "pg": "",
+            "ameliorationS":{
+                "agressive":false,
+                "allegee":false,
+                "assasine":false,
+                "barbelee":false,
+                "connectee":false,
+                "electrifiee":false,
+                "indestructible":false,
+                "jumelle":false,
+                "lumineuse":false,
+                "massive":false,
+                "protectrice":false,
+                "soeur":false,
+                "sournoise":false,
+                "surmesure":false
+            },
+            "ameliorationO":{
+                "arairi":false,
+                "armazu":false,
+                "armrs":false,
+                "armgra":false,
+                "blason":false,
+                "boucgra":false,
+                "chescu":false,
+                "chromee":false,
+                "code":false,
+                "crane":false,
+                "faugra":false,
+                "fauplu":false,
+                "flasty":false,
+                "grigra":false,
+                "masbris":false,
+                "roucas":false,
+                "sillon":false
+            },
+            "special":{
+                "energie":"0",
+                "bondeg":{
+                    "de":"0",
+                    "degpur":"0"
+                },
+                "bonvio":{
+                    "de": false,
+                    "degpur":"0"
+                }
+            }
+        },
+        "arme_à_distance": {
+            "description": "",
+            "degats": "",
+            "violence": "",
+            "portee": "",
+            "energie": "",
+            "effet":{
+                "anti-anatheme":{
+                    "etat": false
+                    },
+                "anti-vehicule":{
+                    "etat": false
+                    },
+                "artillerie":{
+                    "etat": false
+                    },
+                "assasin":{
+                    "etat": false,
+                    "valeur":"0"
+                    },
+                "assistance": {
+                    "etat": false
+                    },
+                "barrage":{
+                    "etat": false,
+                    "valeur":"0"
+                    },
+                "cadence":{
+                    "etat": false,
+                    "valeur":"0"
+                    },
+                "chargeur":{
+                    "etat": false,
+                    "valeur":"0"
+                    },
+                "choc":{
+                    "etat": false,
+                    "valeur":"0"
+                    },
+                "defense":{
+                    "etat": false,
+                    "valeur":"0"
+                    },
+                "degcon":{
+                    "etat": false,
+                    "valeur":"0"
+                    },
+                "2main":{
+                    "etat": false
+                    },
+                "demoralisant":{
+                    "etat": false
+                    },
+                "designation":{
+                    "etat": false
+                    },
+                "destructeur":{
+                    "etat": false
+                    },
+                "dispertion":{
+                    "etat": false,
+                    "valeur":"0"
+                    },
+                "chaine":{
+                    "etat": false
+                    },
+                "esperance":{
+                    "etat": false
+                    },
+                "fureur":{
+                    "etat": false
+                    },
+                "ignarm":{
+                    "etat": false
+                    },
+                "igncdf":{
+                    "etat": false
+                    },
+                "akimbo":{
+                    "etat": false
+                    },
+                "ambidex":{
+                    "etat": false
+                    },
+                "lesté":{
+                    "etat": false
+                    },
+                "lourd":{
+                    "etat": false
+                    },
+                "lumiere":{
+                    "etat": false,
+                    "valeur":"0"
+                    },
+                "meurtrier":{
+                    "etat": false
+                    },
+                "obliteration":{
+                    "etat": false
+                    },
+                "orfevrerie":{
+                    "etat": false
+                    },
+                "parasitage":{
+                    "etat": false,
+                    "valeur":"0"
+                    },
+                "penetrant":{
+                    "etat": false,
+                    "valeur":"0"
+                    },
+                "perarm":{
+                    "etat": false,
+                    "valeur":"0"
+                    },
+                "precision":false,
+                "réaction":{
+                    "etat": false,
+                    "valeur":"0"
+                    },
+                "silencieux":{
+                    "etat": false
+                    },
+                "soumission":{
+                    "etat": false
+                    },
+                "tenebricide":{
+                    "etat": false
+                    },
+                "tirraf":{
+                    "etat": false
+                    },
+                "tirsec":{
+                    "etat": false
+                    },
+                "ultraviolence":{
+                    "etat": false
+                    }
+            },
+            "pg": "",
+            "ameliorationA":{
+                "balgrap":false,
+                "canlon":false,
+                "canrac":false,
+                "chadou":false,
+                "intgui":false,
+                "akimbo":false,
+                "ambidexterie":false,               
+                "lunint":false,
+                "munhv":false,
+                "mundro":false,
+                "munexp":false,
+                "muniem":false,
+                "munnlt":false,
+                "munsub":false,
+                "poilas":false,
+                "proarm":false,
+                "revalp":false,
+                "sysref":false
+            },
+            "special":{
+                "energie":"0",
+                "bondeg":{
+                    "de":"0",
+                    "degpur":"0"
+                },
+                "bonvio":{
+                    "de": false,
+                    "degpur":"0"
+                }
+            }        
         },
         "module": {
             "description": "",
