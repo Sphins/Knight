@@ -184,6 +184,21 @@ input[type="text"]{
     color:#f89406;
 }
 
+.champ4 {
+    max-width: 100px;
+    min-width: 99px;
+
+    
+}
+
+.cellule1 {
+    min-width: 45px
+}
+
+.cellule2 {
+    min-width: 155px;
+}
+
 .app,
 .chat-message,
 #chat-form textarea {
@@ -227,8 +242,7 @@ input[type="text"]{
 table {
     border: 5px #edf0f3 groove;
     display: flexbox;
-    table-layout: fixed;
-    width: 47%;
+    table-layout: fixed
 }
 
 button {

@@ -105,7 +105,8 @@ export default class KnightActorSheet extends ActorSheet {
         character.pga = pga
 
         //tri
-        character.arme = dataf.items.filter(item => item.type === "arme"); //tri arme
+        character.arme_à_distance = dataf.items.filter(item => item.type === "arme_à_distance"); //tri arme a distance
+        character.arme_de_contact = dataf.items.filter(item => item.type === "arme_de_contact"); //tri arme au cac
         character.module = dataf.items.filter(item => item.type === "module"); // tri module
         character.overdrive = dataf.items.filter(item => item.type === "overdrive"); // tri overdrive
         character.metaarmure = dataf.items.filter(item => item.type === "meta-armure"); //tri meta armure
@@ -257,14 +258,16 @@ export default class KnightActorSheet extends ActorSheet {
 
     _onRollNorm(event) {                                            // jet de dée hors combat
         console.log(event)
-        var capliste1 = event.currentTarget.dataset["liste1"];
-        var capliste2 = event.currentTarget.dataset["liste2"];
-        var capliste3 = event.currentTarget.dataset["liste3"];
-        var capliste4 = event.currentTarget.dataset["liste4"];
-        var capbm = event.currentTarget.dataset["bm"];
-    
         const dataf = super.getData();
         const character = dataf.actor.data.data
+
+        var capliste1 = character.valeurde1
+        var capliste2 = character.valeurde2
+        var capliste3 = character.valeurde3
+        var capliste4 = character.valeurde4
+        var capbm = character.bonusmalus
+    
+
         var deplacement = Number(character.attributs.Chair.competence.Deplacement.valeur)
         var deplacementOD = Number(character.attributs.Chair.competence.Deplacement.od)
         var force = Number(character.attributs.Chair.competence.Force.valeur)

@@ -54,7 +54,8 @@
             "valeurde3": "",
             "valeurde4": "",
             "bonusmalus": "",
-            "arme": [],
+            "arme_de_contact": [],
+            "arme_à_distance": [],
             "module": [],
             "overdrive": [],
             "vehicule": [],
@@ -365,34 +366,34 @@
                     },
                 "assasin":{
                     "etat": false,
-                    "valeur":"0"
+                    "valeur":""
                     },
                 "assistance": {
                     "etat": false
                     },
                 "barrage":{
                     "etat": false,
-                    "valeur":"0"
+                    "valeur":""
                     },
                 "cadence":{
                     "etat": false,
-                    "valeur":"0"
+                    "valeur":""
                     },
                 "chargeur":{
                     "etat": false,
-                    "valeur":"0"
+                    "valeur":""
                     },
                 "choc":{
                     "etat": false,
-                    "valeur":"0"
+                    "valeur":""
                     },
                 "defense":{
                     "etat": false,
-                    "valeur":"0"
+                    "valeur":""
                     },
                 "degcon":{
                     "etat": false,
-                    "valeur":"0"
+                    "valeur":""
                     },
                 "2main":{
                     "etat": false
@@ -408,7 +409,7 @@
                     },
                 "dispertion":{
                     "etat": false,
-                    "valeur":"0"
+                    "valeur":""
                     },
                 "chaine":{
                     "etat": false
@@ -439,7 +440,7 @@
                     },
                 "lumiere":{
                     "etat": false,
-                    "valeur":"0"
+                    "valeur":""
                     },
                 "meurtrier":{
                     "etat": false
@@ -452,20 +453,20 @@
                     },
                 "parasitage":{
                     "etat": false,
-                    "valeur":"0"
+                    "valeur":""
                     },
                 "penetrant":{
                     "etat": false,
-                    "valeur":"0"
+                    "valeur":""
                     },
                 "perarm":{
                     "etat": false,
-                    "valeur":"0"
+                    "valeur":""
                     },
                 "precision":false,
                 "réaction":{
                     "etat": false,
-                    "valeur":"0"
+                    "valeur":""
                     },
                 "silencieux":{
                     "etat": false
