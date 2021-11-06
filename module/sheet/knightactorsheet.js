@@ -124,17 +124,18 @@ export default class KnightActorSheet extends ActorSheet {
     activateListeners(html) {               //capteur d evenement
         super.activateListeners(html);
 
-        html.find('.jetde').click(this._onRollNorm.bind(this));     //detection jet de dée hors combat
-        html.find('.jetdinit').click(this._onRollInit.bind(this));     //detection jet d init
-        html.find('.item-edit').click(this._onItemEdit.bind(this));     //edition d objet
-        html.find('.item-delete').click(this._onItemDelete.bind(this));  //effacer objet
-
+        html.find('.jetde').click(this._onRollNorm.bind(this));             //detection jet de dée hors combat
+        html.find('.jetdinit').click(this._onRollInit.bind(this));          //detection jet d init
+        html.find('.item-edit').click(this._onItemEdit.bind(this));         //edition d objet
+        html.find('.item-delete').click(this._onItemDelete.bind(this));     //effacer objet
+        html.find('.effet').click(this._onItemDelete.bind(this));           //gerer effet
 
         
         //navigation fiche pj
 
         let generale = document.getElementById("generale");
         let armure = document.getElementById("armure");
+        let combat = document.getElementById("combat");
         let ia = document.getElementById("ia");
         let iai = document.getElementById("iai");
         let historique = document.getElementById("historique");
@@ -144,6 +145,7 @@ export default class KnightActorSheet extends ActorSheet {
         let tab3 = document.getElementById("tab3");
         let tab4 = document.getElementById("tab4");
         let tab5 = document.getElementById("tab5");
+        let tab6 = document.getElementById("tab6");
 
         generale.addEventListener("click", () =>{
             if(getComputedStyle(tab1).display != "block"){
@@ -152,6 +154,7 @@ export default class KnightActorSheet extends ActorSheet {
                 tab3.style.display = "none";
                 tab4.style.display = "none";
                 tab5.style.display = "none";
+                tab6.style.display = "none";
             } else {
                 tab1.style.display = "none";
             }
@@ -164,6 +167,7 @@ export default class KnightActorSheet extends ActorSheet {
                 tab3.style.display = "none";
                 tab4.style.display = "none";
                 tab5.style.display = "none";
+                tab6.style.display = "none";
             } else {
                 tab2.style.display = "none";
             }
@@ -176,6 +180,7 @@ export default class KnightActorSheet extends ActorSheet {
                 tab2.style.display = "none";
                 tab4.style.display = "none";
                 tab5.style.display = "none";
+                tab6.style.display = "none";
             } else {
                 tab3.style.display = "none";
             }
@@ -188,6 +193,7 @@ export default class KnightActorSheet extends ActorSheet {
                 tab2.style.display = "none";
                 tab3.style.display = "none";
                 tab5.style.display = "none";
+                tab6.style.display = "none";
             } else {
                 tab4.style.display = "none";
             }
@@ -200,8 +206,22 @@ export default class KnightActorSheet extends ActorSheet {
                 tab2.style.display = "none";
                 tab3.style.display = "none";
                 tab4.style.display = "none";
+                tab6.style.display = "none";
             } else {
                 tab5.style.display = "none";
+            }
+        })
+
+        combat.addEventListener("click", () =>{
+            if(getComputedStyle(tab6).display != "block"){
+                tab6.style.display = "block";
+                tab1.style.display = "none";
+                tab2.style.display = "none";
+                tab3.style.display = "none";
+                tab4.style.display = "none";
+                tab5.style.display = "none";
+            } else {
+                tab6.style.display = "none";
             }
         })
 

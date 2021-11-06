@@ -177,6 +177,27 @@
                         }
                     }
                 }
+            },
+            "nods":{
+                "soins":{
+                    "sact":"",
+                    "smax":"",
+                    "smod":""
+                },
+                "armure":{
+                    "aact":"",
+                    "amax":"",
+                    "amod":""
+                },
+                "energie":{
+                    "eact":"",
+                    "emax":"",
+                    "emod":""
+                }   
+            },
+            "heroisme":{
+                "hact":"",
+                "hmax":"6"
             }
         },
         "pnj": {
