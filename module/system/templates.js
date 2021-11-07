@@ -10,16 +10,17 @@
                 // ACTOR
                 "systems/Knight/template/sheets/pj-sheet.html",
                 "systems/Knight/template/sheets/pj-composant/pj-header-sheet.html",
-                "systems/knight/template/sheets/pj-composant/pj-generale-sheet.html",
-                "systems/knight/template/sheets/pj-composant/pj-armure-sheet.html",
-                "systems/knight/template/sheets/pj-composant/pj-ia-sheet.html",
-                "systems/knight/template/sheets/pj-composant/pj-iai-sheet.html",
-                "systems/knight/template/sheets/pj-composant/pj-historique-sheet.html",
-                "systems/knight/template/sheets/pj-composant/pj-combat-sheet.html",
+                "systems/Knight/template/sheets/pj-composant/pj-generale-sheet.html",
+                "systems/Knight/template/sheets/pj-composant/pj-armure-sheet.html",
+                "systems/Knight/template/sheets/pj-composant/pj-ia-sheet.html",
+                "systems/Knight/template/sheets/pj-composant/pj-iai-sheet.html",
+                "systems/Knight/template/sheets/pj-composant/pj-historique-sheet.html",
+                "systems/Knight/template/sheets/pj-composant/pj-combat-sheet.html",
 
                 // Items
-                "systems/knight/template/sheets/arme_de_contact.html",
-                "systems/knight/template/sheets/meta-armure-sheet.html",
+                "systems/Knight/template/sheets/arme_de_contact-sheet.html",
+                "systems/Knight/template/sheets/arme_à_distance-sheet.html",
+                "systems/Knight/template/sheets/meta-armure-sheet.html",
             ];
         
             // Load the template parts

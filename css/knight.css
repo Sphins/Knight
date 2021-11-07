@@ -280,3 +280,7 @@ td, th {
     text-align:center;
     width:100%;  
 }
+
+.inline {
+    align-content: flex-start;
+}

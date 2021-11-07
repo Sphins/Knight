@@ -125,20 +125,45 @@ export default class KnightActorSheet extends ActorSheet {
         super.activateListeners(html);
 
         html.find('.jetde').click(this._onRollNorm.bind(this));             //detection jet de dée hors combat
+        html.find('.jetdataccac').click(this._onRollAtaccac.bind(this));    //detection jet de dée combat corps a corps
+        html.find('.jetdatacdis').click(this._onRollAtacdis.bind(this));    //detection jet de dée combat distance
         html.find('.jetdinit').click(this._onRollInit.bind(this));          //detection jet d init
+        html.find('.jetdatacimp1').click(this._onRollAtaImp1.bind(this));   //detection jet attaque improvisé ligne 1
+        html.find('.jetdatacimp2').click(this._onRollAtaImp2.bind(this));   //detection jet attaque improvisé ligne 1
+        html.find('.jetdatacimp3').click(this._onRollAtaImp3.bind(this));   //detection jet attaque improvisé ligne 1
+        html.find('.jetdatacimp4').click(this._onRollAtaImp4.bind(this));   //detection jet attaque improvisé ligne 1
+        html.find('.jetdatacimp5').click(this._onRollAtaImp5.bind(this));   //detection jet attaque improvisé ligne 1
+        html.find('.jetdatacimp6').click(this._onRollAtaImp6.bind(this));   //detection jet attaque improvisé ligne 1
+        html.find('.jetdatacimp7').click(this._onRollAtaImp7.bind(this));   //detection jet attaque improvisé ligne 1
+        html.find('.jetdatacimp8').click(this._onRollAtaImp8.bind(this));   //detection jet attaque improvisé ligne 1
+        html.find('.jetdatacimp9').click(this._onRollAtaImp9.bind(this));   //detection jet attaque improvisé ligne 1
+        html.find('.jetdatacimp10').click(this._onRollAtaImp10.bind(this));   //detection jet attaque improvisé ligne 1
+        html.find('.jetdatacimp11').click(this._onRollAtaImp11.bind(this));   //detection jet attaque improvisé ligne 1
+        html.find('.jetdatacimp12').click(this._onRollAtaImp12.bind(this));   //detection jet attaque improvisé ligne 1
+        html.find('.jetdatacimp13').click(this._onRollAtaImp13.bind(this));   //detection jet attaque improvisé ligne 1
+
+
+
+
+
         html.find('.item-edit').click(this._onItemEdit.bind(this));         //edition d objet
         html.find('.item-delete').click(this._onItemDelete.bind(this));     //effacer objet
-        html.find('.effet').click(this._onItemDelete.bind(this));           //gerer effet
 
+
+
+        html.find('.jetdenodss').click(this._onRollNodsS.bind(this));       //nods de soins
+        html.find('.jetdenodsa').click(this._onRollNodsA.bind(this));       //nods d' armure
+        html.find('.jetdenodse').click(this._onRollNodsE.bind(this));       //nods d'énergie
         
         //navigation fiche pj
 
         let generale = document.getElementById("generale");
         let armure = document.getElementById("armure");
-        let combat = document.getElementById("combat");
         let ia = document.getElementById("ia");
         let iai = document.getElementById("iai");
         let historique = document.getElementById("historique");
+        let combat = document.getElementById("combat1");
+
 
         let tab1 = document.getElementById("tab1");
         let tab2 = document.getElementById("tab2");
@@ -146,6 +171,7 @@ export default class KnightActorSheet extends ActorSheet {
         let tab4 = document.getElementById("tab4");
         let tab5 = document.getElementById("tab5");
         let tab6 = document.getElementById("tab6");
+
 
         generale.addEventListener("click", () =>{
             if(getComputedStyle(tab1).display != "block"){
@@ -655,6 +681,5898 @@ export default class KnightActorSheet extends ActorSheet {
         });
     };
     
+    _onRollAtaccac(event){                                            // jet de dée corps a corps
+        console.log(event)
+        const dataf = super.getData();
+        const character = dataf.actor.data.data
+        const item = this.getItemFromEvent(event);
+
+
+        var capliste1 = character.valeurde1
+        var capliste2 = character.valeurde2
+        var capliste3 = character.valeurde3
+        var capliste4 = character.valeurde4
+        var capbm = character.bonusmalus
+    
+
+        var deplacement = Number(character.attributs.Chair.competence.Deplacement.valeur)
+        var deplacementOD = Number(character.attributs.Chair.competence.Deplacement.od)
+        var force = Number(character.attributs.Chair.competence.Force.valeur)
+        var forceOD = Number(character.attributs.Chair.competence.Force.od)
+        var endurance = Number(character.attributs.Chair.competence.Endurance.valeur)
+        var enduranceOD = Number(character.attributs.Chair.competence.Endurance.od)
+        var hargne = Number(character.attributs.Bete.competence.Hargne.valeur)
+        var hargneOD = Number(character.attributs.Bete.competence.Hargne.od)
+        var combat = Number(character.attributs.Bete.competence.Combat.valeur)
+        var combatOD = Number(character.attributs.Bete.competence.Combat.od)
+        var instinct = Number(character.attributs.Bete.competence.Instinct.valeur)
+        var instinctOD = Number(character.attributs.Bete.competence.Instinct.od)
+        var tir = Number(character.attributs.Machine.competence.Tir.valeur)
+        var tirOD = Number(character.attributs.Machine.competence.Tir.od)
+        var savoir = Number(character.attributs.Machine.competence.Savoir.valeur)
+        var savoirOD = Number(character.attributs.Machine.competence.Savoir.od)
+        var technique = Number(character.attributs.Machine.competence.Technique.valeur)
+        var techniqueOD = Number(character.attributs.Machine.competence.Technique.od)
+        var aura = Number(character.attributs.Dame.competence.Aura.valeur)
+        var auraOD = Number(character.attributs.Dame.competence.Aura.od)
+        var parole = Number(character.attributs.Dame.competence.Parole.valeur)
+        var paroleOD = Number(character.attributs.Dame.competence.Parole.od)
+        var sangfroid = Number(character.attributs.Dame.competence.Sangfroid.valeur)
+        var sangfroidOD = Number(character.attributs.Dame.competence.Sangfroid.od)
+        var discretion = Number(character.attributs.Masque.competence.Discretion.valeur)
+        var discretionOD = Number(character.attributs.Masque.competence.Discretion.od)
+        var dexterite= Number(character.attributs.Masque.competence.Dexterite.valeur)
+        var dexteriteOD = Number(character.attributs.Masque.competence.Dexterite.od)
+        var perception = Number(character.attributs.Masque.competence.Perception.valeur)
+        var perceptionOD = Number(character.attributs.Masque.competence.Perception.od)
+
+        var degf = force + forceOD
+    
+        if (capliste1=="Deplacement"){
+            var capa1 = deplacement;
+            var capa1od = deplacementOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Force"){
+            var capa1=force;
+            var capa1od=forceOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Endurance"){
+            var capa1=endurance;
+            var capa1od=enduranceOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Hargne"){
+            var capa1=hargne;
+            var capa1od=hargneOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Combat"){
+            var capa1=combat;
+            var capa1od=combatOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Instinct"){
+            var capa1=instinct;
+            var capa1od=instinctOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Tir"){
+            var capa1=tir;
+            var capa1od=tirOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Savoir"){
+            var capa1= savoir;
+            var capa1od=savoirOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Technique"){
+            var capa1=technique;
+            var capa1od=techniqueOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Aura"){
+            var capa1=aura;
+            var capa1od=auraOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Parole"){
+            var capa1=parole;
+            var capa1od=paroleOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Sangfroid"){
+            var capa1=sangfroid;
+            var capa1od=sangfroidOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Discretion"){
+            var capa1=discretion;
+            var capa1od=discretionOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Dexterite"){
+            var capa1=dexterite;
+            var capa1od=dexteriteOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Perception"){
+            var capa1=perception;
+            var capa1od=perceptionOD;
+            var name1=capliste1;
+        }
+        else {
+            var capa1="0";
+            var capa1od="0";
+            var name1="";
+        }        
+    
+        if (capliste2=="Deplacement"){
+            var capa2=deplacement;
+            var capa2od=deplacementOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Force"){
+            var capa2=force;
+            var capa2od=forceOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Endurance"){
+            var capa2=endurance;
+            var capa2od=enduranceOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Hargne"){
+            var capa2=hargne;
+            var capa2od=hargneOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Combat"){
+            var capa2=combat;
+            var capa2od=combatOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Instinct"){
+            var capa2=instinct;
+            var capa2od=instinctOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Tir"){
+            var capa2=tir;
+            var capa2od=tirOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Savoir"){
+            var capa2= savoir;
+            var capa2od=savoirOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Technique"){
+            var capa2=technique;
+            var capa2od=techniqueOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Aura"){
+            var capa2=aura;
+            var capa2od=auraOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Parole"){
+            var capa2=parole;
+            var capa2od=paroleOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Sangfroid"){
+            var capa2=sangfroid;
+            var capa2od=sangfroidOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Discretion"){
+            var capa2=discretion;
+            var capa2od=discretionOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Dexterite"){
+            var capa2=dexterite;
+            var capa2od=dexteriteOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Perception"){
+            var capa2=perception;
+            var capa2od=perceptionOD;
+            var name2=capliste2;
+        }
+        else {
+            var capa2="0";
+            var capa2od="0";
+            var name2="";
+        }
+    
+    
+        if (capliste3=="Deplacement"){
+            var capa3=deplacement;
+            var capa3od=deplacementOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Force"){
+            var capa3=force;
+            var capa3od=forceOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Endurance"){
+            var capa3=endurance;
+            var capa3od=enduranceOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Hargne"){
+            var capa3=hargne;
+            var capa3od=hargneOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Combat"){
+            var capa3=combat;
+            var capa3od=combatOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Instinct"){
+            var capa3=instinct;
+            var capa3od=instinctOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Tir"){
+            var capa3=tir;
+            var capa3od=tirOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Savoir"){
+            var capa3= savoir;
+            var capa3od=savoirOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Technique"){
+            var capa3=technique;
+            var capa3od=techniqueOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Aura"){
+            var capa3=aura;
+            var capa3od=auraOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Parole"){
+            var capa3=parole;
+            var capa3od=paroleOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Sangfroid"){
+            var capa3=sangfroid;
+            var capa3od=sangfroidOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Discretion"){
+            var capa3=discretion;
+            var capa3od=discretionOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Dexterite"){
+            var capa3=dexterite;
+            var capa3od=dexteriteOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Perception"){
+            var capa3=perception;
+            var capa3od=perceptionOD;
+            var name3=capliste3;
+        }
+        else {
+            var capa3="0";
+            var capa3od="0";
+            var name3="";
+        }
+    
+        if (capliste4=="Deplacement"){
+            var capa4=deplacement;
+            var capa4od=deplacementOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Force"){
+            var capa4=force;
+            var capa4od=forceOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Endurance"){
+            var capa4=endurance;
+            var capa4od=enduranceOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Hargne"){
+            var capa4=hargne;
+            var capa4od=hargneOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Combat"){
+            var capa4=combat;
+            var capa4od=combatOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Instinct"){
+            var capa4=instinct;
+            var capa4od=instinctOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Tir"){
+            var capa4=tir;
+            var capa4od=tirOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Savoir"){
+            var capa4= savoir;
+            var capa4od=savoirOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Technique"){
+            var capa4=technique;
+            var capa4od=techniqueOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Aura"){
+            var capa4=aura;
+            var capa4od=auraOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Parole"){
+            var capa4=parole;
+            var capa4od=paroleOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Sangfroid"){
+            var capa4=sangfroid;
+            var capa4od=sangfroidOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Discretion"){
+            var capa4=discretion;
+            var capa4od=discretionOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Dexterite"){
+            var capa4=dexterite;
+            var capa4od=dexteriteOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Perception"){
+            var capa4=Perception;
+            var capa4od=perceptionOD;
+            var name4=capliste4;
+        }
+        else {
+            var capa4="0";
+            var capa4od="0";
+            var name4="";
+        }
+        
+        var dedeg = item.data.data.degats;
+        var degpur = item.data.data.special.bondeg.degpur;
+        var devio = item.data.data.violence;
+        var viopur = item.data.data.special.bonvio.degpur;
+
+
+
+        var nbdod= Number(capa1od) + Number(capa2od) + Number(capa3od) + Number(capa4od)+" OD";
+        var nbdd = Number(capa1) + Number(capa2) + Number(capa3) + Number(capa4) + Number(capbm) + "d2cs2";
+        var texte = "jet de : " + name1 + " - " + name2 + " - " + name3 + " - " + name4;
+        let roll1 = new Roll(nbdd);
+        let roll2 = new Roll(dedeg+"d6+"+degpur+"+"+degf);
+        let roll3 = new Roll(devio+"d6+"+viopur);
+        roll1.roll().toMessage({
+            speaker: ChatMessage.getSpeaker({ actor: this.actor} ),
+            flavor: texte + nbdod
+        });
+        roll2.roll().toMessage({
+            speaker: ChatMessage.getSpeaker({ actor: this.actor} ),
+            flavor: "Degats"
+        });
+        roll3.roll().toMessage({
+            speaker: ChatMessage.getSpeaker({ actor: this.actor} ),
+            flavor: "Violence"
+        });
+    };
+
+    _onRollAtacdis(event){                                            // jet de dée corps a corps
+        console.log(event)
+        const dataf = super.getData();
+        const character = dataf.actor.data.data
+        const item = this.getItemFromEvent(event);
+
+        var capliste1 = character.valeurde1
+        var capliste2 = character.valeurde2
+        var capliste3 = character.valeurde3
+        var capliste4 = character.valeurde4
+        var capbm = character.bonusmalus
+    
+
+        var deplacement = Number(character.attributs.Chair.competence.Deplacement.valeur)
+        var deplacementOD = Number(character.attributs.Chair.competence.Deplacement.od)
+        var force = Number(character.attributs.Chair.competence.Force.valeur)
+        var forceOD = Number(character.attributs.Chair.competence.Force.od)
+        var endurance = Number(character.attributs.Chair.competence.Endurance.valeur)
+        var enduranceOD = Number(character.attributs.Chair.competence.Endurance.od)
+        var hargne = Number(character.attributs.Bete.competence.Hargne.valeur)
+        var hargneOD = Number(character.attributs.Bete.competence.Hargne.od)
+        var combat = Number(character.attributs.Bete.competence.Combat.valeur)
+        var combatOD = Number(character.attributs.Bete.competence.Combat.od)
+        var instinct = Number(character.attributs.Bete.competence.Instinct.valeur)
+        var instinctOD = Number(character.attributs.Bete.competence.Instinct.od)
+        var tir = Number(character.attributs.Machine.competence.Tir.valeur)
+        var tirOD = Number(character.attributs.Machine.competence.Tir.od)
+        var savoir = Number(character.attributs.Machine.competence.Savoir.valeur)
+        var savoirOD = Number(character.attributs.Machine.competence.Savoir.od)
+        var technique = Number(character.attributs.Machine.competence.Technique.valeur)
+        var techniqueOD = Number(character.attributs.Machine.competence.Technique.od)
+        var aura = Number(character.attributs.Dame.competence.Aura.valeur)
+        var auraOD = Number(character.attributs.Dame.competence.Aura.od)
+        var parole = Number(character.attributs.Dame.competence.Parole.valeur)
+        var paroleOD = Number(character.attributs.Dame.competence.Parole.od)
+        var sangfroid = Number(character.attributs.Dame.competence.Sangfroid.valeur)
+        var sangfroidOD = Number(character.attributs.Dame.competence.Sangfroid.od)
+        var discretion = Number(character.attributs.Masque.competence.Discretion.valeur)
+        var discretionOD = Number(character.attributs.Masque.competence.Discretion.od)
+        var dexterite= Number(character.attributs.Masque.competence.Dexterite.valeur)
+        var dexteriteOD = Number(character.attributs.Masque.competence.Dexterite.od)
+        var perception = Number(character.attributs.Masque.competence.Perception.valeur)
+        var perceptionOD = Number(character.attributs.Masque.competence.Perception.od)
+    
+        if (capliste1=="Deplacement"){
+            var capa1 = deplacement;
+            var capa1od = deplacementOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Force"){
+            var capa1=force;
+            var capa1od=forceOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Endurance"){
+            var capa1=endurance;
+            var capa1od=enduranceOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Hargne"){
+            var capa1=hargne;
+            var capa1od=hargneOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Combat"){
+            var capa1=combat;
+            var capa1od=combatOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Instinct"){
+            var capa1=instinct;
+            var capa1od=instinctOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Tir"){
+            var capa1=tir;
+            var capa1od=tirOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Savoir"){
+            var capa1= savoir;
+            var capa1od=savoirOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Technique"){
+            var capa1=technique;
+            var capa1od=techniqueOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Aura"){
+            var capa1=aura;
+            var capa1od=auraOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Parole"){
+            var capa1=parole;
+            var capa1od=paroleOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Sangfroid"){
+            var capa1=sangfroid;
+            var capa1od=sangfroidOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Discretion"){
+            var capa1=discretion;
+            var capa1od=discretionOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Dexterite"){
+            var capa1=dexterite;
+            var capa1od=dexteriteOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Perception"){
+            var capa1=perception;
+            var capa1od=perceptionOD;
+            var name1=capliste1;
+        }
+        else {
+            var capa1="0";
+            var capa1od="0";
+            var name1="";
+        }        
+    
+        if (capliste2=="Deplacement"){
+            var capa2=deplacement;
+            var capa2od=deplacementOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Force"){
+            var capa2=force;
+            var capa2od=forceOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Endurance"){
+            var capa2=endurance;
+            var capa2od=enduranceOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Hargne"){
+            var capa2=hargne;
+            var capa2od=hargneOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Combat"){
+            var capa2=combat;
+            var capa2od=combatOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Instinct"){
+            var capa2=instinct;
+            var capa2od=instinctOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Tir"){
+            var capa2=tir;
+            var capa2od=tirOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Savoir"){
+            var capa2= savoir;
+            var capa2od=savoirOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Technique"){
+            var capa2=technique;
+            var capa2od=techniqueOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Aura"){
+            var capa2=aura;
+            var capa2od=auraOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Parole"){
+            var capa2=parole;
+            var capa2od=paroleOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Sangfroid"){
+            var capa2=sangfroid;
+            var capa2od=sangfroidOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Discretion"){
+            var capa2=discretion;
+            var capa2od=discretionOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Dexterite"){
+            var capa2=dexterite;
+            var capa2od=dexteriteOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Perception"){
+            var capa2=perception;
+            var capa2od=perceptionOD;
+            var name2=capliste2;
+        }
+        else {
+            var capa2="0";
+            var capa2od="0";
+            var name2="";
+        }
+    
+    
+        if (capliste3=="Deplacement"){
+            var capa3=deplacement;
+            var capa3od=deplacementOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Force"){
+            var capa3=force;
+            var capa3od=forceOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Endurance"){
+            var capa3=endurance;
+            var capa3od=enduranceOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Hargne"){
+            var capa3=hargne;
+            var capa3od=hargneOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Combat"){
+            var capa3=combat;
+            var capa3od=combatOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Instinct"){
+            var capa3=instinct;
+            var capa3od=instinctOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Tir"){
+            var capa3=tir;
+            var capa3od=tirOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Savoir"){
+            var capa3= savoir;
+            var capa3od=savoirOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Technique"){
+            var capa3=technique;
+            var capa3od=techniqueOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Aura"){
+            var capa3=aura;
+            var capa3od=auraOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Parole"){
+            var capa3=parole;
+            var capa3od=paroleOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Sangfroid"){
+            var capa3=sangfroid;
+            var capa3od=sangfroidOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Discretion"){
+            var capa3=discretion;
+            var capa3od=discretionOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Dexterite"){
+            var capa3=dexterite;
+            var capa3od=dexteriteOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Perception"){
+            var capa3=perception;
+            var capa3od=perceptionOD;
+            var name3=capliste3;
+        }
+        else {
+            var capa3="0";
+            var capa3od="0";
+            var name3="";
+        }
+    
+        if (capliste4=="Deplacement"){
+            var capa4=deplacement;
+            var capa4od=deplacementOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Force"){
+            var capa4=force;
+            var capa4od=forceOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Endurance"){
+            var capa4=endurance;
+            var capa4od=enduranceOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Hargne"){
+            var capa4=hargne;
+            var capa4od=hargneOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Combat"){
+            var capa4=combat;
+            var capa4od=combatOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Instinct"){
+            var capa4=instinct;
+            var capa4od=instinctOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Tir"){
+            var capa4=tir;
+            var capa4od=tirOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Savoir"){
+            var capa4= savoir;
+            var capa4od=savoirOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Technique"){
+            var capa4=technique;
+            var capa4od=techniqueOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Aura"){
+            var capa4=aura;
+            var capa4od=auraOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Parole"){
+            var capa4=parole;
+            var capa4od=paroleOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Sangfroid"){
+            var capa4=sangfroid;
+            var capa4od=sangfroidOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Discretion"){
+            var capa4=discretion;
+            var capa4od=discretionOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Dexterite"){
+            var capa4=dexterite;
+            var capa4od=dexteriteOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Perception"){
+            var capa4=Perception;
+            var capa4od=perceptionOD;
+            var name4=capliste4;
+        }
+        else {
+            var capa4="0";
+            var capa4od="0";
+            var name4="";
+        }
+        
+        var dedeg = item.data.data.degats;
+        var degpur = item.data.data.special.bondeg.degpur;
+        var devio = item.data.data.violence;
+        var viopur = item.data.data.special.bonvio.degpur;
+
+
+
+
+        var nbdod= Number(capa1od) + Number(capa2od) + Number(capa3od) + Number(capa4od)+" OD";
+        var nbdd = Number(capa1) + Number(capa2) + Number(capa3) + Number(capa4) + Number(capbm) + "d2cs2";
+        var texte = "jet de : " + name1 + " - " + name2 + " - " + name3 + " - " + name4;
+        let roll1 = new Roll(nbdd);
+        let roll2 = new Roll(dedeg+"d6+"+degpur);
+        let roll3 = new Roll(devio+"d6+"+viopur);
+        roll1.roll().toMessage({
+            speaker: ChatMessage.getSpeaker({ actor: this.actor} ),
+            flavor: texte + nbdod
+        });
+        roll2.roll().toMessage({
+            speaker: ChatMessage.getSpeaker({ actor: this.actor} ),
+            flavor: "Degats"
+        });
+        roll3.roll().toMessage({
+            speaker: ChatMessage.getSpeaker({ actor: this.actor} ),
+            flavor: "Violence"
+        });
+    };
+
+
+    _onRollNodsS(event){
+        console.log(event)
+        let roll = new Roll(3+"d6");
+        roll.roll().toMessage({
+            speaker: ChatMessage.getSpeaker({ actor: this.actor}),
+            flavor: "Nods de soins"
+        });
+    }
+    _onRollNodsA(event){
+        console.log(event)
+        let roll = new Roll(3+"d6");
+        roll.roll().toMessage({
+            speaker: ChatMessage.getSpeaker({ actor: this.actor}),
+            flavor: "Nods d'armure"
+        });
+    }
+    _onRollNodsE(event){
+        console.log(event)
+        let roll = new Roll(3+"d6");
+        roll.roll().toMessage({
+            speaker: ChatMessage.getSpeaker({ actor: this.actor}),
+            flavor: "Nods d'énergie"
+        });
+    }
+    _onRollAtaImp1(event){
+        console.log(event)
+        const dataf = super.getData();
+        const character = dataf.actor.data.data
+
+        var capliste1 = character.valeurde1
+        var capliste2 = character.valeurde2
+        var capliste3 = character.valeurde3
+        var capliste4 = character.valeurde4
+        var capbm = character.bonusmalus
+    
+
+        var deplacement = Number(character.attributs.Chair.competence.Deplacement.valeur)
+        var deplacementOD = Number(character.attributs.Chair.competence.Deplacement.od)
+        var force = Number(character.attributs.Chair.competence.Force.valeur)
+        var forceOD = Number(character.attributs.Chair.competence.Force.od)
+        var endurance = Number(character.attributs.Chair.competence.Endurance.valeur)
+        var enduranceOD = Number(character.attributs.Chair.competence.Endurance.od)
+        var hargne = Number(character.attributs.Bete.competence.Hargne.valeur)
+        var hargneOD = Number(character.attributs.Bete.competence.Hargne.od)
+        var combat = Number(character.attributs.Bete.competence.Combat.valeur)
+        var combatOD = Number(character.attributs.Bete.competence.Combat.od)
+        var instinct = Number(character.attributs.Bete.competence.Instinct.valeur)
+        var instinctOD = Number(character.attributs.Bete.competence.Instinct.od)
+        var tir = Number(character.attributs.Machine.competence.Tir.valeur)
+        var tirOD = Number(character.attributs.Machine.competence.Tir.od)
+        var savoir = Number(character.attributs.Machine.competence.Savoir.valeur)
+        var savoirOD = Number(character.attributs.Machine.competence.Savoir.od)
+        var technique = Number(character.attributs.Machine.competence.Technique.valeur)
+        var techniqueOD = Number(character.attributs.Machine.competence.Technique.od)
+        var aura = Number(character.attributs.Dame.competence.Aura.valeur)
+        var auraOD = Number(character.attributs.Dame.competence.Aura.od)
+        var parole = Number(character.attributs.Dame.competence.Parole.valeur)
+        var paroleOD = Number(character.attributs.Dame.competence.Parole.od)
+        var sangfroid = Number(character.attributs.Dame.competence.Sangfroid.valeur)
+        var sangfroidOD = Number(character.attributs.Dame.competence.Sangfroid.od)
+        var discretion = Number(character.attributs.Masque.competence.Discretion.valeur)
+        var discretionOD = Number(character.attributs.Masque.competence.Discretion.od)
+        var dexterite= Number(character.attributs.Masque.competence.Dexterite.valeur)
+        var dexteriteOD = Number(character.attributs.Masque.competence.Dexterite.od)
+        var perception = Number(character.attributs.Masque.competence.Perception.valeur)
+        var perceptionOD = Number(character.attributs.Masque.competence.Perception.od)
+    
+        if (capliste1=="Deplacement"){
+            var capa1 = deplacement;
+            var capa1od = deplacementOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Force"){
+            var capa1=force;
+            var capa1od=forceOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Endurance"){
+            var capa1=endurance;
+            var capa1od=enduranceOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Hargne"){
+            var capa1=hargne;
+            var capa1od=hargneOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Combat"){
+            var capa1=combat;
+            var capa1od=combatOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Instinct"){
+            var capa1=instinct;
+            var capa1od=instinctOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Tir"){
+            var capa1=tir;
+            var capa1od=tirOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Savoir"){
+            var capa1= savoir;
+            var capa1od=savoirOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Technique"){
+            var capa1=technique;
+            var capa1od=techniqueOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Aura"){
+            var capa1=aura;
+            var capa1od=auraOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Parole"){
+            var capa1=parole;
+            var capa1od=paroleOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Sangfroid"){
+            var capa1=sangfroid;
+            var capa1od=sangfroidOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Discretion"){
+            var capa1=discretion;
+            var capa1od=discretionOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Dexterite"){
+            var capa1=dexterite;
+            var capa1od=dexteriteOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Perception"){
+            var capa1=perception;
+            var capa1od=perceptionOD;
+            var name1=capliste1;
+        }
+        else {
+            var capa1="0";
+            var capa1od="0";
+            var name1="";
+        }        
+    
+        if (capliste2=="Deplacement"){
+            var capa2=deplacement;
+            var capa2od=deplacementOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Force"){
+            var capa2=force;
+            var capa2od=forceOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Endurance"){
+            var capa2=endurance;
+            var capa2od=enduranceOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Hargne"){
+            var capa2=hargne;
+            var capa2od=hargneOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Combat"){
+            var capa2=combat;
+            var capa2od=combatOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Instinct"){
+            var capa2=instinct;
+            var capa2od=instinctOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Tir"){
+            var capa2=tir;
+            var capa2od=tirOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Savoir"){
+            var capa2= savoir;
+            var capa2od=savoirOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Technique"){
+            var capa2=technique;
+            var capa2od=techniqueOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Aura"){
+            var capa2=aura;
+            var capa2od=auraOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Parole"){
+            var capa2=parole;
+            var capa2od=paroleOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Sangfroid"){
+            var capa2=sangfroid;
+            var capa2od=sangfroidOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Discretion"){
+            var capa2=discretion;
+            var capa2od=discretionOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Dexterite"){
+            var capa2=dexterite;
+            var capa2od=dexteriteOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Perception"){
+            var capa2=perception;
+            var capa2od=perceptionOD;
+            var name2=capliste2;
+        }
+        else {
+            var capa2="0";
+            var capa2od="0";
+            var name2="";
+        }
+    
+    
+        if (capliste3=="Deplacement"){
+            var capa3=deplacement;
+            var capa3od=deplacementOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Force"){
+            var capa3=force;
+            var capa3od=forceOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Endurance"){
+            var capa3=endurance;
+            var capa3od=enduranceOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Hargne"){
+            var capa3=hargne;
+            var capa3od=hargneOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Combat"){
+            var capa3=combat;
+            var capa3od=combatOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Instinct"){
+            var capa3=instinct;
+            var capa3od=instinctOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Tir"){
+            var capa3=tir;
+            var capa3od=tirOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Savoir"){
+            var capa3= savoir;
+            var capa3od=savoirOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Technique"){
+            var capa3=technique;
+            var capa3od=techniqueOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Aura"){
+            var capa3=aura;
+            var capa3od=auraOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Parole"){
+            var capa3=parole;
+            var capa3od=paroleOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Sangfroid"){
+            var capa3=sangfroid;
+            var capa3od=sangfroidOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Discretion"){
+            var capa3=discretion;
+            var capa3od=discretionOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Dexterite"){
+            var capa3=dexterite;
+            var capa3od=dexteriteOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Perception"){
+            var capa3=perception;
+            var capa3od=perceptionOD;
+            var name3=capliste3;
+        }
+        else {
+            var capa3="0";
+            var capa3od="0";
+            var name3="";
+        }
+    
+        if (capliste4=="Deplacement"){
+            var capa4=deplacement;
+            var capa4od=deplacementOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Force"){
+            var capa4=force;
+            var capa4od=forceOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Endurance"){
+            var capa4=endurance;
+            var capa4od=enduranceOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Hargne"){
+            var capa4=hargne;
+            var capa4od=hargneOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Combat"){
+            var capa4=combat;
+            var capa4od=combatOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Instinct"){
+            var capa4=instinct;
+            var capa4od=instinctOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Tir"){
+            var capa4=tir;
+            var capa4od=tirOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Savoir"){
+            var capa4= savoir;
+            var capa4od=savoirOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Technique"){
+            var capa4=technique;
+            var capa4od=techniqueOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Aura"){
+            var capa4=aura;
+            var capa4od=auraOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Parole"){
+            var capa4=parole;
+            var capa4od=paroleOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Sangfroid"){
+            var capa4=sangfroid;
+            var capa4od=sangfroidOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Discretion"){
+            var capa4=discretion;
+            var capa4od=discretionOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Dexterite"){
+            var capa4=dexterite;
+            var capa4od=dexteriteOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Perception"){
+            var capa4=Perception;
+            var capa4od=perceptionOD;
+            var name4=capliste4;
+        }
+        else {
+            var capa4="0";
+            var capa4od="0";
+            var name4="";
+        }
+        
+
+        var degf = force + forceOD
+        var nbdod= Number(capa1od) + Number(capa2od) + Number(capa3od) + Number(capa4od)+" OD";
+        var nbdd = Number(capa1) + Number(capa2) + Number(capa3) + Number(capa4) + Number(capbm) + "d2cs2";
+        var texte = "jet de : " + name1 + " - " + name2 + " - " + name3 + " - " + name4;
+        let roll1 = new Roll(nbdd);
+        let roll2 = new Roll(4+'D6+'+degf)
+        let roll3 = new Roll(4+'D6')
+
+        roll1.roll().toMessage({
+            speaker: ChatMessage.getSpeaker({ actor: this.actor} ),
+            flavor: texte + nbdod
+        });
+        roll2.roll().toMessage({
+            speaker: ChatMessage.getSpeaker({ actor: this.actor}+"Arme improvisée"),
+            flavor: "Degats"
+        });
+        roll3.roll().toMessage({
+            speaker: ChatMessage.getSpeaker({ actor: this.actor}+"Arme improvisée"),
+            flavor: "Violence"
+        });
+    }
+    _onRollAtaImp2(event){
+        console.log(event)
+        const dataf = super.getData();
+        const character = dataf.actor.data.data
+
+        var capliste1 = character.valeurde1
+        var capliste2 = character.valeurde2
+        var capliste3 = character.valeurde3
+        var capliste4 = character.valeurde4
+        var capbm = character.bonusmalus
+    
+
+        var deplacement = Number(character.attributs.Chair.competence.Deplacement.valeur)
+        var deplacementOD = Number(character.attributs.Chair.competence.Deplacement.od)
+        var force = Number(character.attributs.Chair.competence.Force.valeur)
+        var forceOD = Number(character.attributs.Chair.competence.Force.od)
+        var endurance = Number(character.attributs.Chair.competence.Endurance.valeur)
+        var enduranceOD = Number(character.attributs.Chair.competence.Endurance.od)
+        var hargne = Number(character.attributs.Bete.competence.Hargne.valeur)
+        var hargneOD = Number(character.attributs.Bete.competence.Hargne.od)
+        var combat = Number(character.attributs.Bete.competence.Combat.valeur)
+        var combatOD = Number(character.attributs.Bete.competence.Combat.od)
+        var instinct = Number(character.attributs.Bete.competence.Instinct.valeur)
+        var instinctOD = Number(character.attributs.Bete.competence.Instinct.od)
+        var tir = Number(character.attributs.Machine.competence.Tir.valeur)
+        var tirOD = Number(character.attributs.Machine.competence.Tir.od)
+        var savoir = Number(character.attributs.Machine.competence.Savoir.valeur)
+        var savoirOD = Number(character.attributs.Machine.competence.Savoir.od)
+        var technique = Number(character.attributs.Machine.competence.Technique.valeur)
+        var techniqueOD = Number(character.attributs.Machine.competence.Technique.od)
+        var aura = Number(character.attributs.Dame.competence.Aura.valeur)
+        var auraOD = Number(character.attributs.Dame.competence.Aura.od)
+        var parole = Number(character.attributs.Dame.competence.Parole.valeur)
+        var paroleOD = Number(character.attributs.Dame.competence.Parole.od)
+        var sangfroid = Number(character.attributs.Dame.competence.Sangfroid.valeur)
+        var sangfroidOD = Number(character.attributs.Dame.competence.Sangfroid.od)
+        var discretion = Number(character.attributs.Masque.competence.Discretion.valeur)
+        var discretionOD = Number(character.attributs.Masque.competence.Discretion.od)
+        var dexterite= Number(character.attributs.Masque.competence.Dexterite.valeur)
+        var dexteriteOD = Number(character.attributs.Masque.competence.Dexterite.od)
+        var perception = Number(character.attributs.Masque.competence.Perception.valeur)
+        var perceptionOD = Number(character.attributs.Masque.competence.Perception.od)
+    
+        if (capliste1=="Deplacement"){
+            var capa1 = deplacement;
+            var capa1od = deplacementOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Force"){
+            var capa1=force;
+            var capa1od=forceOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Endurance"){
+            var capa1=endurance;
+            var capa1od=enduranceOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Hargne"){
+            var capa1=hargne;
+            var capa1od=hargneOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Combat"){
+            var capa1=combat;
+            var capa1od=combatOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Instinct"){
+            var capa1=instinct;
+            var capa1od=instinctOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Tir"){
+            var capa1=tir;
+            var capa1od=tirOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Savoir"){
+            var capa1= savoir;
+            var capa1od=savoirOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Technique"){
+            var capa1=technique;
+            var capa1od=techniqueOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Aura"){
+            var capa1=aura;
+            var capa1od=auraOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Parole"){
+            var capa1=parole;
+            var capa1od=paroleOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Sangfroid"){
+            var capa1=sangfroid;
+            var capa1od=sangfroidOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Discretion"){
+            var capa1=discretion;
+            var capa1od=discretionOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Dexterite"){
+            var capa1=dexterite;
+            var capa1od=dexteriteOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Perception"){
+            var capa1=perception;
+            var capa1od=perceptionOD;
+            var name1=capliste1;
+        }
+        else {
+            var capa1="0";
+            var capa1od="0";
+            var name1="";
+        }        
+    
+        if (capliste2=="Deplacement"){
+            var capa2=deplacement;
+            var capa2od=deplacementOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Force"){
+            var capa2=force;
+            var capa2od=forceOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Endurance"){
+            var capa2=endurance;
+            var capa2od=enduranceOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Hargne"){
+            var capa2=hargne;
+            var capa2od=hargneOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Combat"){
+            var capa2=combat;
+            var capa2od=combatOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Instinct"){
+            var capa2=instinct;
+            var capa2od=instinctOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Tir"){
+            var capa2=tir;
+            var capa2od=tirOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Savoir"){
+            var capa2= savoir;
+            var capa2od=savoirOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Technique"){
+            var capa2=technique;
+            var capa2od=techniqueOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Aura"){
+            var capa2=aura;
+            var capa2od=auraOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Parole"){
+            var capa2=parole;
+            var capa2od=paroleOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Sangfroid"){
+            var capa2=sangfroid;
+            var capa2od=sangfroidOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Discretion"){
+            var capa2=discretion;
+            var capa2od=discretionOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Dexterite"){
+            var capa2=dexterite;
+            var capa2od=dexteriteOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Perception"){
+            var capa2=perception;
+            var capa2od=perceptionOD;
+            var name2=capliste2;
+        }
+        else {
+            var capa2="0";
+            var capa2od="0";
+            var name2="";
+        }
+    
+    
+        if (capliste3=="Deplacement"){
+            var capa3=deplacement;
+            var capa3od=deplacementOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Force"){
+            var capa3=force;
+            var capa3od=forceOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Endurance"){
+            var capa3=endurance;
+            var capa3od=enduranceOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Hargne"){
+            var capa3=hargne;
+            var capa3od=hargneOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Combat"){
+            var capa3=combat;
+            var capa3od=combatOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Instinct"){
+            var capa3=instinct;
+            var capa3od=instinctOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Tir"){
+            var capa3=tir;
+            var capa3od=tirOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Savoir"){
+            var capa3= savoir;
+            var capa3od=savoirOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Technique"){
+            var capa3=technique;
+            var capa3od=techniqueOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Aura"){
+            var capa3=aura;
+            var capa3od=auraOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Parole"){
+            var capa3=parole;
+            var capa3od=paroleOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Sangfroid"){
+            var capa3=sangfroid;
+            var capa3od=sangfroidOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Discretion"){
+            var capa3=discretion;
+            var capa3od=discretionOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Dexterite"){
+            var capa3=dexterite;
+            var capa3od=dexteriteOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Perception"){
+            var capa3=perception;
+            var capa3od=perceptionOD;
+            var name3=capliste3;
+        }
+        else {
+            var capa3="0";
+            var capa3od="0";
+            var name3="";
+        }
+    
+        if (capliste4=="Deplacement"){
+            var capa4=deplacement;
+            var capa4od=deplacementOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Force"){
+            var capa4=force;
+            var capa4od=forceOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Endurance"){
+            var capa4=endurance;
+            var capa4od=enduranceOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Hargne"){
+            var capa4=hargne;
+            var capa4od=hargneOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Combat"){
+            var capa4=combat;
+            var capa4od=combatOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Instinct"){
+            var capa4=instinct;
+            var capa4od=instinctOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Tir"){
+            var capa4=tir;
+            var capa4od=tirOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Savoir"){
+            var capa4= savoir;
+            var capa4od=savoirOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Technique"){
+            var capa4=technique;
+            var capa4od=techniqueOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Aura"){
+            var capa4=aura;
+            var capa4od=auraOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Parole"){
+            var capa4=parole;
+            var capa4od=paroleOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Sangfroid"){
+            var capa4=sangfroid;
+            var capa4od=sangfroidOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Discretion"){
+            var capa4=discretion;
+            var capa4od=discretionOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Dexterite"){
+            var capa4=dexterite;
+            var capa4od=dexteriteOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Perception"){
+            var capa4=Perception;
+            var capa4od=perceptionOD;
+            var name4=capliste4;
+        }
+        else {
+            var capa4="0";
+            var capa4od="0";
+            var name4="";
+        }
+        
+
+        var degf = force + forceOD
+        var nbdod= Number(capa1od) + Number(capa2od) + Number(capa3od) + Number(capa4od)+" OD";
+        var nbdd = Number(capa1) + Number(capa2) + Number(capa3) + Number(capa4) + Number(capbm) + "d2cs2";
+        var texte = "jet de : " + name1 + " - " + name2 + " - " + name3 + " - " + name4;
+        let roll1 = new Roll(nbdd);
+
+        let roll2 = new Roll(2+'D6+'+degf)
+        let roll3 = new Roll(5+'D6')
+
+        roll1.roll().toMessage({
+            speaker: ChatMessage.getSpeaker({ actor: this.actor} ),
+            flavor: texte + nbdod
+        });
+        roll2.roll().toMessage({
+            speaker: ChatMessage.getSpeaker({ actor: this.actor}+"Arme improvisée"),
+            flavor: "Degats"
+        });
+        roll3.roll().toMessage({
+            speaker: ChatMessage.getSpeaker({ actor: this.actor}+"Arme improvisée"),
+            flavor: "Violence"
+        });
+    }
+    _onRollAtaImp3(event){
+             console.log(event)
+        const dataf = super.getData();
+        const character = dataf.actor.data.data
+
+        var capliste1 = character.valeurde1
+        var capliste2 = character.valeurde2
+        var capliste3 = character.valeurde3
+        var capliste4 = character.valeurde4
+        var capbm = character.bonusmalus
+    
+
+        var deplacement = Number(character.attributs.Chair.competence.Deplacement.valeur)
+        var deplacementOD = Number(character.attributs.Chair.competence.Deplacement.od)
+        var force = Number(character.attributs.Chair.competence.Force.valeur)
+        var forceOD = Number(character.attributs.Chair.competence.Force.od)
+        var endurance = Number(character.attributs.Chair.competence.Endurance.valeur)
+        var enduranceOD = Number(character.attributs.Chair.competence.Endurance.od)
+        var hargne = Number(character.attributs.Bete.competence.Hargne.valeur)
+        var hargneOD = Number(character.attributs.Bete.competence.Hargne.od)
+        var combat = Number(character.attributs.Bete.competence.Combat.valeur)
+        var combatOD = Number(character.attributs.Bete.competence.Combat.od)
+        var instinct = Number(character.attributs.Bete.competence.Instinct.valeur)
+        var instinctOD = Number(character.attributs.Bete.competence.Instinct.od)
+        var tir = Number(character.attributs.Machine.competence.Tir.valeur)
+        var tirOD = Number(character.attributs.Machine.competence.Tir.od)
+        var savoir = Number(character.attributs.Machine.competence.Savoir.valeur)
+        var savoirOD = Number(character.attributs.Machine.competence.Savoir.od)
+        var technique = Number(character.attributs.Machine.competence.Technique.valeur)
+        var techniqueOD = Number(character.attributs.Machine.competence.Technique.od)
+        var aura = Number(character.attributs.Dame.competence.Aura.valeur)
+        var auraOD = Number(character.attributs.Dame.competence.Aura.od)
+        var parole = Number(character.attributs.Dame.competence.Parole.valeur)
+        var paroleOD = Number(character.attributs.Dame.competence.Parole.od)
+        var sangfroid = Number(character.attributs.Dame.competence.Sangfroid.valeur)
+        var sangfroidOD = Number(character.attributs.Dame.competence.Sangfroid.od)
+        var discretion = Number(character.attributs.Masque.competence.Discretion.valeur)
+        var discretionOD = Number(character.attributs.Masque.competence.Discretion.od)
+        var dexterite= Number(character.attributs.Masque.competence.Dexterite.valeur)
+        var dexteriteOD = Number(character.attributs.Masque.competence.Dexterite.od)
+        var perception = Number(character.attributs.Masque.competence.Perception.valeur)
+        var perceptionOD = Number(character.attributs.Masque.competence.Perception.od)
+    
+        if (capliste1=="Deplacement"){
+            var capa1 = deplacement;
+            var capa1od = deplacementOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Force"){
+            var capa1=force;
+            var capa1od=forceOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Endurance"){
+            var capa1=endurance;
+            var capa1od=enduranceOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Hargne"){
+            var capa1=hargne;
+            var capa1od=hargneOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Combat"){
+            var capa1=combat;
+            var capa1od=combatOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Instinct"){
+            var capa1=instinct;
+            var capa1od=instinctOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Tir"){
+            var capa1=tir;
+            var capa1od=tirOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Savoir"){
+            var capa1= savoir;
+            var capa1od=savoirOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Technique"){
+            var capa1=technique;
+            var capa1od=techniqueOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Aura"){
+            var capa1=aura;
+            var capa1od=auraOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Parole"){
+            var capa1=parole;
+            var capa1od=paroleOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Sangfroid"){
+            var capa1=sangfroid;
+            var capa1od=sangfroidOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Discretion"){
+            var capa1=discretion;
+            var capa1od=discretionOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Dexterite"){
+            var capa1=dexterite;
+            var capa1od=dexteriteOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Perception"){
+            var capa1=perception;
+            var capa1od=perceptionOD;
+            var name1=capliste1;
+        }
+        else {
+            var capa1="0";
+            var capa1od="0";
+            var name1="";
+        }        
+    
+        if (capliste2=="Deplacement"){
+            var capa2=deplacement;
+            var capa2od=deplacementOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Force"){
+            var capa2=force;
+            var capa2od=forceOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Endurance"){
+            var capa2=endurance;
+            var capa2od=enduranceOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Hargne"){
+            var capa2=hargne;
+            var capa2od=hargneOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Combat"){
+            var capa2=combat;
+            var capa2od=combatOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Instinct"){
+            var capa2=instinct;
+            var capa2od=instinctOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Tir"){
+            var capa2=tir;
+            var capa2od=tirOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Savoir"){
+            var capa2= savoir;
+            var capa2od=savoirOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Technique"){
+            var capa2=technique;
+            var capa2od=techniqueOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Aura"){
+            var capa2=aura;
+            var capa2od=auraOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Parole"){
+            var capa2=parole;
+            var capa2od=paroleOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Sangfroid"){
+            var capa2=sangfroid;
+            var capa2od=sangfroidOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Discretion"){
+            var capa2=discretion;
+            var capa2od=discretionOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Dexterite"){
+            var capa2=dexterite;
+            var capa2od=dexteriteOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Perception"){
+            var capa2=perception;
+            var capa2od=perceptionOD;
+            var name2=capliste2;
+        }
+        else {
+            var capa2="0";
+            var capa2od="0";
+            var name2="";
+        }
+    
+    
+        if (capliste3=="Deplacement"){
+            var capa3=deplacement;
+            var capa3od=deplacementOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Force"){
+            var capa3=force;
+            var capa3od=forceOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Endurance"){
+            var capa3=endurance;
+            var capa3od=enduranceOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Hargne"){
+            var capa3=hargne;
+            var capa3od=hargneOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Combat"){
+            var capa3=combat;
+            var capa3od=combatOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Instinct"){
+            var capa3=instinct;
+            var capa3od=instinctOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Tir"){
+            var capa3=tir;
+            var capa3od=tirOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Savoir"){
+            var capa3= savoir;
+            var capa3od=savoirOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Technique"){
+            var capa3=technique;
+            var capa3od=techniqueOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Aura"){
+            var capa3=aura;
+            var capa3od=auraOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Parole"){
+            var capa3=parole;
+            var capa3od=paroleOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Sangfroid"){
+            var capa3=sangfroid;
+            var capa3od=sangfroidOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Discretion"){
+            var capa3=discretion;
+            var capa3od=discretionOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Dexterite"){
+            var capa3=dexterite;
+            var capa3od=dexteriteOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Perception"){
+            var capa3=perception;
+            var capa3od=perceptionOD;
+            var name3=capliste3;
+        }
+        else {
+            var capa3="0";
+            var capa3od="0";
+            var name3="";
+        }
+    
+        if (capliste4=="Deplacement"){
+            var capa4=deplacement;
+            var capa4od=deplacementOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Force"){
+            var capa4=force;
+            var capa4od=forceOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Endurance"){
+            var capa4=endurance;
+            var capa4od=enduranceOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Hargne"){
+            var capa4=hargne;
+            var capa4od=hargneOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Combat"){
+            var capa4=combat;
+            var capa4od=combatOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Instinct"){
+            var capa4=instinct;
+            var capa4od=instinctOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Tir"){
+            var capa4=tir;
+            var capa4od=tirOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Savoir"){
+            var capa4= savoir;
+            var capa4od=savoirOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Technique"){
+            var capa4=technique;
+            var capa4od=techniqueOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Aura"){
+            var capa4=aura;
+            var capa4od=auraOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Parole"){
+            var capa4=parole;
+            var capa4od=paroleOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Sangfroid"){
+            var capa4=sangfroid;
+            var capa4od=sangfroidOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Discretion"){
+            var capa4=discretion;
+            var capa4od=discretionOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Dexterite"){
+            var capa4=dexterite;
+            var capa4od=dexteriteOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Perception"){
+            var capa4=Perception;
+            var capa4od=perceptionOD;
+            var name4=capliste4;
+        }
+        else {
+            var capa4="0";
+            var capa4od="0";
+            var name4="";
+        }
+        
+
+        var degf = force + forceOD
+        var nbdod= Number(capa1od) + Number(capa2od) + Number(capa3od) + Number(capa4od)+" OD";
+        var nbdd = Number(capa1) + Number(capa2) + Number(capa3) + Number(capa4) + Number(capbm) + "d2cs2";
+        var texte = "jet de : " + name1 + " - " + name2 + " - " + name3 + " - " + name4;
+        let roll1 = new Roll(nbdd);
+        let roll2 = new Roll(4+'D6+'+degf)
+        let roll3 = new Roll(4+'D6')
+
+        roll1.roll().toMessage({
+            speaker: ChatMessage.getSpeaker({ actor: this.actor} ),
+            flavor: texte + nbdod
+        });
+        roll2.roll().toMessage({
+            speaker: ChatMessage.getSpeaker({ actor: this.actor}+"Arme improvisée"),
+            flavor: "Degats"
+        });
+        roll3.roll().toMessage({
+            speaker: ChatMessage.getSpeaker({ actor: this.actor}+"Arme improvisée"),
+            flavor: "Violence"
+        });
+    }
+    _onRollAtaImp4(event){
+        console.log(event)
+        const dataf = super.getData();
+        const character = dataf.actor.data.data
+
+        var capliste1 = character.valeurde1
+        var capliste2 = character.valeurde2
+        var capliste3 = character.valeurde3
+        var capliste4 = character.valeurde4
+        var capbm = character.bonusmalus
+    
+
+        var deplacement = Number(character.attributs.Chair.competence.Deplacement.valeur)
+        var deplacementOD = Number(character.attributs.Chair.competence.Deplacement.od)
+        var force = Number(character.attributs.Chair.competence.Force.valeur)
+        var forceOD = Number(character.attributs.Chair.competence.Force.od)
+        var endurance = Number(character.attributs.Chair.competence.Endurance.valeur)
+        var enduranceOD = Number(character.attributs.Chair.competence.Endurance.od)
+        var hargne = Number(character.attributs.Bete.competence.Hargne.valeur)
+        var hargneOD = Number(character.attributs.Bete.competence.Hargne.od)
+        var combat = Number(character.attributs.Bete.competence.Combat.valeur)
+        var combatOD = Number(character.attributs.Bete.competence.Combat.od)
+        var instinct = Number(character.attributs.Bete.competence.Instinct.valeur)
+        var instinctOD = Number(character.attributs.Bete.competence.Instinct.od)
+        var tir = Number(character.attributs.Machine.competence.Tir.valeur)
+        var tirOD = Number(character.attributs.Machine.competence.Tir.od)
+        var savoir = Number(character.attributs.Machine.competence.Savoir.valeur)
+        var savoirOD = Number(character.attributs.Machine.competence.Savoir.od)
+        var technique = Number(character.attributs.Machine.competence.Technique.valeur)
+        var techniqueOD = Number(character.attributs.Machine.competence.Technique.od)
+        var aura = Number(character.attributs.Dame.competence.Aura.valeur)
+        var auraOD = Number(character.attributs.Dame.competence.Aura.od)
+        var parole = Number(character.attributs.Dame.competence.Parole.valeur)
+        var paroleOD = Number(character.attributs.Dame.competence.Parole.od)
+        var sangfroid = Number(character.attributs.Dame.competence.Sangfroid.valeur)
+        var sangfroidOD = Number(character.attributs.Dame.competence.Sangfroid.od)
+        var discretion = Number(character.attributs.Masque.competence.Discretion.valeur)
+        var discretionOD = Number(character.attributs.Masque.competence.Discretion.od)
+        var dexterite= Number(character.attributs.Masque.competence.Dexterite.valeur)
+        var dexteriteOD = Number(character.attributs.Masque.competence.Dexterite.od)
+        var perception = Number(character.attributs.Masque.competence.Perception.valeur)
+        var perceptionOD = Number(character.attributs.Masque.competence.Perception.od)
+    
+        if (capliste1=="Deplacement"){
+            var capa1 = deplacement;
+            var capa1od = deplacementOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Force"){
+            var capa1=force;
+            var capa1od=forceOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Endurance"){
+            var capa1=endurance;
+            var capa1od=enduranceOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Hargne"){
+            var capa1=hargne;
+            var capa1od=hargneOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Combat"){
+            var capa1=combat;
+            var capa1od=combatOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Instinct"){
+            var capa1=instinct;
+            var capa1od=instinctOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Tir"){
+            var capa1=tir;
+            var capa1od=tirOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Savoir"){
+            var capa1= savoir;
+            var capa1od=savoirOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Technique"){
+            var capa1=technique;
+            var capa1od=techniqueOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Aura"){
+            var capa1=aura;
+            var capa1od=auraOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Parole"){
+            var capa1=parole;
+            var capa1od=paroleOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Sangfroid"){
+            var capa1=sangfroid;
+            var capa1od=sangfroidOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Discretion"){
+            var capa1=discretion;
+            var capa1od=discretionOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Dexterite"){
+            var capa1=dexterite;
+            var capa1od=dexteriteOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Perception"){
+            var capa1=perception;
+            var capa1od=perceptionOD;
+            var name1=capliste1;
+        }
+        else {
+            var capa1="0";
+            var capa1od="0";
+            var name1="";
+        }        
+    
+        if (capliste2=="Deplacement"){
+            var capa2=deplacement;
+            var capa2od=deplacementOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Force"){
+            var capa2=force;
+            var capa2od=forceOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Endurance"){
+            var capa2=endurance;
+            var capa2od=enduranceOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Hargne"){
+            var capa2=hargne;
+            var capa2od=hargneOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Combat"){
+            var capa2=combat;
+            var capa2od=combatOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Instinct"){
+            var capa2=instinct;
+            var capa2od=instinctOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Tir"){
+            var capa2=tir;
+            var capa2od=tirOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Savoir"){
+            var capa2= savoir;
+            var capa2od=savoirOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Technique"){
+            var capa2=technique;
+            var capa2od=techniqueOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Aura"){
+            var capa2=aura;
+            var capa2od=auraOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Parole"){
+            var capa2=parole;
+            var capa2od=paroleOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Sangfroid"){
+            var capa2=sangfroid;
+            var capa2od=sangfroidOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Discretion"){
+            var capa2=discretion;
+            var capa2od=discretionOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Dexterite"){
+            var capa2=dexterite;
+            var capa2od=dexteriteOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Perception"){
+            var capa2=perception;
+            var capa2od=perceptionOD;
+            var name2=capliste2;
+        }
+        else {
+            var capa2="0";
+            var capa2od="0";
+            var name2="";
+        }
+    
+    
+        if (capliste3=="Deplacement"){
+            var capa3=deplacement;
+            var capa3od=deplacementOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Force"){
+            var capa3=force;
+            var capa3od=forceOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Endurance"){
+            var capa3=endurance;
+            var capa3od=enduranceOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Hargne"){
+            var capa3=hargne;
+            var capa3od=hargneOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Combat"){
+            var capa3=combat;
+            var capa3od=combatOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Instinct"){
+            var capa3=instinct;
+            var capa3od=instinctOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Tir"){
+            var capa3=tir;
+            var capa3od=tirOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Savoir"){
+            var capa3= savoir;
+            var capa3od=savoirOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Technique"){
+            var capa3=technique;
+            var capa3od=techniqueOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Aura"){
+            var capa3=aura;
+            var capa3od=auraOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Parole"){
+            var capa3=parole;
+            var capa3od=paroleOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Sangfroid"){
+            var capa3=sangfroid;
+            var capa3od=sangfroidOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Discretion"){
+            var capa3=discretion;
+            var capa3od=discretionOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Dexterite"){
+            var capa3=dexterite;
+            var capa3od=dexteriteOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Perception"){
+            var capa3=perception;
+            var capa3od=perceptionOD;
+            var name3=capliste3;
+        }
+        else {
+            var capa3="0";
+            var capa3od="0";
+            var name3="";
+        }
+    
+        if (capliste4=="Deplacement"){
+            var capa4=deplacement;
+            var capa4od=deplacementOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Force"){
+            var capa4=force;
+            var capa4od=forceOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Endurance"){
+            var capa4=endurance;
+            var capa4od=enduranceOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Hargne"){
+            var capa4=hargne;
+            var capa4od=hargneOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Combat"){
+            var capa4=combat;
+            var capa4od=combatOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Instinct"){
+            var capa4=instinct;
+            var capa4od=instinctOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Tir"){
+            var capa4=tir;
+            var capa4od=tirOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Savoir"){
+            var capa4= savoir;
+            var capa4od=savoirOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Technique"){
+            var capa4=technique;
+            var capa4od=techniqueOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Aura"){
+            var capa4=aura;
+            var capa4od=auraOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Parole"){
+            var capa4=parole;
+            var capa4od=paroleOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Sangfroid"){
+            var capa4=sangfroid;
+            var capa4od=sangfroidOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Discretion"){
+            var capa4=discretion;
+            var capa4od=discretionOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Dexterite"){
+            var capa4=dexterite;
+            var capa4od=dexteriteOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Perception"){
+            var capa4=Perception;
+            var capa4od=perceptionOD;
+            var name4=capliste4;
+        }
+        else {
+            var capa4="0";
+            var capa4od="0";
+            var name4="";
+        }
+        
+
+        var degf = force + forceOD
+        var nbdod= Number(capa1od) + Number(capa2od) + Number(capa3od) + Number(capa4od)+" OD";
+        var nbdd = Number(capa1) + Number(capa2) + Number(capa3) + Number(capa4) + Number(capbm) + "d2cs2";
+        var texte = "jet de : " + name1 + " - " + name2 + " - " + name3 + " - " + name4;
+        let roll1 = new Roll(nbdd);
+        let roll2 = new Roll(6+'D6+'+degf)
+        let roll3 = new Roll(4+'D6')
+
+        roll1.roll().toMessage({
+            speaker: ChatMessage.getSpeaker({ actor: this.actor} ),
+            flavor: texte + nbdod
+        });
+        roll2.roll().toMessage({
+            speaker: ChatMessage.getSpeaker({ actor: this.actor}+"Arme improvisée"),
+            flavor: "Degats"
+        });
+        roll3.roll().toMessage({
+            speaker: ChatMessage.getSpeaker({ actor: this.actor}+"Arme improvisée"),
+            flavor: "Violence"
+        });
+    }
+    _onRollAtaImp5(event){
+        console.log(event)
+        const dataf = super.getData();
+        const character = dataf.actor.data.data
+
+        var capliste1 = character.valeurde1
+        var capliste2 = character.valeurde2
+        var capliste3 = character.valeurde3
+        var capliste4 = character.valeurde4
+        var capbm = character.bonusmalus
+    
+
+        var deplacement = Number(character.attributs.Chair.competence.Deplacement.valeur)
+        var deplacementOD = Number(character.attributs.Chair.competence.Deplacement.od)
+        var force = Number(character.attributs.Chair.competence.Force.valeur)
+        var forceOD = Number(character.attributs.Chair.competence.Force.od)
+        var endurance = Number(character.attributs.Chair.competence.Endurance.valeur)
+        var enduranceOD = Number(character.attributs.Chair.competence.Endurance.od)
+        var hargne = Number(character.attributs.Bete.competence.Hargne.valeur)
+        var hargneOD = Number(character.attributs.Bete.competence.Hargne.od)
+        var combat = Number(character.attributs.Bete.competence.Combat.valeur)
+        var combatOD = Number(character.attributs.Bete.competence.Combat.od)
+        var instinct = Number(character.attributs.Bete.competence.Instinct.valeur)
+        var instinctOD = Number(character.attributs.Bete.competence.Instinct.od)
+        var tir = Number(character.attributs.Machine.competence.Tir.valeur)
+        var tirOD = Number(character.attributs.Machine.competence.Tir.od)
+        var savoir = Number(character.attributs.Machine.competence.Savoir.valeur)
+        var savoirOD = Number(character.attributs.Machine.competence.Savoir.od)
+        var technique = Number(character.attributs.Machine.competence.Technique.valeur)
+        var techniqueOD = Number(character.attributs.Machine.competence.Technique.od)
+        var aura = Number(character.attributs.Dame.competence.Aura.valeur)
+        var auraOD = Number(character.attributs.Dame.competence.Aura.od)
+        var parole = Number(character.attributs.Dame.competence.Parole.valeur)
+        var paroleOD = Number(character.attributs.Dame.competence.Parole.od)
+        var sangfroid = Number(character.attributs.Dame.competence.Sangfroid.valeur)
+        var sangfroidOD = Number(character.attributs.Dame.competence.Sangfroid.od)
+        var discretion = Number(character.attributs.Masque.competence.Discretion.valeur)
+        var discretionOD = Number(character.attributs.Masque.competence.Discretion.od)
+        var dexterite= Number(character.attributs.Masque.competence.Dexterite.valeur)
+        var dexteriteOD = Number(character.attributs.Masque.competence.Dexterite.od)
+        var perception = Number(character.attributs.Masque.competence.Perception.valeur)
+        var perceptionOD = Number(character.attributs.Masque.competence.Perception.od)
+    
+        if (capliste1=="Deplacement"){
+            var capa1 = deplacement;
+            var capa1od = deplacementOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Force"){
+            var capa1=force;
+            var capa1od=forceOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Endurance"){
+            var capa1=endurance;
+            var capa1od=enduranceOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Hargne"){
+            var capa1=hargne;
+            var capa1od=hargneOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Combat"){
+            var capa1=combat;
+            var capa1od=combatOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Instinct"){
+            var capa1=instinct;
+            var capa1od=instinctOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Tir"){
+            var capa1=tir;
+            var capa1od=tirOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Savoir"){
+            var capa1= savoir;
+            var capa1od=savoirOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Technique"){
+            var capa1=technique;
+            var capa1od=techniqueOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Aura"){
+            var capa1=aura;
+            var capa1od=auraOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Parole"){
+            var capa1=parole;
+            var capa1od=paroleOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Sangfroid"){
+            var capa1=sangfroid;
+            var capa1od=sangfroidOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Discretion"){
+            var capa1=discretion;
+            var capa1od=discretionOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Dexterite"){
+            var capa1=dexterite;
+            var capa1od=dexteriteOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Perception"){
+            var capa1=perception;
+            var capa1od=perceptionOD;
+            var name1=capliste1;
+        }
+        else {
+            var capa1="0";
+            var capa1od="0";
+            var name1="";
+        }        
+    
+        if (capliste2=="Deplacement"){
+            var capa2=deplacement;
+            var capa2od=deplacementOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Force"){
+            var capa2=force;
+            var capa2od=forceOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Endurance"){
+            var capa2=endurance;
+            var capa2od=enduranceOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Hargne"){
+            var capa2=hargne;
+            var capa2od=hargneOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Combat"){
+            var capa2=combat;
+            var capa2od=combatOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Instinct"){
+            var capa2=instinct;
+            var capa2od=instinctOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Tir"){
+            var capa2=tir;
+            var capa2od=tirOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Savoir"){
+            var capa2= savoir;
+            var capa2od=savoirOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Technique"){
+            var capa2=technique;
+            var capa2od=techniqueOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Aura"){
+            var capa2=aura;
+            var capa2od=auraOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Parole"){
+            var capa2=parole;
+            var capa2od=paroleOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Sangfroid"){
+            var capa2=sangfroid;
+            var capa2od=sangfroidOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Discretion"){
+            var capa2=discretion;
+            var capa2od=discretionOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Dexterite"){
+            var capa2=dexterite;
+            var capa2od=dexteriteOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Perception"){
+            var capa2=perception;
+            var capa2od=perceptionOD;
+            var name2=capliste2;
+        }
+        else {
+            var capa2="0";
+            var capa2od="0";
+            var name2="";
+        }
+    
+    
+        if (capliste3=="Deplacement"){
+            var capa3=deplacement;
+            var capa3od=deplacementOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Force"){
+            var capa3=force;
+            var capa3od=forceOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Endurance"){
+            var capa3=endurance;
+            var capa3od=enduranceOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Hargne"){
+            var capa3=hargne;
+            var capa3od=hargneOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Combat"){
+            var capa3=combat;
+            var capa3od=combatOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Instinct"){
+            var capa3=instinct;
+            var capa3od=instinctOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Tir"){
+            var capa3=tir;
+            var capa3od=tirOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Savoir"){
+            var capa3= savoir;
+            var capa3od=savoirOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Technique"){
+            var capa3=technique;
+            var capa3od=techniqueOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Aura"){
+            var capa3=aura;
+            var capa3od=auraOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Parole"){
+            var capa3=parole;
+            var capa3od=paroleOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Sangfroid"){
+            var capa3=sangfroid;
+            var capa3od=sangfroidOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Discretion"){
+            var capa3=discretion;
+            var capa3od=discretionOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Dexterite"){
+            var capa3=dexterite;
+            var capa3od=dexteriteOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Perception"){
+            var capa3=perception;
+            var capa3od=perceptionOD;
+            var name3=capliste3;
+        }
+        else {
+            var capa3="0";
+            var capa3od="0";
+            var name3="";
+        }
+    
+        if (capliste4=="Deplacement"){
+            var capa4=deplacement;
+            var capa4od=deplacementOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Force"){
+            var capa4=force;
+            var capa4od=forceOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Endurance"){
+            var capa4=endurance;
+            var capa4od=enduranceOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Hargne"){
+            var capa4=hargne;
+            var capa4od=hargneOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Combat"){
+            var capa4=combat;
+            var capa4od=combatOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Instinct"){
+            var capa4=instinct;
+            var capa4od=instinctOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Tir"){
+            var capa4=tir;
+            var capa4od=tirOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Savoir"){
+            var capa4= savoir;
+            var capa4od=savoirOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Technique"){
+            var capa4=technique;
+            var capa4od=techniqueOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Aura"){
+            var capa4=aura;
+            var capa4od=auraOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Parole"){
+            var capa4=parole;
+            var capa4od=paroleOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Sangfroid"){
+            var capa4=sangfroid;
+            var capa4od=sangfroidOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Discretion"){
+            var capa4=discretion;
+            var capa4od=discretionOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Dexterite"){
+            var capa4=dexterite;
+            var capa4od=dexteriteOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Perception"){
+            var capa4=Perception;
+            var capa4od=perceptionOD;
+            var name4=capliste4;
+        }
+        else {
+            var capa4="0";
+            var capa4od="0";
+            var name4="";
+        }
+        
+
+        var degf = force + forceOD
+        var nbdod= Number(capa1od) + Number(capa2od) + Number(capa3od) + Number(capa4od)+" OD";
+        var nbdd = Number(capa1) + Number(capa2) + Number(capa3) + Number(capa4) + Number(capbm) + "d2cs2";
+        var texte = "jet de : " + name1 + " - " + name2 + " - " + name3 + " - " + name4;
+        let roll1 = new Roll(nbdd);
+        let roll2 = new Roll(4+'D6+'+degf)
+        let roll3 = new Roll(6+'D6')
+
+        roll1.roll().toMessage({
+            speaker: ChatMessage.getSpeaker({ actor: this.actor} ),
+            flavor: texte + nbdod
+        });
+        roll2.roll().toMessage({
+            speaker: ChatMessage.getSpeaker({ actor: this.actor}+"Arme improvisée"),
+            flavor: "Degats"
+        });
+        roll3.roll().toMessage({
+            speaker: ChatMessage.getSpeaker({ actor: this.actor}+"Arme improvisée"),
+            flavor: "Violence"
+        });
+    }
+    _onRollAtaImp6(event){
+        console.log(event)
+        const dataf = super.getData();
+        const character = dataf.actor.data.data
+
+        var capliste1 = character.valeurde1
+        var capliste2 = character.valeurde2
+        var capliste3 = character.valeurde3
+        var capliste4 = character.valeurde4
+        var capbm = character.bonusmalus
+    
+
+        var deplacement = Number(character.attributs.Chair.competence.Deplacement.valeur)
+        var deplacementOD = Number(character.attributs.Chair.competence.Deplacement.od)
+        var force = Number(character.attributs.Chair.competence.Force.valeur)
+        var forceOD = Number(character.attributs.Chair.competence.Force.od)
+        var endurance = Number(character.attributs.Chair.competence.Endurance.valeur)
+        var enduranceOD = Number(character.attributs.Chair.competence.Endurance.od)
+        var hargne = Number(character.attributs.Bete.competence.Hargne.valeur)
+        var hargneOD = Number(character.attributs.Bete.competence.Hargne.od)
+        var combat = Number(character.attributs.Bete.competence.Combat.valeur)
+        var combatOD = Number(character.attributs.Bete.competence.Combat.od)
+        var instinct = Number(character.attributs.Bete.competence.Instinct.valeur)
+        var instinctOD = Number(character.attributs.Bete.competence.Instinct.od)
+        var tir = Number(character.attributs.Machine.competence.Tir.valeur)
+        var tirOD = Number(character.attributs.Machine.competence.Tir.od)
+        var savoir = Number(character.attributs.Machine.competence.Savoir.valeur)
+        var savoirOD = Number(character.attributs.Machine.competence.Savoir.od)
+        var technique = Number(character.attributs.Machine.competence.Technique.valeur)
+        var techniqueOD = Number(character.attributs.Machine.competence.Technique.od)
+        var aura = Number(character.attributs.Dame.competence.Aura.valeur)
+        var auraOD = Number(character.attributs.Dame.competence.Aura.od)
+        var parole = Number(character.attributs.Dame.competence.Parole.valeur)
+        var paroleOD = Number(character.attributs.Dame.competence.Parole.od)
+        var sangfroid = Number(character.attributs.Dame.competence.Sangfroid.valeur)
+        var sangfroidOD = Number(character.attributs.Dame.competence.Sangfroid.od)
+        var discretion = Number(character.attributs.Masque.competence.Discretion.valeur)
+        var discretionOD = Number(character.attributs.Masque.competence.Discretion.od)
+        var dexterite= Number(character.attributs.Masque.competence.Dexterite.valeur)
+        var dexteriteOD = Number(character.attributs.Masque.competence.Dexterite.od)
+        var perception = Number(character.attributs.Masque.competence.Perception.valeur)
+        var perceptionOD = Number(character.attributs.Masque.competence.Perception.od)
+    
+        if (capliste1=="Deplacement"){
+            var capa1 = deplacement;
+            var capa1od = deplacementOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Force"){
+            var capa1=force;
+            var capa1od=forceOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Endurance"){
+            var capa1=endurance;
+            var capa1od=enduranceOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Hargne"){
+            var capa1=hargne;
+            var capa1od=hargneOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Combat"){
+            var capa1=combat;
+            var capa1od=combatOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Instinct"){
+            var capa1=instinct;
+            var capa1od=instinctOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Tir"){
+            var capa1=tir;
+            var capa1od=tirOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Savoir"){
+            var capa1= savoir;
+            var capa1od=savoirOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Technique"){
+            var capa1=technique;
+            var capa1od=techniqueOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Aura"){
+            var capa1=aura;
+            var capa1od=auraOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Parole"){
+            var capa1=parole;
+            var capa1od=paroleOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Sangfroid"){
+            var capa1=sangfroid;
+            var capa1od=sangfroidOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Discretion"){
+            var capa1=discretion;
+            var capa1od=discretionOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Dexterite"){
+            var capa1=dexterite;
+            var capa1od=dexteriteOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Perception"){
+            var capa1=perception;
+            var capa1od=perceptionOD;
+            var name1=capliste1;
+        }
+        else {
+            var capa1="0";
+            var capa1od="0";
+            var name1="";
+        }        
+    
+        if (capliste2=="Deplacement"){
+            var capa2=deplacement;
+            var capa2od=deplacementOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Force"){
+            var capa2=force;
+            var capa2od=forceOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Endurance"){
+            var capa2=endurance;
+            var capa2od=enduranceOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Hargne"){
+            var capa2=hargne;
+            var capa2od=hargneOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Combat"){
+            var capa2=combat;
+            var capa2od=combatOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Instinct"){
+            var capa2=instinct;
+            var capa2od=instinctOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Tir"){
+            var capa2=tir;
+            var capa2od=tirOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Savoir"){
+            var capa2= savoir;
+            var capa2od=savoirOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Technique"){
+            var capa2=technique;
+            var capa2od=techniqueOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Aura"){
+            var capa2=aura;
+            var capa2od=auraOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Parole"){
+            var capa2=parole;
+            var capa2od=paroleOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Sangfroid"){
+            var capa2=sangfroid;
+            var capa2od=sangfroidOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Discretion"){
+            var capa2=discretion;
+            var capa2od=discretionOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Dexterite"){
+            var capa2=dexterite;
+            var capa2od=dexteriteOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Perception"){
+            var capa2=perception;
+            var capa2od=perceptionOD;
+            var name2=capliste2;
+        }
+        else {
+            var capa2="0";
+            var capa2od="0";
+            var name2="";
+        }
+    
+    
+        if (capliste3=="Deplacement"){
+            var capa3=deplacement;
+            var capa3od=deplacementOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Force"){
+            var capa3=force;
+            var capa3od=forceOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Endurance"){
+            var capa3=endurance;
+            var capa3od=enduranceOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Hargne"){
+            var capa3=hargne;
+            var capa3od=hargneOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Combat"){
+            var capa3=combat;
+            var capa3od=combatOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Instinct"){
+            var capa3=instinct;
+            var capa3od=instinctOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Tir"){
+            var capa3=tir;
+            var capa3od=tirOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Savoir"){
+            var capa3= savoir;
+            var capa3od=savoirOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Technique"){
+            var capa3=technique;
+            var capa3od=techniqueOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Aura"){
+            var capa3=aura;
+            var capa3od=auraOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Parole"){
+            var capa3=parole;
+            var capa3od=paroleOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Sangfroid"){
+            var capa3=sangfroid;
+            var capa3od=sangfroidOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Discretion"){
+            var capa3=discretion;
+            var capa3od=discretionOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Dexterite"){
+            var capa3=dexterite;
+            var capa3od=dexteriteOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Perception"){
+            var capa3=perception;
+            var capa3od=perceptionOD;
+            var name3=capliste3;
+        }
+        else {
+            var capa3="0";
+            var capa3od="0";
+            var name3="";
+        }
+    
+        if (capliste4=="Deplacement"){
+            var capa4=deplacement;
+            var capa4od=deplacementOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Force"){
+            var capa4=force;
+            var capa4od=forceOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Endurance"){
+            var capa4=endurance;
+            var capa4od=enduranceOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Hargne"){
+            var capa4=hargne;
+            var capa4od=hargneOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Combat"){
+            var capa4=combat;
+            var capa4od=combatOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Instinct"){
+            var capa4=instinct;
+            var capa4od=instinctOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Tir"){
+            var capa4=tir;
+            var capa4od=tirOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Savoir"){
+            var capa4= savoir;
+            var capa4od=savoirOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Technique"){
+            var capa4=technique;
+            var capa4od=techniqueOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Aura"){
+            var capa4=aura;
+            var capa4od=auraOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Parole"){
+            var capa4=parole;
+            var capa4od=paroleOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Sangfroid"){
+            var capa4=sangfroid;
+            var capa4od=sangfroidOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Discretion"){
+            var capa4=discretion;
+            var capa4od=discretionOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Dexterite"){
+            var capa4=dexterite;
+            var capa4od=dexteriteOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Perception"){
+            var capa4=Perception;
+            var capa4od=perceptionOD;
+            var name4=capliste4;
+        }
+        else {
+            var capa4="0";
+            var capa4od="0";
+            var name4="";
+        }
+        
+
+        var degf = force + forceOD
+        var nbdod= Number(capa1od) + Number(capa2od) + Number(capa3od) + Number(capa4od)+" OD";
+        var nbdd = Number(capa1) + Number(capa2) + Number(capa3) + Number(capa4) + Number(capbm) + "d2cs2";
+        var texte = "jet de : " + name1 + " - " + name2 + " - " + name3 + " - " + name4;
+        let roll1 = new Roll(nbdd);
+        let roll2 = new Roll(5+'D6+'+degf)
+        let roll3 = new Roll(5+'D6')
+
+        roll1.roll().toMessage({
+            speaker: ChatMessage.getSpeaker({ actor: this.actor} ),
+            flavor: texte + nbdod
+        });
+        roll2.roll().toMessage({
+            speaker: ChatMessage.getSpeaker({ actor: this.actor}+"Arme improvisée"),
+            flavor: "Degats"
+        });
+        roll3.roll().toMessage({
+            speaker: ChatMessage.getSpeaker({ actor: this.actor}+"Arme improvisée"),
+            flavor: "Violence"
+        });
+    }
+    _onRollAtaImp7(event){
+        console.log(event)
+        const dataf = super.getData();
+        const character = dataf.actor.data.data
+
+        var capliste1 = character.valeurde1
+        var capliste2 = character.valeurde2
+        var capliste3 = character.valeurde3
+        var capliste4 = character.valeurde4
+        var capbm = character.bonusmalus
+    
+
+        var deplacement = Number(character.attributs.Chair.competence.Deplacement.valeur)
+        var deplacementOD = Number(character.attributs.Chair.competence.Deplacement.od)
+        var force = Number(character.attributs.Chair.competence.Force.valeur)
+        var forceOD = Number(character.attributs.Chair.competence.Force.od)
+        var endurance = Number(character.attributs.Chair.competence.Endurance.valeur)
+        var enduranceOD = Number(character.attributs.Chair.competence.Endurance.od)
+        var hargne = Number(character.attributs.Bete.competence.Hargne.valeur)
+        var hargneOD = Number(character.attributs.Bete.competence.Hargne.od)
+        var combat = Number(character.attributs.Bete.competence.Combat.valeur)
+        var combatOD = Number(character.attributs.Bete.competence.Combat.od)
+        var instinct = Number(character.attributs.Bete.competence.Instinct.valeur)
+        var instinctOD = Number(character.attributs.Bete.competence.Instinct.od)
+        var tir = Number(character.attributs.Machine.competence.Tir.valeur)
+        var tirOD = Number(character.attributs.Machine.competence.Tir.od)
+        var savoir = Number(character.attributs.Machine.competence.Savoir.valeur)
+        var savoirOD = Number(character.attributs.Machine.competence.Savoir.od)
+        var technique = Number(character.attributs.Machine.competence.Technique.valeur)
+        var techniqueOD = Number(character.attributs.Machine.competence.Technique.od)
+        var aura = Number(character.attributs.Dame.competence.Aura.valeur)
+        var auraOD = Number(character.attributs.Dame.competence.Aura.od)
+        var parole = Number(character.attributs.Dame.competence.Parole.valeur)
+        var paroleOD = Number(character.attributs.Dame.competence.Parole.od)
+        var sangfroid = Number(character.attributs.Dame.competence.Sangfroid.valeur)
+        var sangfroidOD = Number(character.attributs.Dame.competence.Sangfroid.od)
+        var discretion = Number(character.attributs.Masque.competence.Discretion.valeur)
+        var discretionOD = Number(character.attributs.Masque.competence.Discretion.od)
+        var dexterite= Number(character.attributs.Masque.competence.Dexterite.valeur)
+        var dexteriteOD = Number(character.attributs.Masque.competence.Dexterite.od)
+        var perception = Number(character.attributs.Masque.competence.Perception.valeur)
+        var perceptionOD = Number(character.attributs.Masque.competence.Perception.od)
+    
+        if (capliste1=="Deplacement"){
+            var capa1 = deplacement;
+            var capa1od = deplacementOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Force"){
+            var capa1=force;
+            var capa1od=forceOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Endurance"){
+            var capa1=endurance;
+            var capa1od=enduranceOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Hargne"){
+            var capa1=hargne;
+            var capa1od=hargneOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Combat"){
+            var capa1=combat;
+            var capa1od=combatOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Instinct"){
+            var capa1=instinct;
+            var capa1od=instinctOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Tir"){
+            var capa1=tir;
+            var capa1od=tirOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Savoir"){
+            var capa1= savoir;
+            var capa1od=savoirOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Technique"){
+            var capa1=technique;
+            var capa1od=techniqueOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Aura"){
+            var capa1=aura;
+            var capa1od=auraOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Parole"){
+            var capa1=parole;
+            var capa1od=paroleOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Sangfroid"){
+            var capa1=sangfroid;
+            var capa1od=sangfroidOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Discretion"){
+            var capa1=discretion;
+            var capa1od=discretionOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Dexterite"){
+            var capa1=dexterite;
+            var capa1od=dexteriteOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Perception"){
+            var capa1=perception;
+            var capa1od=perceptionOD;
+            var name1=capliste1;
+        }
+        else {
+            var capa1="0";
+            var capa1od="0";
+            var name1="";
+        }        
+    
+        if (capliste2=="Deplacement"){
+            var capa2=deplacement;
+            var capa2od=deplacementOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Force"){
+            var capa2=force;
+            var capa2od=forceOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Endurance"){
+            var capa2=endurance;
+            var capa2od=enduranceOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Hargne"){
+            var capa2=hargne;
+            var capa2od=hargneOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Combat"){
+            var capa2=combat;
+            var capa2od=combatOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Instinct"){
+            var capa2=instinct;
+            var capa2od=instinctOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Tir"){
+            var capa2=tir;
+            var capa2od=tirOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Savoir"){
+            var capa2= savoir;
+            var capa2od=savoirOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Technique"){
+            var capa2=technique;
+            var capa2od=techniqueOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Aura"){
+            var capa2=aura;
+            var capa2od=auraOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Parole"){
+            var capa2=parole;
+            var capa2od=paroleOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Sangfroid"){
+            var capa2=sangfroid;
+            var capa2od=sangfroidOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Discretion"){
+            var capa2=discretion;
+            var capa2od=discretionOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Dexterite"){
+            var capa2=dexterite;
+            var capa2od=dexteriteOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Perception"){
+            var capa2=perception;
+            var capa2od=perceptionOD;
+            var name2=capliste2;
+        }
+        else {
+            var capa2="0";
+            var capa2od="0";
+            var name2="";
+        }
+    
+    
+        if (capliste3=="Deplacement"){
+            var capa3=deplacement;
+            var capa3od=deplacementOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Force"){
+            var capa3=force;
+            var capa3od=forceOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Endurance"){
+            var capa3=endurance;
+            var capa3od=enduranceOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Hargne"){
+            var capa3=hargne;
+            var capa3od=hargneOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Combat"){
+            var capa3=combat;
+            var capa3od=combatOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Instinct"){
+            var capa3=instinct;
+            var capa3od=instinctOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Tir"){
+            var capa3=tir;
+            var capa3od=tirOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Savoir"){
+            var capa3= savoir;
+            var capa3od=savoirOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Technique"){
+            var capa3=technique;
+            var capa3od=techniqueOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Aura"){
+            var capa3=aura;
+            var capa3od=auraOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Parole"){
+            var capa3=parole;
+            var capa3od=paroleOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Sangfroid"){
+            var capa3=sangfroid;
+            var capa3od=sangfroidOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Discretion"){
+            var capa3=discretion;
+            var capa3od=discretionOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Dexterite"){
+            var capa3=dexterite;
+            var capa3od=dexteriteOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Perception"){
+            var capa3=perception;
+            var capa3od=perceptionOD;
+            var name3=capliste3;
+        }
+        else {
+            var capa3="0";
+            var capa3od="0";
+            var name3="";
+        }
+    
+        if (capliste4=="Deplacement"){
+            var capa4=deplacement;
+            var capa4od=deplacementOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Force"){
+            var capa4=force;
+            var capa4od=forceOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Endurance"){
+            var capa4=endurance;
+            var capa4od=enduranceOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Hargne"){
+            var capa4=hargne;
+            var capa4od=hargneOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Combat"){
+            var capa4=combat;
+            var capa4od=combatOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Instinct"){
+            var capa4=instinct;
+            var capa4od=instinctOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Tir"){
+            var capa4=tir;
+            var capa4od=tirOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Savoir"){
+            var capa4= savoir;
+            var capa4od=savoirOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Technique"){
+            var capa4=technique;
+            var capa4od=techniqueOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Aura"){
+            var capa4=aura;
+            var capa4od=auraOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Parole"){
+            var capa4=parole;
+            var capa4od=paroleOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Sangfroid"){
+            var capa4=sangfroid;
+            var capa4od=sangfroidOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Discretion"){
+            var capa4=discretion;
+            var capa4od=discretionOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Dexterite"){
+            var capa4=dexterite;
+            var capa4od=dexteriteOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Perception"){
+            var capa4=Perception;
+            var capa4od=perceptionOD;
+            var name4=capliste4;
+        }
+        else {
+            var capa4="0";
+            var capa4od="0";
+            var name4="";
+        }
+        
+
+        var degf = force + forceOD
+        var nbdod= Number(capa1od) + Number(capa2od) + Number(capa3od) + Number(capa4od)+" OD";
+        var nbdd = Number(capa1) + Number(capa2) + Number(capa3) + Number(capa4) + Number(capbm) + "d2cs2";
+        var texte = "jet de : " + name1 + " - " + name2 + " - " + name3 + " - " + name4;
+        let roll1 = new Roll(nbdd);
+        let roll2 = new Roll(7+'D6+'+degf)
+        let roll3 = new Roll(5+'D6')
+
+        roll1.roll().toMessage({
+            speaker: ChatMessage.getSpeaker({ actor: this.actor} ),
+            flavor: texte + nbdod
+        });
+        roll2.roll().toMessage({
+            speaker: ChatMessage.getSpeaker({ actor: this.actor}+"Arme improvisée"),
+            flavor: "Degats"
+        });
+        roll3.roll().toMessage({
+            speaker: ChatMessage.getSpeaker({ actor: this.actor}+"Arme improvisée"),
+            flavor: "Violence"
+        });
+    }
+    _onRollAtaImp8(event){
+        console.log(event)
+        const dataf = super.getData();
+        const character = dataf.actor.data.data
+
+        var capliste1 = character.valeurde1
+        var capliste2 = character.valeurde2
+        var capliste3 = character.valeurde3
+        var capliste4 = character.valeurde4
+        var capbm = character.bonusmalus
+    
+
+        var deplacement = Number(character.attributs.Chair.competence.Deplacement.valeur)
+        var deplacementOD = Number(character.attributs.Chair.competence.Deplacement.od)
+        var force = Number(character.attributs.Chair.competence.Force.valeur)
+        var forceOD = Number(character.attributs.Chair.competence.Force.od)
+        var endurance = Number(character.attributs.Chair.competence.Endurance.valeur)
+        var enduranceOD = Number(character.attributs.Chair.competence.Endurance.od)
+        var hargne = Number(character.attributs.Bete.competence.Hargne.valeur)
+        var hargneOD = Number(character.attributs.Bete.competence.Hargne.od)
+        var combat = Number(character.attributs.Bete.competence.Combat.valeur)
+        var combatOD = Number(character.attributs.Bete.competence.Combat.od)
+        var instinct = Number(character.attributs.Bete.competence.Instinct.valeur)
+        var instinctOD = Number(character.attributs.Bete.competence.Instinct.od)
+        var tir = Number(character.attributs.Machine.competence.Tir.valeur)
+        var tirOD = Number(character.attributs.Machine.competence.Tir.od)
+        var savoir = Number(character.attributs.Machine.competence.Savoir.valeur)
+        var savoirOD = Number(character.attributs.Machine.competence.Savoir.od)
+        var technique = Number(character.attributs.Machine.competence.Technique.valeur)
+        var techniqueOD = Number(character.attributs.Machine.competence.Technique.od)
+        var aura = Number(character.attributs.Dame.competence.Aura.valeur)
+        var auraOD = Number(character.attributs.Dame.competence.Aura.od)
+        var parole = Number(character.attributs.Dame.competence.Parole.valeur)
+        var paroleOD = Number(character.attributs.Dame.competence.Parole.od)
+        var sangfroid = Number(character.attributs.Dame.competence.Sangfroid.valeur)
+        var sangfroidOD = Number(character.attributs.Dame.competence.Sangfroid.od)
+        var discretion = Number(character.attributs.Masque.competence.Discretion.valeur)
+        var discretionOD = Number(character.attributs.Masque.competence.Discretion.od)
+        var dexterite= Number(character.attributs.Masque.competence.Dexterite.valeur)
+        var dexteriteOD = Number(character.attributs.Masque.competence.Dexterite.od)
+        var perception = Number(character.attributs.Masque.competence.Perception.valeur)
+        var perceptionOD = Number(character.attributs.Masque.competence.Perception.od)
+    
+        if (capliste1=="Deplacement"){
+            var capa1 = deplacement;
+            var capa1od = deplacementOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Force"){
+            var capa1=force;
+            var capa1od=forceOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Endurance"){
+            var capa1=endurance;
+            var capa1od=enduranceOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Hargne"){
+            var capa1=hargne;
+            var capa1od=hargneOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Combat"){
+            var capa1=combat;
+            var capa1od=combatOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Instinct"){
+            var capa1=instinct;
+            var capa1od=instinctOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Tir"){
+            var capa1=tir;
+            var capa1od=tirOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Savoir"){
+            var capa1= savoir;
+            var capa1od=savoirOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Technique"){
+            var capa1=technique;
+            var capa1od=techniqueOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Aura"){
+            var capa1=aura;
+            var capa1od=auraOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Parole"){
+            var capa1=parole;
+            var capa1od=paroleOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Sangfroid"){
+            var capa1=sangfroid;
+            var capa1od=sangfroidOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Discretion"){
+            var capa1=discretion;
+            var capa1od=discretionOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Dexterite"){
+            var capa1=dexterite;
+            var capa1od=dexteriteOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Perception"){
+            var capa1=perception;
+            var capa1od=perceptionOD;
+            var name1=capliste1;
+        }
+        else {
+            var capa1="0";
+            var capa1od="0";
+            var name1="";
+        }        
+    
+        if (capliste2=="Deplacement"){
+            var capa2=deplacement;
+            var capa2od=deplacementOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Force"){
+            var capa2=force;
+            var capa2od=forceOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Endurance"){
+            var capa2=endurance;
+            var capa2od=enduranceOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Hargne"){
+            var capa2=hargne;
+            var capa2od=hargneOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Combat"){
+            var capa2=combat;
+            var capa2od=combatOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Instinct"){
+            var capa2=instinct;
+            var capa2od=instinctOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Tir"){
+            var capa2=tir;
+            var capa2od=tirOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Savoir"){
+            var capa2= savoir;
+            var capa2od=savoirOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Technique"){
+            var capa2=technique;
+            var capa2od=techniqueOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Aura"){
+            var capa2=aura;
+            var capa2od=auraOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Parole"){
+            var capa2=parole;
+            var capa2od=paroleOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Sangfroid"){
+            var capa2=sangfroid;
+            var capa2od=sangfroidOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Discretion"){
+            var capa2=discretion;
+            var capa2od=discretionOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Dexterite"){
+            var capa2=dexterite;
+            var capa2od=dexteriteOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Perception"){
+            var capa2=perception;
+            var capa2od=perceptionOD;
+            var name2=capliste2;
+        }
+        else {
+            var capa2="0";
+            var capa2od="0";
+            var name2="";
+        }
+    
+    
+        if (capliste3=="Deplacement"){
+            var capa3=deplacement;
+            var capa3od=deplacementOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Force"){
+            var capa3=force;
+            var capa3od=forceOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Endurance"){
+            var capa3=endurance;
+            var capa3od=enduranceOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Hargne"){
+            var capa3=hargne;
+            var capa3od=hargneOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Combat"){
+            var capa3=combat;
+            var capa3od=combatOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Instinct"){
+            var capa3=instinct;
+            var capa3od=instinctOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Tir"){
+            var capa3=tir;
+            var capa3od=tirOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Savoir"){
+            var capa3= savoir;
+            var capa3od=savoirOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Technique"){
+            var capa3=technique;
+            var capa3od=techniqueOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Aura"){
+            var capa3=aura;
+            var capa3od=auraOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Parole"){
+            var capa3=parole;
+            var capa3od=paroleOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Sangfroid"){
+            var capa3=sangfroid;
+            var capa3od=sangfroidOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Discretion"){
+            var capa3=discretion;
+            var capa3od=discretionOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Dexterite"){
+            var capa3=dexterite;
+            var capa3od=dexteriteOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Perception"){
+            var capa3=perception;
+            var capa3od=perceptionOD;
+            var name3=capliste3;
+        }
+        else {
+            var capa3="0";
+            var capa3od="0";
+            var name3="";
+        }
+    
+        if (capliste4=="Deplacement"){
+            var capa4=deplacement;
+            var capa4od=deplacementOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Force"){
+            var capa4=force;
+            var capa4od=forceOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Endurance"){
+            var capa4=endurance;
+            var capa4od=enduranceOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Hargne"){
+            var capa4=hargne;
+            var capa4od=hargneOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Combat"){
+            var capa4=combat;
+            var capa4od=combatOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Instinct"){
+            var capa4=instinct;
+            var capa4od=instinctOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Tir"){
+            var capa4=tir;
+            var capa4od=tirOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Savoir"){
+            var capa4= savoir;
+            var capa4od=savoirOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Technique"){
+            var capa4=technique;
+            var capa4od=techniqueOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Aura"){
+            var capa4=aura;
+            var capa4od=auraOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Parole"){
+            var capa4=parole;
+            var capa4od=paroleOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Sangfroid"){
+            var capa4=sangfroid;
+            var capa4od=sangfroidOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Discretion"){
+            var capa4=discretion;
+            var capa4od=discretionOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Dexterite"){
+            var capa4=dexterite;
+            var capa4od=dexteriteOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Perception"){
+            var capa4=Perception;
+            var capa4od=perceptionOD;
+            var name4=capliste4;
+        }
+        else {
+            var capa4="0";
+            var capa4od="0";
+            var name4="";
+        }
+        
+
+        var degf = force + forceOD
+        var nbdod= Number(capa1od) + Number(capa2od) + Number(capa3od) + Number(capa4od)+" OD";
+        var nbdd = Number(capa1) + Number(capa2) + Number(capa3) + Number(capa4) + Number(capbm) + "d2cs2";
+        var texte = "jet de : " + name1 + " - " + name2 + " - " + name3 + " - " + name4;
+        let roll1 = new Roll(nbdd);
+        let roll2 = new Roll(5+'D6+'+degf)
+        let roll3 = new Roll(7+'D6')
+
+        roll1.roll().toMessage({
+            speaker: ChatMessage.getSpeaker({ actor: this.actor} ),
+            flavor: texte + nbdod
+        });
+        roll2.roll().toMessage({
+            speaker: ChatMessage.getSpeaker({ actor: this.actor}+"Arme improvisée"),
+            flavor: "Degats"
+        });
+        roll3.roll().toMessage({
+            speaker: ChatMessage.getSpeaker({ actor: this.actor}+"Arme improvisée"),
+            flavor: "Violence"
+        });
+    }
+    _onRollAtaImp9(event){
+        console.log(event)
+        const dataf = super.getData();
+        const character = dataf.actor.data.data
+
+        var capliste1 = character.valeurde1
+        var capliste2 = character.valeurde2
+        var capliste3 = character.valeurde3
+        var capliste4 = character.valeurde4
+        var capbm = character.bonusmalus
+    
+
+        var deplacement = Number(character.attributs.Chair.competence.Deplacement.valeur)
+        var deplacementOD = Number(character.attributs.Chair.competence.Deplacement.od)
+        var force = Number(character.attributs.Chair.competence.Force.valeur)
+        var forceOD = Number(character.attributs.Chair.competence.Force.od)
+        var endurance = Number(character.attributs.Chair.competence.Endurance.valeur)
+        var enduranceOD = Number(character.attributs.Chair.competence.Endurance.od)
+        var hargne = Number(character.attributs.Bete.competence.Hargne.valeur)
+        var hargneOD = Number(character.attributs.Bete.competence.Hargne.od)
+        var combat = Number(character.attributs.Bete.competence.Combat.valeur)
+        var combatOD = Number(character.attributs.Bete.competence.Combat.od)
+        var instinct = Number(character.attributs.Bete.competence.Instinct.valeur)
+        var instinctOD = Number(character.attributs.Bete.competence.Instinct.od)
+        var tir = Number(character.attributs.Machine.competence.Tir.valeur)
+        var tirOD = Number(character.attributs.Machine.competence.Tir.od)
+        var savoir = Number(character.attributs.Machine.competence.Savoir.valeur)
+        var savoirOD = Number(character.attributs.Machine.competence.Savoir.od)
+        var technique = Number(character.attributs.Machine.competence.Technique.valeur)
+        var techniqueOD = Number(character.attributs.Machine.competence.Technique.od)
+        var aura = Number(character.attributs.Dame.competence.Aura.valeur)
+        var auraOD = Number(character.attributs.Dame.competence.Aura.od)
+        var parole = Number(character.attributs.Dame.competence.Parole.valeur)
+        var paroleOD = Number(character.attributs.Dame.competence.Parole.od)
+        var sangfroid = Number(character.attributs.Dame.competence.Sangfroid.valeur)
+        var sangfroidOD = Number(character.attributs.Dame.competence.Sangfroid.od)
+        var discretion = Number(character.attributs.Masque.competence.Discretion.valeur)
+        var discretionOD = Number(character.attributs.Masque.competence.Discretion.od)
+        var dexterite= Number(character.attributs.Masque.competence.Dexterite.valeur)
+        var dexteriteOD = Number(character.attributs.Masque.competence.Dexterite.od)
+        var perception = Number(character.attributs.Masque.competence.Perception.valeur)
+        var perceptionOD = Number(character.attributs.Masque.competence.Perception.od)
+    
+        if (capliste1=="Deplacement"){
+            var capa1 = deplacement;
+            var capa1od = deplacementOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Force"){
+            var capa1=force;
+            var capa1od=forceOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Endurance"){
+            var capa1=endurance;
+            var capa1od=enduranceOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Hargne"){
+            var capa1=hargne;
+            var capa1od=hargneOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Combat"){
+            var capa1=combat;
+            var capa1od=combatOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Instinct"){
+            var capa1=instinct;
+            var capa1od=instinctOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Tir"){
+            var capa1=tir;
+            var capa1od=tirOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Savoir"){
+            var capa1= savoir;
+            var capa1od=savoirOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Technique"){
+            var capa1=technique;
+            var capa1od=techniqueOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Aura"){
+            var capa1=aura;
+            var capa1od=auraOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Parole"){
+            var capa1=parole;
+            var capa1od=paroleOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Sangfroid"){
+            var capa1=sangfroid;
+            var capa1od=sangfroidOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Discretion"){
+            var capa1=discretion;
+            var capa1od=discretionOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Dexterite"){
+            var capa1=dexterite;
+            var capa1od=dexteriteOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Perception"){
+            var capa1=perception;
+            var capa1od=perceptionOD;
+            var name1=capliste1;
+        }
+        else {
+            var capa1="0";
+            var capa1od="0";
+            var name1="";
+        }        
+    
+        if (capliste2=="Deplacement"){
+            var capa2=deplacement;
+            var capa2od=deplacementOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Force"){
+            var capa2=force;
+            var capa2od=forceOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Endurance"){
+            var capa2=endurance;
+            var capa2od=enduranceOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Hargne"){
+            var capa2=hargne;
+            var capa2od=hargneOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Combat"){
+            var capa2=combat;
+            var capa2od=combatOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Instinct"){
+            var capa2=instinct;
+            var capa2od=instinctOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Tir"){
+            var capa2=tir;
+            var capa2od=tirOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Savoir"){
+            var capa2= savoir;
+            var capa2od=savoirOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Technique"){
+            var capa2=technique;
+            var capa2od=techniqueOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Aura"){
+            var capa2=aura;
+            var capa2od=auraOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Parole"){
+            var capa2=parole;
+            var capa2od=paroleOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Sangfroid"){
+            var capa2=sangfroid;
+            var capa2od=sangfroidOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Discretion"){
+            var capa2=discretion;
+            var capa2od=discretionOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Dexterite"){
+            var capa2=dexterite;
+            var capa2od=dexteriteOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Perception"){
+            var capa2=perception;
+            var capa2od=perceptionOD;
+            var name2=capliste2;
+        }
+        else {
+            var capa2="0";
+            var capa2od="0";
+            var name2="";
+        }
+    
+    
+        if (capliste3=="Deplacement"){
+            var capa3=deplacement;
+            var capa3od=deplacementOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Force"){
+            var capa3=force;
+            var capa3od=forceOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Endurance"){
+            var capa3=endurance;
+            var capa3od=enduranceOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Hargne"){
+            var capa3=hargne;
+            var capa3od=hargneOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Combat"){
+            var capa3=combat;
+            var capa3od=combatOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Instinct"){
+            var capa3=instinct;
+            var capa3od=instinctOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Tir"){
+            var capa3=tir;
+            var capa3od=tirOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Savoir"){
+            var capa3= savoir;
+            var capa3od=savoirOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Technique"){
+            var capa3=technique;
+            var capa3od=techniqueOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Aura"){
+            var capa3=aura;
+            var capa3od=auraOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Parole"){
+            var capa3=parole;
+            var capa3od=paroleOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Sangfroid"){
+            var capa3=sangfroid;
+            var capa3od=sangfroidOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Discretion"){
+            var capa3=discretion;
+            var capa3od=discretionOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Dexterite"){
+            var capa3=dexterite;
+            var capa3od=dexteriteOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Perception"){
+            var capa3=perception;
+            var capa3od=perceptionOD;
+            var name3=capliste3;
+        }
+        else {
+            var capa3="0";
+            var capa3od="0";
+            var name3="";
+        }
+    
+        if (capliste4=="Deplacement"){
+            var capa4=deplacement;
+            var capa4od=deplacementOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Force"){
+            var capa4=force;
+            var capa4od=forceOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Endurance"){
+            var capa4=endurance;
+            var capa4od=enduranceOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Hargne"){
+            var capa4=hargne;
+            var capa4od=hargneOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Combat"){
+            var capa4=combat;
+            var capa4od=combatOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Instinct"){
+            var capa4=instinct;
+            var capa4od=instinctOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Tir"){
+            var capa4=tir;
+            var capa4od=tirOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Savoir"){
+            var capa4= savoir;
+            var capa4od=savoirOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Technique"){
+            var capa4=technique;
+            var capa4od=techniqueOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Aura"){
+            var capa4=aura;
+            var capa4od=auraOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Parole"){
+            var capa4=parole;
+            var capa4od=paroleOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Sangfroid"){
+            var capa4=sangfroid;
+            var capa4od=sangfroidOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Discretion"){
+            var capa4=discretion;
+            var capa4od=discretionOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Dexterite"){
+            var capa4=dexterite;
+            var capa4od=dexteriteOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Perception"){
+            var capa4=Perception;
+            var capa4od=perceptionOD;
+            var name4=capliste4;
+        }
+        else {
+            var capa4="0";
+            var capa4od="0";
+            var name4="";
+        }
+        
+
+        var degf = force + forceOD
+        var nbdod= Number(capa1od) + Number(capa2od) + Number(capa3od) + Number(capa4od)+" OD";
+        var nbdd = Number(capa1) + Number(capa2) + Number(capa3) + Number(capa4) + Number(capbm) + "d2cs2";
+        var texte = "jet de : " + name1 + " - " + name2 + " - " + name3 + " - " + name4;
+        let roll1 = new Roll(nbdd);
+        let roll2 = new Roll(6+'D6+'+degf)
+        let roll3 = new Roll(6+'D6')
+
+        roll1.roll().toMessage({
+            speaker: ChatMessage.getSpeaker({ actor: this.actor} ),
+            flavor: texte + nbdod
+        });
+        roll2.roll().toMessage({
+            speaker: ChatMessage.getSpeaker({ actor: this.actor}+"Arme improvisée"),
+            flavor: "Degats"
+        });
+        roll3.roll().toMessage({
+            speaker: ChatMessage.getSpeaker({ actor: this.actor}+"Arme improvisée"),
+            flavor: "Violence"
+        });
+    }
+    _onRollAtaImp10(event){
+        console.log(event)
+        const dataf = super.getData();
+        const character = dataf.actor.data.data
+
+        var capliste1 = character.valeurde1
+        var capliste2 = character.valeurde2
+        var capliste3 = character.valeurde3
+        var capliste4 = character.valeurde4
+        var capbm = character.bonusmalus
+    
+
+        var deplacement = Number(character.attributs.Chair.competence.Deplacement.valeur)
+        var deplacementOD = Number(character.attributs.Chair.competence.Deplacement.od)
+        var force = Number(character.attributs.Chair.competence.Force.valeur)
+        var forceOD = Number(character.attributs.Chair.competence.Force.od)
+        var endurance = Number(character.attributs.Chair.competence.Endurance.valeur)
+        var enduranceOD = Number(character.attributs.Chair.competence.Endurance.od)
+        var hargne = Number(character.attributs.Bete.competence.Hargne.valeur)
+        var hargneOD = Number(character.attributs.Bete.competence.Hargne.od)
+        var combat = Number(character.attributs.Bete.competence.Combat.valeur)
+        var combatOD = Number(character.attributs.Bete.competence.Combat.od)
+        var instinct = Number(character.attributs.Bete.competence.Instinct.valeur)
+        var instinctOD = Number(character.attributs.Bete.competence.Instinct.od)
+        var tir = Number(character.attributs.Machine.competence.Tir.valeur)
+        var tirOD = Number(character.attributs.Machine.competence.Tir.od)
+        var savoir = Number(character.attributs.Machine.competence.Savoir.valeur)
+        var savoirOD = Number(character.attributs.Machine.competence.Savoir.od)
+        var technique = Number(character.attributs.Machine.competence.Technique.valeur)
+        var techniqueOD = Number(character.attributs.Machine.competence.Technique.od)
+        var aura = Number(character.attributs.Dame.competence.Aura.valeur)
+        var auraOD = Number(character.attributs.Dame.competence.Aura.od)
+        var parole = Number(character.attributs.Dame.competence.Parole.valeur)
+        var paroleOD = Number(character.attributs.Dame.competence.Parole.od)
+        var sangfroid = Number(character.attributs.Dame.competence.Sangfroid.valeur)
+        var sangfroidOD = Number(character.attributs.Dame.competence.Sangfroid.od)
+        var discretion = Number(character.attributs.Masque.competence.Discretion.valeur)
+        var discretionOD = Number(character.attributs.Masque.competence.Discretion.od)
+        var dexterite= Number(character.attributs.Masque.competence.Dexterite.valeur)
+        var dexteriteOD = Number(character.attributs.Masque.competence.Dexterite.od)
+        var perception = Number(character.attributs.Masque.competence.Perception.valeur)
+        var perceptionOD = Number(character.attributs.Masque.competence.Perception.od)
+    
+        if (capliste1=="Deplacement"){
+            var capa1 = deplacement;
+            var capa1od = deplacementOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Force"){
+            var capa1=force;
+            var capa1od=forceOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Endurance"){
+            var capa1=endurance;
+            var capa1od=enduranceOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Hargne"){
+            var capa1=hargne;
+            var capa1od=hargneOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Combat"){
+            var capa1=combat;
+            var capa1od=combatOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Instinct"){
+            var capa1=instinct;
+            var capa1od=instinctOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Tir"){
+            var capa1=tir;
+            var capa1od=tirOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Savoir"){
+            var capa1= savoir;
+            var capa1od=savoirOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Technique"){
+            var capa1=technique;
+            var capa1od=techniqueOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Aura"){
+            var capa1=aura;
+            var capa1od=auraOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Parole"){
+            var capa1=parole;
+            var capa1od=paroleOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Sangfroid"){
+            var capa1=sangfroid;
+            var capa1od=sangfroidOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Discretion"){
+            var capa1=discretion;
+            var capa1od=discretionOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Dexterite"){
+            var capa1=dexterite;
+            var capa1od=dexteriteOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Perception"){
+            var capa1=perception;
+            var capa1od=perceptionOD;
+            var name1=capliste1;
+        }
+        else {
+            var capa1="0";
+            var capa1od="0";
+            var name1="";
+        }        
+    
+        if (capliste2=="Deplacement"){
+            var capa2=deplacement;
+            var capa2od=deplacementOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Force"){
+            var capa2=force;
+            var capa2od=forceOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Endurance"){
+            var capa2=endurance;
+            var capa2od=enduranceOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Hargne"){
+            var capa2=hargne;
+            var capa2od=hargneOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Combat"){
+            var capa2=combat;
+            var capa2od=combatOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Instinct"){
+            var capa2=instinct;
+            var capa2od=instinctOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Tir"){
+            var capa2=tir;
+            var capa2od=tirOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Savoir"){
+            var capa2= savoir;
+            var capa2od=savoirOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Technique"){
+            var capa2=technique;
+            var capa2od=techniqueOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Aura"){
+            var capa2=aura;
+            var capa2od=auraOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Parole"){
+            var capa2=parole;
+            var capa2od=paroleOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Sangfroid"){
+            var capa2=sangfroid;
+            var capa2od=sangfroidOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Discretion"){
+            var capa2=discretion;
+            var capa2od=discretionOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Dexterite"){
+            var capa2=dexterite;
+            var capa2od=dexteriteOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Perception"){
+            var capa2=perception;
+            var capa2od=perceptionOD;
+            var name2=capliste2;
+        }
+        else {
+            var capa2="0";
+            var capa2od="0";
+            var name2="";
+        }
+    
+    
+        if (capliste3=="Deplacement"){
+            var capa3=deplacement;
+            var capa3od=deplacementOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Force"){
+            var capa3=force;
+            var capa3od=forceOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Endurance"){
+            var capa3=endurance;
+            var capa3od=enduranceOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Hargne"){
+            var capa3=hargne;
+            var capa3od=hargneOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Combat"){
+            var capa3=combat;
+            var capa3od=combatOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Instinct"){
+            var capa3=instinct;
+            var capa3od=instinctOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Tir"){
+            var capa3=tir;
+            var capa3od=tirOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Savoir"){
+            var capa3= savoir;
+            var capa3od=savoirOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Technique"){
+            var capa3=technique;
+            var capa3od=techniqueOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Aura"){
+            var capa3=aura;
+            var capa3od=auraOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Parole"){
+            var capa3=parole;
+            var capa3od=paroleOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Sangfroid"){
+            var capa3=sangfroid;
+            var capa3od=sangfroidOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Discretion"){
+            var capa3=discretion;
+            var capa3od=discretionOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Dexterite"){
+            var capa3=dexterite;
+            var capa3od=dexteriteOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Perception"){
+            var capa3=perception;
+            var capa3od=perceptionOD;
+            var name3=capliste3;
+        }
+        else {
+            var capa3="0";
+            var capa3od="0";
+            var name3="";
+        }
+    
+        if (capliste4=="Deplacement"){
+            var capa4=deplacement;
+            var capa4od=deplacementOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Force"){
+            var capa4=force;
+            var capa4od=forceOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Endurance"){
+            var capa4=endurance;
+            var capa4od=enduranceOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Hargne"){
+            var capa4=hargne;
+            var capa4od=hargneOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Combat"){
+            var capa4=combat;
+            var capa4od=combatOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Instinct"){
+            var capa4=instinct;
+            var capa4od=instinctOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Tir"){
+            var capa4=tir;
+            var capa4od=tirOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Savoir"){
+            var capa4= savoir;
+            var capa4od=savoirOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Technique"){
+            var capa4=technique;
+            var capa4od=techniqueOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Aura"){
+            var capa4=aura;
+            var capa4od=auraOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Parole"){
+            var capa4=parole;
+            var capa4od=paroleOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Sangfroid"){
+            var capa4=sangfroid;
+            var capa4od=sangfroidOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Discretion"){
+            var capa4=discretion;
+            var capa4od=discretionOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Dexterite"){
+            var capa4=dexterite;
+            var capa4od=dexteriteOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Perception"){
+            var capa4=Perception;
+            var capa4od=perceptionOD;
+            var name4=capliste4;
+        }
+        else {
+            var capa4="0";
+            var capa4od="0";
+            var name4="";
+        }
+        
+
+        var degf = force + forceOD
+        var nbdod= Number(capa1od) + Number(capa2od) + Number(capa3od) + Number(capa4od)+" OD";
+        var nbdd = Number(capa1) + Number(capa2) + Number(capa3) + Number(capa4) + Number(capbm) + "d2cs2";
+        var texte = "jet de : " + name1 + " - " + name2 + " - " + name3 + " - " + name4;
+        let roll1 = new Roll(nbdd);
+        let roll2 = new Roll(7+'D6+'+degf)
+        let roll3 = new Roll(9+'D6')
+
+        roll1.roll().toMessage({
+            speaker: ChatMessage.getSpeaker({ actor: this.actor} ),
+            flavor: texte + nbdod
+        });
+        roll2.roll().toMessage({
+            speaker: ChatMessage.getSpeaker({ actor: this.actor}+"Arme improvisée"),
+            flavor: "Degats"
+        });
+        roll3.roll().toMessage({
+            speaker: ChatMessage.getSpeaker({ actor: this.actor}+"Arme improvisée"),
+            flavor: "Violence"
+        });
+    }
+    _onRollAtaImp11(event){
+        console.log(event)
+        const dataf = super.getData();
+        const character = dataf.actor.data.data
+
+        var capliste1 = character.valeurde1
+        var capliste2 = character.valeurde2
+        var capliste3 = character.valeurde3
+        var capliste4 = character.valeurde4
+        var capbm = character.bonusmalus
+    
+
+        var deplacement = Number(character.attributs.Chair.competence.Deplacement.valeur)
+        var deplacementOD = Number(character.attributs.Chair.competence.Deplacement.od)
+        var force = Number(character.attributs.Chair.competence.Force.valeur)
+        var forceOD = Number(character.attributs.Chair.competence.Force.od)
+        var endurance = Number(character.attributs.Chair.competence.Endurance.valeur)
+        var enduranceOD = Number(character.attributs.Chair.competence.Endurance.od)
+        var hargne = Number(character.attributs.Bete.competence.Hargne.valeur)
+        var hargneOD = Number(character.attributs.Bete.competence.Hargne.od)
+        var combat = Number(character.attributs.Bete.competence.Combat.valeur)
+        var combatOD = Number(character.attributs.Bete.competence.Combat.od)
+        var instinct = Number(character.attributs.Bete.competence.Instinct.valeur)
+        var instinctOD = Number(character.attributs.Bete.competence.Instinct.od)
+        var tir = Number(character.attributs.Machine.competence.Tir.valeur)
+        var tirOD = Number(character.attributs.Machine.competence.Tir.od)
+        var savoir = Number(character.attributs.Machine.competence.Savoir.valeur)
+        var savoirOD = Number(character.attributs.Machine.competence.Savoir.od)
+        var technique = Number(character.attributs.Machine.competence.Technique.valeur)
+        var techniqueOD = Number(character.attributs.Machine.competence.Technique.od)
+        var aura = Number(character.attributs.Dame.competence.Aura.valeur)
+        var auraOD = Number(character.attributs.Dame.competence.Aura.od)
+        var parole = Number(character.attributs.Dame.competence.Parole.valeur)
+        var paroleOD = Number(character.attributs.Dame.competence.Parole.od)
+        var sangfroid = Number(character.attributs.Dame.competence.Sangfroid.valeur)
+        var sangfroidOD = Number(character.attributs.Dame.competence.Sangfroid.od)
+        var discretion = Number(character.attributs.Masque.competence.Discretion.valeur)
+        var discretionOD = Number(character.attributs.Masque.competence.Discretion.od)
+        var dexterite= Number(character.attributs.Masque.competence.Dexterite.valeur)
+        var dexteriteOD = Number(character.attributs.Masque.competence.Dexterite.od)
+        var perception = Number(character.attributs.Masque.competence.Perception.valeur)
+        var perceptionOD = Number(character.attributs.Masque.competence.Perception.od)
+    
+        if (capliste1=="Deplacement"){
+            var capa1 = deplacement;
+            var capa1od = deplacementOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Force"){
+            var capa1=force;
+            var capa1od=forceOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Endurance"){
+            var capa1=endurance;
+            var capa1od=enduranceOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Hargne"){
+            var capa1=hargne;
+            var capa1od=hargneOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Combat"){
+            var capa1=combat;
+            var capa1od=combatOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Instinct"){
+            var capa1=instinct;
+            var capa1od=instinctOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Tir"){
+            var capa1=tir;
+            var capa1od=tirOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Savoir"){
+            var capa1= savoir;
+            var capa1od=savoirOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Technique"){
+            var capa1=technique;
+            var capa1od=techniqueOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Aura"){
+            var capa1=aura;
+            var capa1od=auraOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Parole"){
+            var capa1=parole;
+            var capa1od=paroleOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Sangfroid"){
+            var capa1=sangfroid;
+            var capa1od=sangfroidOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Discretion"){
+            var capa1=discretion;
+            var capa1od=discretionOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Dexterite"){
+            var capa1=dexterite;
+            var capa1od=dexteriteOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Perception"){
+            var capa1=perception;
+            var capa1od=perceptionOD;
+            var name1=capliste1;
+        }
+        else {
+            var capa1="0";
+            var capa1od="0";
+            var name1="";
+        }        
+    
+        if (capliste2=="Deplacement"){
+            var capa2=deplacement;
+            var capa2od=deplacementOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Force"){
+            var capa2=force;
+            var capa2od=forceOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Endurance"){
+            var capa2=endurance;
+            var capa2od=enduranceOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Hargne"){
+            var capa2=hargne;
+            var capa2od=hargneOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Combat"){
+            var capa2=combat;
+            var capa2od=combatOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Instinct"){
+            var capa2=instinct;
+            var capa2od=instinctOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Tir"){
+            var capa2=tir;
+            var capa2od=tirOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Savoir"){
+            var capa2= savoir;
+            var capa2od=savoirOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Technique"){
+            var capa2=technique;
+            var capa2od=techniqueOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Aura"){
+            var capa2=aura;
+            var capa2od=auraOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Parole"){
+            var capa2=parole;
+            var capa2od=paroleOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Sangfroid"){
+            var capa2=sangfroid;
+            var capa2od=sangfroidOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Discretion"){
+            var capa2=discretion;
+            var capa2od=discretionOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Dexterite"){
+            var capa2=dexterite;
+            var capa2od=dexteriteOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Perception"){
+            var capa2=perception;
+            var capa2od=perceptionOD;
+            var name2=capliste2;
+        }
+        else {
+            var capa2="0";
+            var capa2od="0";
+            var name2="";
+        }
+    
+    
+        if (capliste3=="Deplacement"){
+            var capa3=deplacement;
+            var capa3od=deplacementOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Force"){
+            var capa3=force;
+            var capa3od=forceOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Endurance"){
+            var capa3=endurance;
+            var capa3od=enduranceOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Hargne"){
+            var capa3=hargne;
+            var capa3od=hargneOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Combat"){
+            var capa3=combat;
+            var capa3od=combatOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Instinct"){
+            var capa3=instinct;
+            var capa3od=instinctOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Tir"){
+            var capa3=tir;
+            var capa3od=tirOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Savoir"){
+            var capa3= savoir;
+            var capa3od=savoirOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Technique"){
+            var capa3=technique;
+            var capa3od=techniqueOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Aura"){
+            var capa3=aura;
+            var capa3od=auraOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Parole"){
+            var capa3=parole;
+            var capa3od=paroleOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Sangfroid"){
+            var capa3=sangfroid;
+            var capa3od=sangfroidOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Discretion"){
+            var capa3=discretion;
+            var capa3od=discretionOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Dexterite"){
+            var capa3=dexterite;
+            var capa3od=dexteriteOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Perception"){
+            var capa3=perception;
+            var capa3od=perceptionOD;
+            var name3=capliste3;
+        }
+        else {
+            var capa3="0";
+            var capa3od="0";
+            var name3="";
+        }
+    
+        if (capliste4=="Deplacement"){
+            var capa4=deplacement;
+            var capa4od=deplacementOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Force"){
+            var capa4=force;
+            var capa4od=forceOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Endurance"){
+            var capa4=endurance;
+            var capa4od=enduranceOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Hargne"){
+            var capa4=hargne;
+            var capa4od=hargneOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Combat"){
+            var capa4=combat;
+            var capa4od=combatOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Instinct"){
+            var capa4=instinct;
+            var capa4od=instinctOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Tir"){
+            var capa4=tir;
+            var capa4od=tirOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Savoir"){
+            var capa4= savoir;
+            var capa4od=savoirOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Technique"){
+            var capa4=technique;
+            var capa4od=techniqueOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Aura"){
+            var capa4=aura;
+            var capa4od=auraOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Parole"){
+            var capa4=parole;
+            var capa4od=paroleOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Sangfroid"){
+            var capa4=sangfroid;
+            var capa4od=sangfroidOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Discretion"){
+            var capa4=discretion;
+            var capa4od=discretionOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Dexterite"){
+            var capa4=dexterite;
+            var capa4od=dexteriteOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Perception"){
+            var capa4=Perception;
+            var capa4od=perceptionOD;
+            var name4=capliste4;
+        }
+        else {
+            var capa4="0";
+            var capa4od="0";
+            var name4="";
+        }
+        
+
+        var degf = force + forceOD
+        var nbdod= Number(capa1od) + Number(capa2od) + Number(capa3od) + Number(capa4od)+" OD";
+        var nbdd = Number(capa1) + Number(capa2) + Number(capa3) + Number(capa4) + Number(capbm) + "d2cs2";
+        var texte = "jet de : " + name1 + " - " + name2 + " - " + name3 + " - " + name4;
+        let roll1 = new Roll(nbdd);
+        let roll2 = new Roll(8+'D6+'+degf)
+        let roll3 = new Roll(8+'D6')
+
+        roll1.roll().toMessage({
+            speaker: ChatMessage.getSpeaker({ actor: this.actor} ),
+            flavor: texte + nbdod
+        });
+        roll2.roll().toMessage({
+            speaker: ChatMessage.getSpeaker({ actor: this.actor}+"Arme improvisée"),
+            flavor: "Degats"
+        });
+        roll3.roll().toMessage({
+            speaker: ChatMessage.getSpeaker({ actor: this.actor}+"Arme improvisée"),
+            flavor: "Violence"
+        });
+    }
+    _onRollAtaImp12(event){
+        console.log(event)
+        const dataf = super.getData();
+        const character = dataf.actor.data.data
+
+        var capliste1 = character.valeurde1
+        var capliste2 = character.valeurde2
+        var capliste3 = character.valeurde3
+        var capliste4 = character.valeurde4
+        var capbm = character.bonusmalus
+    
+
+        var deplacement = Number(character.attributs.Chair.competence.Deplacement.valeur)
+        var deplacementOD = Number(character.attributs.Chair.competence.Deplacement.od)
+        var force = Number(character.attributs.Chair.competence.Force.valeur)
+        var forceOD = Number(character.attributs.Chair.competence.Force.od)
+        var endurance = Number(character.attributs.Chair.competence.Endurance.valeur)
+        var enduranceOD = Number(character.attributs.Chair.competence.Endurance.od)
+        var hargne = Number(character.attributs.Bete.competence.Hargne.valeur)
+        var hargneOD = Number(character.attributs.Bete.competence.Hargne.od)
+        var combat = Number(character.attributs.Bete.competence.Combat.valeur)
+        var combatOD = Number(character.attributs.Bete.competence.Combat.od)
+        var instinct = Number(character.attributs.Bete.competence.Instinct.valeur)
+        var instinctOD = Number(character.attributs.Bete.competence.Instinct.od)
+        var tir = Number(character.attributs.Machine.competence.Tir.valeur)
+        var tirOD = Number(character.attributs.Machine.competence.Tir.od)
+        var savoir = Number(character.attributs.Machine.competence.Savoir.valeur)
+        var savoirOD = Number(character.attributs.Machine.competence.Savoir.od)
+        var technique = Number(character.attributs.Machine.competence.Technique.valeur)
+        var techniqueOD = Number(character.attributs.Machine.competence.Technique.od)
+        var aura = Number(character.attributs.Dame.competence.Aura.valeur)
+        var auraOD = Number(character.attributs.Dame.competence.Aura.od)
+        var parole = Number(character.attributs.Dame.competence.Parole.valeur)
+        var paroleOD = Number(character.attributs.Dame.competence.Parole.od)
+        var sangfroid = Number(character.attributs.Dame.competence.Sangfroid.valeur)
+        var sangfroidOD = Number(character.attributs.Dame.competence.Sangfroid.od)
+        var discretion = Number(character.attributs.Masque.competence.Discretion.valeur)
+        var discretionOD = Number(character.attributs.Masque.competence.Discretion.od)
+        var dexterite= Number(character.attributs.Masque.competence.Dexterite.valeur)
+        var dexteriteOD = Number(character.attributs.Masque.competence.Dexterite.od)
+        var perception = Number(character.attributs.Masque.competence.Perception.valeur)
+        var perceptionOD = Number(character.attributs.Masque.competence.Perception.od)
+    
+        if (capliste1=="Deplacement"){
+            var capa1 = deplacement;
+            var capa1od = deplacementOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Force"){
+            var capa1=force;
+            var capa1od=forceOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Endurance"){
+            var capa1=endurance;
+            var capa1od=enduranceOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Hargne"){
+            var capa1=hargne;
+            var capa1od=hargneOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Combat"){
+            var capa1=combat;
+            var capa1od=combatOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Instinct"){
+            var capa1=instinct;
+            var capa1od=instinctOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Tir"){
+            var capa1=tir;
+            var capa1od=tirOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Savoir"){
+            var capa1= savoir;
+            var capa1od=savoirOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Technique"){
+            var capa1=technique;
+            var capa1od=techniqueOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Aura"){
+            var capa1=aura;
+            var capa1od=auraOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Parole"){
+            var capa1=parole;
+            var capa1od=paroleOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Sangfroid"){
+            var capa1=sangfroid;
+            var capa1od=sangfroidOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Discretion"){
+            var capa1=discretion;
+            var capa1od=discretionOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Dexterite"){
+            var capa1=dexterite;
+            var capa1od=dexteriteOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Perception"){
+            var capa1=perception;
+            var capa1od=perceptionOD;
+            var name1=capliste1;
+        }
+        else {
+            var capa1="0";
+            var capa1od="0";
+            var name1="";
+        }        
+    
+        if (capliste2=="Deplacement"){
+            var capa2=deplacement;
+            var capa2od=deplacementOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Force"){
+            var capa2=force;
+            var capa2od=forceOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Endurance"){
+            var capa2=endurance;
+            var capa2od=enduranceOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Hargne"){
+            var capa2=hargne;
+            var capa2od=hargneOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Combat"){
+            var capa2=combat;
+            var capa2od=combatOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Instinct"){
+            var capa2=instinct;
+            var capa2od=instinctOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Tir"){
+            var capa2=tir;
+            var capa2od=tirOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Savoir"){
+            var capa2= savoir;
+            var capa2od=savoirOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Technique"){
+            var capa2=technique;
+            var capa2od=techniqueOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Aura"){
+            var capa2=aura;
+            var capa2od=auraOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Parole"){
+            var capa2=parole;
+            var capa2od=paroleOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Sangfroid"){
+            var capa2=sangfroid;
+            var capa2od=sangfroidOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Discretion"){
+            var capa2=discretion;
+            var capa2od=discretionOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Dexterite"){
+            var capa2=dexterite;
+            var capa2od=dexteriteOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Perception"){
+            var capa2=perception;
+            var capa2od=perceptionOD;
+            var name2=capliste2;
+        }
+        else {
+            var capa2="0";
+            var capa2od="0";
+            var name2="";
+        }
+    
+    
+        if (capliste3=="Deplacement"){
+            var capa3=deplacement;
+            var capa3od=deplacementOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Force"){
+            var capa3=force;
+            var capa3od=forceOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Endurance"){
+            var capa3=endurance;
+            var capa3od=enduranceOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Hargne"){
+            var capa3=hargne;
+            var capa3od=hargneOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Combat"){
+            var capa3=combat;
+            var capa3od=combatOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Instinct"){
+            var capa3=instinct;
+            var capa3od=instinctOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Tir"){
+            var capa3=tir;
+            var capa3od=tirOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Savoir"){
+            var capa3= savoir;
+            var capa3od=savoirOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Technique"){
+            var capa3=technique;
+            var capa3od=techniqueOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Aura"){
+            var capa3=aura;
+            var capa3od=auraOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Parole"){
+            var capa3=parole;
+            var capa3od=paroleOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Sangfroid"){
+            var capa3=sangfroid;
+            var capa3od=sangfroidOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Discretion"){
+            var capa3=discretion;
+            var capa3od=discretionOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Dexterite"){
+            var capa3=dexterite;
+            var capa3od=dexteriteOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Perception"){
+            var capa3=perception;
+            var capa3od=perceptionOD;
+            var name3=capliste3;
+        }
+        else {
+            var capa3="0";
+            var capa3od="0";
+            var name3="";
+        }
+    
+        if (capliste4=="Deplacement"){
+            var capa4=deplacement;
+            var capa4od=deplacementOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Force"){
+            var capa4=force;
+            var capa4od=forceOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Endurance"){
+            var capa4=endurance;
+            var capa4od=enduranceOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Hargne"){
+            var capa4=hargne;
+            var capa4od=hargneOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Combat"){
+            var capa4=combat;
+            var capa4od=combatOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Instinct"){
+            var capa4=instinct;
+            var capa4od=instinctOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Tir"){
+            var capa4=tir;
+            var capa4od=tirOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Savoir"){
+            var capa4= savoir;
+            var capa4od=savoirOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Technique"){
+            var capa4=technique;
+            var capa4od=techniqueOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Aura"){
+            var capa4=aura;
+            var capa4od=auraOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Parole"){
+            var capa4=parole;
+            var capa4od=paroleOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Sangfroid"){
+            var capa4=sangfroid;
+            var capa4od=sangfroidOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Discretion"){
+            var capa4=discretion;
+            var capa4od=discretionOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Dexterite"){
+            var capa4=dexterite;
+            var capa4od=dexteriteOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Perception"){
+            var capa4=Perception;
+            var capa4od=perceptionOD;
+            var name4=capliste4;
+        }
+        else {
+            var capa4="0";
+            var capa4od="0";
+            var name4="";
+        }
+        
+
+        var degf = force + forceOD
+        var nbdod= Number(capa1od) + Number(capa2od) + Number(capa3od) + Number(capa4od)+" OD";
+        var nbdd = Number(capa1) + Number(capa2) + Number(capa3) + Number(capa4) + Number(capbm) + "d2cs2";
+        var texte = "jet de : " + name1 + " - " + name2 + " - " + name3 + " - " + name4;
+        let roll1 = new Roll(nbdd);
+        let roll2 = new Roll(10+'D6+'+degf)
+        let roll3 = new Roll(12+'D6')
+
+        roll1.roll().toMessage({
+            speaker: ChatMessage.getSpeaker({ actor: this.actor} ),
+            flavor: texte + nbdod
+        });
+        roll2.roll().toMessage({
+            speaker: ChatMessage.getSpeaker({ actor: this.actor}+"Arme improvisée"),
+            flavor: "Degats"
+        });
+        roll3.roll().toMessage({
+            speaker: ChatMessage.getSpeaker({ actor: this.actor}+"Arme improvisée"),
+            flavor: "Violence"
+        });
+    }
+    _onRollAtaImp13(event){
+        console.log(event)
+        const dataf = super.getData();
+        const character = dataf.actor.data.data
+
+        var capliste1 = character.valeurde1
+        var capliste2 = character.valeurde2
+        var capliste3 = character.valeurde3
+        var capliste4 = character.valeurde4
+        var capbm = character.bonusmalus
+    
+
+        var deplacement = Number(character.attributs.Chair.competence.Deplacement.valeur)
+        var deplacementOD = Number(character.attributs.Chair.competence.Deplacement.od)
+        var force = Number(character.attributs.Chair.competence.Force.valeur)
+        var forceOD = Number(character.attributs.Chair.competence.Force.od)
+        var endurance = Number(character.attributs.Chair.competence.Endurance.valeur)
+        var enduranceOD = Number(character.attributs.Chair.competence.Endurance.od)
+        var hargne = Number(character.attributs.Bete.competence.Hargne.valeur)
+        var hargneOD = Number(character.attributs.Bete.competence.Hargne.od)
+        var combat = Number(character.attributs.Bete.competence.Combat.valeur)
+        var combatOD = Number(character.attributs.Bete.competence.Combat.od)
+        var instinct = Number(character.attributs.Bete.competence.Instinct.valeur)
+        var instinctOD = Number(character.attributs.Bete.competence.Instinct.od)
+        var tir = Number(character.attributs.Machine.competence.Tir.valeur)
+        var tirOD = Number(character.attributs.Machine.competence.Tir.od)
+        var savoir = Number(character.attributs.Machine.competence.Savoir.valeur)
+        var savoirOD = Number(character.attributs.Machine.competence.Savoir.od)
+        var technique = Number(character.attributs.Machine.competence.Technique.valeur)
+        var techniqueOD = Number(character.attributs.Machine.competence.Technique.od)
+        var aura = Number(character.attributs.Dame.competence.Aura.valeur)
+        var auraOD = Number(character.attributs.Dame.competence.Aura.od)
+        var parole = Number(character.attributs.Dame.competence.Parole.valeur)
+        var paroleOD = Number(character.attributs.Dame.competence.Parole.od)
+        var sangfroid = Number(character.attributs.Dame.competence.Sangfroid.valeur)
+        var sangfroidOD = Number(character.attributs.Dame.competence.Sangfroid.od)
+        var discretion = Number(character.attributs.Masque.competence.Discretion.valeur)
+        var discretionOD = Number(character.attributs.Masque.competence.Discretion.od)
+        var dexterite= Number(character.attributs.Masque.competence.Dexterite.valeur)
+        var dexteriteOD = Number(character.attributs.Masque.competence.Dexterite.od)
+        var perception = Number(character.attributs.Masque.competence.Perception.valeur)
+        var perceptionOD = Number(character.attributs.Masque.competence.Perception.od)
+    
+        if (capliste1=="Deplacement"){
+            var capa1 = deplacement;
+            var capa1od = deplacementOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Force"){
+            var capa1=force;
+            var capa1od=forceOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Endurance"){
+            var capa1=endurance;
+            var capa1od=enduranceOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Hargne"){
+            var capa1=hargne;
+            var capa1od=hargneOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Combat"){
+            var capa1=combat;
+            var capa1od=combatOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Instinct"){
+            var capa1=instinct;
+            var capa1od=instinctOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Tir"){
+            var capa1=tir;
+            var capa1od=tirOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Savoir"){
+            var capa1= savoir;
+            var capa1od=savoirOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Technique"){
+            var capa1=technique;
+            var capa1od=techniqueOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Aura"){
+            var capa1=aura;
+            var capa1od=auraOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Parole"){
+            var capa1=parole;
+            var capa1od=paroleOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Sangfroid"){
+            var capa1=sangfroid;
+            var capa1od=sangfroidOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Discretion"){
+            var capa1=discretion;
+            var capa1od=discretionOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Dexterite"){
+            var capa1=dexterite;
+            var capa1od=dexteriteOD;
+            var name1=capliste1;
+        }
+        else if (capliste1=="Perception"){
+            var capa1=perception;
+            var capa1od=perceptionOD;
+            var name1=capliste1;
+        }
+        else {
+            var capa1="0";
+            var capa1od="0";
+            var name1="";
+        }        
+    
+        if (capliste2=="Deplacement"){
+            var capa2=deplacement;
+            var capa2od=deplacementOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Force"){
+            var capa2=force;
+            var capa2od=forceOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Endurance"){
+            var capa2=endurance;
+            var capa2od=enduranceOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Hargne"){
+            var capa2=hargne;
+            var capa2od=hargneOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Combat"){
+            var capa2=combat;
+            var capa2od=combatOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Instinct"){
+            var capa2=instinct;
+            var capa2od=instinctOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Tir"){
+            var capa2=tir;
+            var capa2od=tirOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Savoir"){
+            var capa2= savoir;
+            var capa2od=savoirOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Technique"){
+            var capa2=technique;
+            var capa2od=techniqueOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Aura"){
+            var capa2=aura;
+            var capa2od=auraOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Parole"){
+            var capa2=parole;
+            var capa2od=paroleOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Sangfroid"){
+            var capa2=sangfroid;
+            var capa2od=sangfroidOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Discretion"){
+            var capa2=discretion;
+            var capa2od=discretionOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Dexterite"){
+            var capa2=dexterite;
+            var capa2od=dexteriteOD;
+            var name2=capliste2;
+        }
+        else if (capliste2=="Perception"){
+            var capa2=perception;
+            var capa2od=perceptionOD;
+            var name2=capliste2;
+        }
+        else {
+            var capa2="0";
+            var capa2od="0";
+            var name2="";
+        }
+    
+    
+        if (capliste3=="Deplacement"){
+            var capa3=deplacement;
+            var capa3od=deplacementOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Force"){
+            var capa3=force;
+            var capa3od=forceOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Endurance"){
+            var capa3=endurance;
+            var capa3od=enduranceOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Hargne"){
+            var capa3=hargne;
+            var capa3od=hargneOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Combat"){
+            var capa3=combat;
+            var capa3od=combatOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Instinct"){
+            var capa3=instinct;
+            var capa3od=instinctOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Tir"){
+            var capa3=tir;
+            var capa3od=tirOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Savoir"){
+            var capa3= savoir;
+            var capa3od=savoirOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Technique"){
+            var capa3=technique;
+            var capa3od=techniqueOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Aura"){
+            var capa3=aura;
+            var capa3od=auraOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Parole"){
+            var capa3=parole;
+            var capa3od=paroleOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Sangfroid"){
+            var capa3=sangfroid;
+            var capa3od=sangfroidOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Discretion"){
+            var capa3=discretion;
+            var capa3od=discretionOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Dexterite"){
+            var capa3=dexterite;
+            var capa3od=dexteriteOD;
+            var name3=capliste3;
+        }
+        else if (capliste3=="Perception"){
+            var capa3=perception;
+            var capa3od=perceptionOD;
+            var name3=capliste3;
+        }
+        else {
+            var capa3="0";
+            var capa3od="0";
+            var name3="";
+        }
+    
+        if (capliste4=="Deplacement"){
+            var capa4=deplacement;
+            var capa4od=deplacementOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Force"){
+            var capa4=force;
+            var capa4od=forceOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Endurance"){
+            var capa4=endurance;
+            var capa4od=enduranceOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Hargne"){
+            var capa4=hargne;
+            var capa4od=hargneOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Combat"){
+            var capa4=combat;
+            var capa4od=combatOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Instinct"){
+            var capa4=instinct;
+            var capa4od=instinctOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Tir"){
+            var capa4=tir;
+            var capa4od=tirOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Savoir"){
+            var capa4= savoir;
+            var capa4od=savoirOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Technique"){
+            var capa4=technique;
+            var capa4od=techniqueOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Aura"){
+            var capa4=aura;
+            var capa4od=auraOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Parole"){
+            var capa4=parole;
+            var capa4od=paroleOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Sangfroid"){
+            var capa4=sangfroid;
+            var capa4od=sangfroidOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Discretion"){
+            var capa4=discretion;
+            var capa4od=discretionOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Dexterite"){
+            var capa4=dexterite;
+            var capa4od=dexteriteOD;
+            var name4=capliste4;
+        }
+        else if (capliste4=="Perception"){
+            var capa4=Perception;
+            var capa4od=perceptionOD;
+            var name4=capliste4;
+        }
+        else {
+            var capa4="0";
+            var capa4od="0";
+            var name4="";
+        }
+        
+
+        var degf = force + forceOD
+        var nbdod= Number(capa1od) + Number(capa2od) + Number(capa3od) + Number(capa4od)+" OD";
+        var nbdd = Number(capa1) + Number(capa2) + Number(capa3) + Number(capa4) + Number(capbm) + "d2cs2";
+        var texte = "jet de : " + name1 + " - " + name2 + " - " + name3 + " - " + name4;
+        let roll1 = new Roll(nbdd);
+        let roll2 = new Roll(11+'D6+'+degf)
+        let roll3 = new Roll(11+'D6')
+
+        roll1.roll().toMessage({
+            speaker: ChatMessage.getSpeaker({ actor: this.actor} ),
+            flavor: texte + nbdod
+        });
+        roll2.roll().toMessage({
+            speaker: ChatMessage.getSpeaker({ actor: this.actor}+"Arme improvisée"),
+            flavor: "Degats"
+        });
+        roll3.roll().toMessage({
+            speaker: ChatMessage.getSpeaker({ actor: this.actor}+"Arme improvisée"),
+            flavor: "Violence"
+        });
+    }
 }
 
     

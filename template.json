@@ -9,6 +9,7 @@
         ],
 
         "pj": {
+            "stycom":"",
             "expa":"",
             "expu":"",
             "expt":"",
@@ -53,6 +54,10 @@
             "valeurde2": "",
             "valeurde3": "",
             "valeurde4": "",
+            "valeurda1": "",
+            "valeurda2": "",
+            "valeurda3": "",
+            "valeurda4": "",
             "bonusmalus": "",
             "arme_de_contact": [],
             "arme_à_distance": [],
@@ -198,6 +203,18 @@
             "heroisme":{
                 "hact":"",
                 "hmax":"6"
+            },
+            "armeimpr":{
+                "val2":"2",
+                "val4":"4",
+                "val5":"5",
+                "val6":"6",
+                "val7":"7",
+                "val8":"8",
+                "val9":"9",
+                "val10":"10",
+                "val11":"11",
+                "val12":"12"
             }
         },
         "pnj": {
@@ -370,6 +387,10 @@
             "vehicule"
         ],
         "arme_de_contact": {
+            "valeurda1": "",
+            "valeurda2": "",
+            "valeurda3": "",
+            "valeurda4": "",
             "description": "",
             "degats": "",
             "violence": "",
@@ -551,7 +572,7 @@
                     "degpur":"0"
                 },
                 "bonvio":{
-                    "de": false,
+                    "de": "",
                     "degpur":"0"
                 }
             }
@@ -713,6 +734,7 @@
                 "munsub":false,
                 "poilas":false,
                 "proarm":false,
+                "revome":false,
                 "revalp":false,
                 "sysref":false
             },

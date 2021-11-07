@@ -33,9 +33,9 @@
     {{#each actor.data.data.metaarmure as |item key|}}
         <div class=item data-item-id={{item._id}}>
             <img src="{{item.img}}" data-edit="img" title="{{item.name}}" height="32" width="32" /> 
-            <p class=label100>{{item.name}}</p>
-            <a class="item-edit"  title="Edit Item"><i class="fas fa-edit"></i></a>
-            <a class="item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+            <label class=label100>{{item.name}}</label>
+            <a class="item-edit inline"  title="Edit Item"><i class="fas fa-edit"></i></a>
+            <a class="item-delete inline" title="Delete Item"><i class="fas fa-trash"></i></a>
         </div>
     {{/each}}
 </div>
@@ -60,7 +60,7 @@
 
 <div class=defense>
 
-    <label class=label200>Déscription</label> 
+    <h3 class=label200>Déscription</h3> 
     <BR/>
     {{#each actor.data.data.metaarmure as |items key|}}
     <p>{{items.data.description}}</p>
@@ -70,7 +70,7 @@
 
 <div class=defense>
 
-    <label class=label200>Capacité</label>
+    <h3 class=label200>Capacité</h3>
     <BR/> 
     {{#each actor.data.data.metaarmure as |items key|}}
     <p>{{items.data.capacite}}</p>
