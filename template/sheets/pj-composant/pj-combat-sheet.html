@@ -1,4 +1,5 @@
 <body>
+    <!--Nods-->
     <div >
         <table class=attributs>
             <tr><th colspan=3>Nods</th></tr>
@@ -32,12 +33,14 @@
   
         </table> 
     </div>
+    <!--heroisme-->
     <div class=cdi>
         <div class=inline>
             <label class=label100>Point d'héroisme</label>
             <input class="champ1" name="data.heroisme.hact" type="number" value="{{actor.data.data.heroisme.hact}}" />
             <label class=label100>/6</label>
         </div>
+    <!--style de combat-->
         <label>
             Style de combat
         </label>
@@ -56,6 +59,7 @@
             {{/select}}
         </select>
     </div>
+    <!--tableau arme de contact-->
     <table>
         <tr><th colspan=5>Arme de contact</th></tr>
         <tr>
@@ -81,7 +85,7 @@
         </tr>
         {{/each}}
     </table> 
-    
+    <!--tableau arme a distance-->
     <table>
         <tr><th colspan=5>Arme à distance</th></tr>
         <tr>
@@ -107,7 +111,7 @@
         </tr>
         {{/each}}
     </table>
-
+    <!--tableau arme improvisé-->
     <table>
         <tr><th colspan=6>Arme improvisée</th></tr>
         <tr>
