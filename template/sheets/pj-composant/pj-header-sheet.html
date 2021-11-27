@@ -148,39 +148,39 @@
         <div class="content flex3">
             {{!-- Sheet Tab Navigation --}}
             
-            <button class=champ2 id="generale">Générale</button>
-            <button class=champ2 id="armure">Armure</button>
-            <button class=champ2 id="combat1">Combat</button>
-            <button class=champ2 id="ia">IA</button>
-            <button class=champ2 id="iai">IA incarnée</button>
-            <button class=champ2 id="historique">Historique</button>
+            <button class=champ2 id="generale" style="background:#f89406;color:#3A3F44">Générale</button>
+            <button class=champ2 id="armure" style="background:#3A3F44;color:#f89406">Armure</button>
+            <button class=champ2 id="combat1" style="background:#3A3F44;color:#f89406">Combat</button>
+            <button class=champ2 id="ia" style="background:#3A3F44;color:#f89406">IA</button>
+            <button class=champ2 id="iai" style="background:#3A3F44;color:#f89406">IA incarnée</button>
+            <button class=champ2 id="historique" style="background:#3A3F44;color:#f89406">Historique</button>
          
          
          
     
             {{!-- Sheet Body --}}
             
-                <div id="tab1" class="tab" >
+                <div id="tab1" class="tab" style="display:block">
                     {{>"systems/Knight/template/sheets/pj-composant/pj-generale-sheet.html"}}
                 </div>
 
-                <div id="tab2" class="tab" >
+                <div id="tab2" class="tab" style="display:none">
                     {{>"systems/Knight/template/sheets/pj-composant/pj-armure-sheet.html"}}
                 </div>
 
-                <div id="tab3" class="tab" >
+                <div id="tab3" class="tab" style="display:none">
                     {{>"systems/Knight/template/sheets/pj-composant/pj-ia-sheet.html"}}
                 </div>
 
-                <div id="tab4" class="tab" >
+                <div id="tab4" class="tab" style="display:none">
                     {{>"systems/Knight/template/sheets/pj-composant/pj-iai-sheet.html"}}
                 </div>
 
-                <div id="tab5" class="tab" >
+                <div id="tab5" class="tab" style="display:none">
                     {{>"systems/Knight/template/sheets/pj-composant/pj-historique-sheet.html"}}
                 </div>
 
-                <div id="tab6" class="tab" >
+                <div id="tab6" class="tab" style="display:none">
                     {{>"systems/Knight/template/sheets/pj-composant/pj-combat-sheet.html"}}
                 </div>
     </div>

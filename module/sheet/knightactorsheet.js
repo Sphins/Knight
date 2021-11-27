@@ -58,6 +58,13 @@ export default class KnightActorSheet extends ActorSheet {
             var modsant = 8;
             var modkra = 1;
         }
+
+        //impacte style de combat
+
+        var tab = this._stylComb();
+
+        var modstyD = tab[1];
+        var modstyR = tab[2];
         
         //calcule santé max
 
@@ -70,7 +77,7 @@ export default class KnightActorSheet extends ActorSheet {
         var betecommax = combat + combatOD
         var beteinsmax = instinct + instinctOD
         var betemax = Math.max(betehagmax, betecommax,beteinsmax)
-        character.defense = Number(betemax) + Number(modkra);
+        character.defense = Number(betemax) + Number(modkra) + Number(modstyD);
 
         //calcule reaction
 
@@ -78,7 +85,7 @@ export default class KnightActorSheet extends ActorSheet {
         var macsavmax = savoir + savoirOD
         var mactecmax = technique + techniqueOD
         var macmax = Math.max(mactirmax, macsavmax,mactecmax)
-        character.reaction = Number(macmax) + Number(modkra);
+        character.reaction = Number(macmax) + Number(modkra) + Number(modstyR);
 
         //initiative max
 
@@ -123,8 +130,13 @@ export default class KnightActorSheet extends ActorSheet {
     
     }
     _onRollNodsS(event){                                                                    // utilisation nods soins
-        console.log(event)
+        // const dataf = super.getData();
+        // const character = dataf.actor.data.data;
+        // var nods = Number(character.nods.soins.sact)
+        // character.nods.soins.sact = nods-1;
+        console.log(event);
         let roll = new Roll(3+"d6");
+        
         roll.roll().toMessage({
             speaker: ChatMessage.getSpeaker({ actor: this.actor}),
             flavor: "Nods de soins"
@@ -200,8 +212,19 @@ export default class KnightActorSheet extends ActorSheet {
                 tab4.style.display = "none";
                 tab5.style.display = "none";
                 tab6.style.display = "none";
-            } else {
-                tab1.style.display = "none";
+                
+                generale.style.background = "#f89406";
+                generale.style.color = "#3A3F44";
+                armure.style.background = "#3A3F44";
+                armure.style.color = "#f89406";
+                ia.style.background = "#3A3F44";
+                ia.style.color = "#f89406";
+                iai.style.background = "#3A3F44";
+                iai.style.color = "#f89406";
+                historique.style.background = "#3A3F44";
+                historique.style.color = "#f89406";
+                combat.style.background = "#3A3F44";
+                combat.style.color = "#f89406";
             }
         })
 
@@ -213,8 +236,19 @@ export default class KnightActorSheet extends ActorSheet {
                 tab4.style.display = "none";
                 tab5.style.display = "none";
                 tab6.style.display = "none";
-            } else {
-                tab2.style.display = "none";
+                                
+                generale.style.background = "#3A3F44";
+                generale.style.color = "#f89406";
+                armure.style.background = "#f89406";
+                armure.style.color = "#3A3F44";
+                ia.style.background = "#3A3F44";
+                ia.style.color = "#f89406";
+                iai.style.background = "#3A3F44";
+                iai.style.color = "#f89406";
+                historique.style.background = "#3A3F44";
+                historique.style.color = "#f89406";
+                combat.style.background = "#3A3F44";
+                combat.style.color = "#f89406";
             }
         })
 
@@ -226,8 +260,19 @@ export default class KnightActorSheet extends ActorSheet {
                 tab4.style.display = "none";
                 tab5.style.display = "none";
                 tab6.style.display = "none";
-            } else {
-                tab3.style.display = "none";
+                                
+                generale.style.background = "#3A3F44";
+                generale.style.color = "#f89406";
+                armure.style.background = "#3A3F44";
+                armure.style.color = "#f89406";
+                ia.style.background = "#f89406";
+                ia.style.color = "#3A3F44";
+                iai.style.background = "#3A3F44";
+                iai.style.color = "#f89406";
+                historique.style.background = "#3A3F44";
+                historique.style.color = "#f89406";
+                combat.style.background = "#3A3F44";
+                combat.style.color = "#f89406";
             }
         })
 
@@ -239,8 +284,19 @@ export default class KnightActorSheet extends ActorSheet {
                 tab3.style.display = "none";
                 tab5.style.display = "none";
                 tab6.style.display = "none";
-            } else {
-                tab4.style.display = "none";
+                                
+                generale.style.background = "#3A3F44";
+                generale.style.color = "#f89406";
+                armure.style.background = "#3A3F44";
+                armure.style.color = "#f89406";
+                ia.style.background = "#3A3F44";
+                ia.style.color = "#f89406";
+                iai.style.background = "#f89406";
+                iai.style.color = "#3A3F44";
+                historique.style.background = "#3A3F44";
+                historique.style.color = "#f89406";
+                combat.style.background = "#3A3F44";
+                combat.style.color = "#f89406";
             }
         })
 
@@ -252,8 +308,19 @@ export default class KnightActorSheet extends ActorSheet {
                 tab3.style.display = "none";
                 tab4.style.display = "none";
                 tab6.style.display = "none";
-            } else {
-                tab5.style.display = "none";
+                                
+                generale.style.background = "#3A3F44";
+                generale.style.color = "#f89406";
+                armure.style.background = "#3A3F44";
+                armure.style.color = "#f89406";
+                ia.style.background = "#3A3F44";
+                ia.style.color = "#f89406";
+                iai.style.background = "#3A3F44";
+                iai.style.color = "#f89406";
+                historique.style.background = "#f89406";
+                historique.style.color = "#3A3F44";
+                combat.style.background = "#3A3F44";
+                combat.style.color = "#f89406";
             }
         })
 
@@ -265,11 +332,23 @@ export default class KnightActorSheet extends ActorSheet {
                 tab3.style.display = "none";
                 tab4.style.display = "none";
                 tab5.style.display = "none";
-            } else {
-                tab6.style.display = "none";
+                                
+                generale.style.background = "#3A3F44";
+                generale.style.color = "#f89406";
+                armure.style.background = "#3A3F44";
+                armure.style.color = "#f89406";
+                ia.style.background = "#3A3F44";
+                ia.style.color = "#f89406";
+                iai.style.background = "#3A3F44";
+                iai.style.color = "#f89406";
+                historique.style.background = "#3A3F44";
+                historique.style.color = "#f89406";
+                combat.style.background = "#f89406";
+                combat.style.color = "#3A3F44";
             }
         })
 
+  
 
     }
     getItemFromEvent = (ev) => {                                                            //repere l id de l item      
@@ -309,10 +388,84 @@ export default class KnightActorSheet extends ActorSheet {
             flavor: texte
         });
     }
-    _listeJet(){                                                                            // base des jets
+    _stylComb() {                                                                           // selection style de combat
         const dataf = super.getData();
         const character = dataf.actor.data.data
 
+        var stycom = character.stycom
+        console.log(stycom)
+
+        if (stycom=="Standard"){
+            var modstyJ = 0;
+            var modstyD = 0;
+            var modstyR = 0;
+            var texte="Pas de bonus, ni de malus.";
+        }
+        else if (stycom=="Agressif"){
+            var modstyJ = 3;
+            var modstyD = -2;
+            var modstyR = -2;
+            var texte="Le personnage privilégie la réussite de ses attaques à sa propre sécurité. Bonus : Le personnage reçoit un bonus de 3 dés à ses jets d’attaque, au combat comme au tir. Malus : Le personnage reçoit un malus de 2 à sa réaction et à sa défense (avec un minimum de 0 dans ces deux scores).";
+        }
+        else if (stycom=="Defensif"){
+            var modstyJ = -3;
+            var modstyD = 2;
+            var modstyR = 0;
+            var texte="Le personnage cherche à se défendre face aux attaques de contact. Bonus : Le personnage gagne un bonus de 2 points en défense. Malus : Le personnage lance 3 dés en moins à ses jets d’attaque effectués, au contact comme au tir.";
+        }
+        else if (stycom=="Couvert"){
+            var modstyJ = -3;
+            var modstyD = 0;
+            var modstyR = 2;
+            var texte="S’il en a les moyens, un personnage peut se mettre à couvert pour obtenir une meilleure réaction face aux tirs. Bonus : Si l’abri est dans la ligne de tir (c’est le MJ qui décide), le personnage qui se met derrière obtient un bonus de 2 points en réaction. Malus : Le personnage lance 3 dés en moins à ses jets d’attaque effectués, au contact comme au tir.";
+        }
+        else if (stycom=="precis"){
+            var modstyJ = 0;
+            var modstyD = 0;
+            var modstyR = 0;
+            var texte="Le personnage équipé d’une arme de contact avec l’effet deux mains sacrifie sa mobilité pour une frappe plus adroite. Bonus : Le personnage peut ajouter une troisième caractéristique à son combo pour toucher sa cible à choisir parmi Dextérité, Savoir, Instinct ou Sang-Froid (le choix s’effectue à chaque attaque). Les bonus normalement octroyés par l’OD de cette troisième caractéristique sont ignorés. Malus : Pour effectuer une attaque avec le style précis, le personnage doit utiliser une action de combat et une action de déplacement.";
+        }
+        else if (stycom=="Pilonnage"){
+            var modstyJ = 0;
+            var modstyD = 0;
+            var modstyR = 0;
+            var texte="Le personnage équipé d’une arme de tir avec l’effet deux mains pilonne sa cible pour la tuer plus rapidement. Bonus : Tant que le personnage effectue un tir sur la même cible (ou le même groupe de cibles dans le cas d’une arme avec l’effet dispersion X), il augmente ses dégâts ou sa violence de 1 dé par tour passé à tirer précédemment. Au 1er tour, il ajoute ainsi 0 dé, au 2e tour passé à tirer, il ajoute 1 dé, au 3e, il ajoute 2 dés et ainsi de suite, dans la limite de 6 dés ajoutés ainsi. Malus : À chacune de ses attaques, le personnage lance 2 dés en moins.";
+        }
+        else if (stycom=="Puissant"){
+            var modstyJ = 0;
+            var modstyD = -2;
+            var modstyR = -2;
+            var texte="Le personnage équipé d’une arme de contact avec l’effet lourd frappe en puissance pour massacrer sa cible. Bonus : Lorsque le personnage effectue son attaque, il peut décider de sacrifier 1 dé à son jet pour toucher pour recevoir en contrepartie 1 dé supplémentaire aux dégâts ou à la violence de l’arme. Le personnage peut sacrifier ainsi jusqu’à 6 dés par attaque pour ajouter jusqu’à 6 dés de dégâts ou de violence. Malus : Le personnage reçoit un malus de 2 à sa réaction et à sa défense (avec un minimum de 0 dans ces deux scores).";
+        }
+        else if (stycom=="Suppression"){
+            var modstyJ = 0;
+            var modstyD = 0;
+            var modstyR = 0;
+            var texte="Le personnage équipé d’une arme de tir avec l’effet lourd effectue un tir de suppression pour amoindrir la puissance des ennemis. Bonus : Cet effet fonctionne de deux manières distinctes. En premier lieu, le personnage peut, lorsqu’il attaque un hostile, un salopard ou un patron, sacrifier 2 dés à ses dégâts pour retirer 1 dé de dégâts à toutes les attaques du prochain tour de l’ennemi ciblé. Un maximim de 6 dés peuvent ainsi êtres sacrifiés pour retirer jusqu’à 3 dés de dégâts à l’ennemi (la cible conserve au moins toujours 1 dé de dégâts). Si l’arme possède l’effet dispersion X, les ennemis touchés grâce à la dispersion subissent aussi le malus du style suppression. En second lieu, le personnage peut, lorsqu’il attaque une bande, sacrifier 2 dés à sa violence pour retirer 1 au score de débordement de sa cible. Un maximim de 8 dés peuvent ainsi être sacrifiés pour retirer jusqu’à 4 points au débordement de la bande ennemie. Ces points de débordement sont retirés avant calcul des dégâts effectifs. Les dégâts effectifs de la bande à ce tour sont donc égaux à son débordement moins le malus de suppression multiplié par le nombre de tours écoulés. Le style suppression réduit le débordement pour le tour en cours, et uniquement le tour en cours.";
+        }
+        else if (stycom=="Ambidextere"){
+            var modstyJ = 0;
+            var modstyD = 0;
+            var modstyR = 0;
+            var texte="Avec ce style, le personnage utilise deux armes de contact, deux armes de tir ou une de chaque, dans chacune de ses mains. Un chevalier peut par exemple posséder un ceste de répulsion dans une main et un pistolet de service dans l’autre. Les armes utilisées dans ce style doivent être des armes à une main (c’està-dire que l’effet deux mains n’est pas précisé dans leur profil). Bonus : Le personnage peut effectuer une première attaque avec l’arme dans sa main directrice (à déterminer avec le MJ) puis une autre avec son autre main. Les deux attaques successives comptent comme une seule action de combat, mais le PJ doit effectuer un test pour chaque attaque et peut toucher de cette façon deux créatures différentes. Malus : À toutes ses attaques, le personnage lance 3 dés en moins lors du jet effectué, au contact comme au tir.";
+        }
+        else if (stycom=="Akimbo"){
+            var modstyJ = 0;
+            var modstyD = 0;
+            var modstyR = 0;
+            var texte="Le style akimbo consiste à avoir dans les mains les deux mêmes armes pour s’en servir en même temps, peu importe le type d’arme du moment que celle-ci se tient à une main. Ainsi, pour utiliser ce style, le personnage doit par exemple utiliser un pistolet de service – ou encore une épée bâtarde (en version à une main) – dans chaque main. Les armes doivent être identiques mais peuvent posséder des améliorations ou des munitions différentes. Si les options ou les munitions des armes varient, il faut choisir l’une des deux armes comme étant l’arme principale, tous les effets de cette arme s’appliquent. Tous les effets de l’autre arme sont ignorés et elle vient juste ajouter ses dés de dégâts aux dégâts de l’arme principale (ou la moitié, arrondie à l’inférieur, de ses dés de violence à ceux de l’arme principale). Bonus : Un chevalier peut frapper ou tirer de ses deux armes en même temps. Ainsi, lorsqu’il détermine les dégâts, il cumule puis utilise les dés de dégâts indiqués sur les armes utilisées. Pour les dés de violence, le MJ utilise tous ceux indiqués sur une des armes et y ajoute la moitié des dés de violence de l’autre arme (arrondie à l’entier supérieur). Les bonus fixes ne sont pas cumulés (on utilise une seule fois les bonus fixes). Malus : À chacune de ses attaques, le personnage lance 3 dés en moins, au contact comme au tir.";
+        }
+
+
+        character.stycomt = texte
+        var tab = [modstyJ,modstyD,modstyR]
+        return tab
+    }
+    _listeJet(){                                                                            // base des jets
+        const dataf = super.getData();
+        const character = dataf.actor.data.data
+        var tab = this._stylComb();
+        var modstyJ = tab[0];
         var capliste1 = character.valeurde1
         var capliste2 = character.valeurde2
         var capliste3 = character.valeurde3
@@ -678,7 +831,7 @@ export default class KnightActorSheet extends ActorSheet {
 
 
         var nbdod= Number(capa1od) + Number(capa2od) + Number(capa3od) + Number(capa4od)+" OD";
-        var nbdd = Number(capa1) + Number(capa2) + Number(capa3) + Number(capa4) + Number(capbm) + "d2cs2";
+        var nbdd = Number(capa1) + Number(capa2) + Number(capa3) + Number(capa4) + Number(capbm) + Number(modstyJ) + "d2cs2";
         var texte = "jet de : " + name1 + " - " + name2 + " - " + name3 + " - " + name4;
 
         var tab = [nbdd, nbdod, texte];
