@@ -1,100 +1,86 @@
-<form class="{{cssClass}}" autocomplete="off">
+<form class="{{cssClass}}" autocompvare="off">
     <img src="{{item.img}}" data-edit="img" title="{{item.name}}" height="128" width="128" />
     <h1><input name="name" type="text" value="{{item.name}}" placeholder="Name" /></h1>
 
  
 
-       <!-- Slots -->
+    <select name="data.choix" value="{{choix}}">
+        {{#select data.data.choix}}
+        <option value="0"></option>
+        <option value="barbarian">Barbarian</option>
+        <option value="bard">Bard</option>
+        <option value="berserk">Berserk</option>
+        <option value="druid">Druid</option>
+        <option value="monk">Monk</option>
+        <option value="necromancer">Necromancer</option>
+        <option value="paladin">Paladin</option>
+        <option value="priest">Priest</option>
+        <option value="psion">Psion</option>
+        <option value="ranger">Ranger</option>
+        <option value="Rogue">Rogue</option>
+        <option value="shaman">Shaman</option>
+        <option value="sorcerer">Sorcerer</option>
+        <option value="warlock">Warlock</option>
+        <option value="warior">Warior</option>
+        <option value="wizard">Wizard</option>
+        <option value="personalisé">Personalisé</option>
+        {{/select}}
+    </select>
 
 
-       <div class=attributs >
-        <label>Slots</label>
-            <ul>
-                <label>Tête
-                    <input name="data.slots.tete" type="text" value="{{data.data.slots.tete}}" placeholder=""/>
-                </label>
-
-                <label>Bras gauche
-                    <input name="data.slots.brasgauche" type="text" value="{{data.data.slots.brasgauche}}" placeholder=""/>
-                </label>
-
-                <label>Bras droit
-                    <input name="data.slots.brasdroit" type="text" value="{{data.data.slots.brasdroit}}" placeholder=""/>
-                </label>
-
-                <label>Torse
-                    <input name="data.slots.torse" type="text" value="{{data.data.slots.torse}}" placeholder=""/>
-                </label>
-
-                <label>Jambe gauche
-                    <input name="data.slots.jambegauche" type="text" value="{{data.data.slots.jambegauche}}" placeholder=""/>
-                </label>
-
-                <label>Jambe droite
-                    <input name="data.slots.jambedroite" type="text" value="{{data.data.slots.jambedroite}}" placeholder=""/>
-                </label>
-            </ul>
+    <div id="meta1" class="tab" style="display:none">
+        {{>"systems/Knight/template/sheets/meta-armure/personalisable.html"}}
+    </div>
+    <div id="meta2" class="tab" style="display:none">
+        {{>"systems/Knight/template/sheets/meta-armure/barbarian.html"}}
+    </div>
+    <div id="meta3" class="tab" style="display:none">
+        {{>"systems/Knight/template/sheets/meta-armure/bard.html"}}
+    </div>
+    <div id="meta4" class="tab" style="display:none">
+        {{>"systems/Knight/template/sheets/meta-armure/berserk.html"}}
+    </div>
+    <div id="meta5" class="tab" style="display:none">
+        {{>"systems/Knight/template/sheets/meta-armure/druid.html"}}
+    </div>
+    <div id="meta6" class="tab" style="display:none">
+        {{>"systems/Knight/template/sheets/meta-armure/monk.html"}}
+    </div>
+    <div id="meta7" class="tab" style="display:none">
+        {{>"systems/Knight/template/sheets/meta-armure/necromancer.html"}}
+    </div>
+    <div id="meta8" class="tab" style="display:none">
+        {{>"systems/Knight/template/sheets/meta-armure/paladin.html"}}
+    </div>
+    <div id="meta9" class="tab" style="display:none">
+        {{>"systems/Knight/template/sheets/meta-armure/priest.html"}}
+    </div>
+    <div id="meta10" class="tab" style="display:none">
+        {{>"systems/Knight/template/sheets/meta-armure/psion.html"}}
+    </div>
+    <div id="meta11" class="tab" style="display:none">
+        {{>"systems/Knight/template/sheets/meta-armure/ranger.html"}}
+    </div>
+    <div id="meta12" class="tab" style="display:none">
+        {{>"systems/Knight/template/sheets/meta-armure/rogue.html"}}
+    </div>
+    <div id="meta13" class="tab" style="display:none">
+        {{>"systems/Knight/template/sheets/meta-armure/shaman.html"}}
+    </div>
+    <div id="meta14" class="tab" style="display:none">
+        {{>"systems/Knight/template/sheets/meta-armure/sorcerer.html"}}
+    </div>
+    <div id="meta15" class="tab" style="display:none">
+        {{>"systems/Knight/template/sheets/meta-armure/warlock.html"}}
+    </div>
+    <div id="meta16" class="tab" style="display:none">
+        {{>"systems/Knight/template/sheets/meta-armure/warmaster.html"}}
+    </div>
+    <div id="meta17" class="tab" style="display:none">
+        {{>"systems/Knight/template/sheets/meta-armure/warrior.html"}}
+    </div>
+    <div id="meta18" class="tab" style="display:none">
+        {{>"systems/Knight/template/sheets/meta-armure/wizard.html"}}
     </div>
 
-    <!-- caracteristique -->
-
-    <div class=cdi>
-        <label>Point d'armure</label>
-        <input name="data.pointdarmure" type="text" value="{{data.data.pointdarmure}}" placeholder=""/>
-    
-
-        <label>Point d'énergie</label>
-        <input name="data.pointdenergie" type="text" value="{{data.data.pointdenergie}}" placeholder=""/>
-
-        <label>Champ de force</label>
-        <input name="data.champdeforce" type="text" value="{{data.data.champdeforce}}" placeholder=""/>
-    </div>
-
- 
-
-    <!-- overdrive -->
-
-    <div class=cdi>
-        <label>Overdrive</label>
-        <ul>
-
-            <input name="data.overdrives.od1" type="text" value="{{data.data.overdrives.od1}}" placeholder=""/>
-            
-            <input name="data.overdrives.od2" type="text" value="{{data.data.overdrives.od2}}" placeholder=""/>
-            
-            <input name="data.overdrives.od3" type="text" value="{{data.data.overdrives.od3}}" placeholder=""/>
-              
-            <input name="data.overdrives.od4" type="text" value="{{data.data.overdrives.od4}}" placeholder=""/>
-
-        </ul>
-
-    </div>
-
-<!-- description -->
-<div class=defense >
-    <label>Déscription</label>
-        </br>
-        <textarea rows=5 name="data.description">{{data.data.description}}</textarea>
-</div>
-<!--Capacité-->
-<div class=defense >
-    <label>Capacité</label>
-        </br>
-        <textarea rows=5 name="data.capacite">{{data.data.capacite}}</textarea>
-</div>
-<!--evolution-->
-<div class=defense>
-    <label>Evolution</label>
-    <ul>
-        <label>150 PG accumulés</label>
-        <textarea rows=3 name="data.evolutions.150PG">{{data.data.evolutions.150PG}}</textarea>
-        <label>200 PG accumulés</label>
-        <textarea rows=3 name="data.evolutions.200PG">{{data.data.evolutions.200PG}}</textarea>
-        <label>250 PG accumulés</label>
-        <textarea rows=3 name="data.evolutions.250PG">{{data.data.evolutions.250PG}}</textarea>
-          
-    </ul>
-
-</div>
-            
 </form>

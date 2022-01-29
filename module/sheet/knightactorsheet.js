@@ -68,7 +68,7 @@ export default class KnightActorSheet extends ActorSheet {
         
         //calcule santé max
 
-        var chairmax = Math.max(deplacement, force,endurance)
+        var chairmax = Math.max(deplacement, force, endurance)
         character.santemax = 10+(Number(modsant)*Number(chairmax));            
 
         //calcule defense
@@ -124,6 +124,8 @@ export default class KnightActorSheet extends ActorSheet {
         character.metaarmure = dataf.items.filter(item => item.type === "meta-armure");             //tri meta armure
         character.vehicule = dataf.items.filter(item => item.type === "vehicule");                  // tri vehicule
 
+        //
+
 
         return dataf;
 
@@ -135,7 +137,7 @@ export default class KnightActorSheet extends ActorSheet {
         // var nods = Number(character.nods.soins.sact)
         // character.nods.soins.sact = nods-1;
         console.log(event);
-        let roll = new Roll(3+"d6");
+        var roll = new Roll(3+"d6");
         
         roll.roll().toMessage({
             speaker: ChatMessage.getSpeaker({ actor: this.actor}),
@@ -144,7 +146,7 @@ export default class KnightActorSheet extends ActorSheet {
     }
     _onRollNodsA(event){                                                                    // utilisation nods armure
         console.log(event)
-        let roll = new Roll(3+"d6");
+        var roll = new Roll(3+"d6");
         roll.roll().toMessage({
             speaker: ChatMessage.getSpeaker({ actor: this.actor}),
             flavor: "Nods d'armure"
@@ -152,7 +154,7 @@ export default class KnightActorSheet extends ActorSheet {
     }
     _onRollNodsE(event){                                                                    // utilisation nods energie
         console.log(event)
-        let roll = new Roll(3+"d6");
+        var roll = new Roll(3+"d6");
         roll.roll().toMessage({
             speaker: ChatMessage.getSpeaker({ actor: this.actor}),
             flavor: "Nods d'énergie"
@@ -180,29 +182,30 @@ export default class KnightActorSheet extends ActorSheet {
         html.find('.jetdatacimp13').click(this._onRollAtaImp13.bind(this));                 //detection jet attaque improvisé ligne 13
 
         html.find('.item-edit').click(this._onItemEdit.bind(this));                         //edition d objet
-        html.find('.item-delete').click(this._onItemDelete.bind(this));                     //effacer objet
+        html.find('.item-devare').click(this._onItemDelete.bind(this));                     //effacer objet
 
         html.find('.jetdenodss').click(this._onRollNodsS.bind(this));                       //nods de soins
         html.find('.jetdenodsa').click(this._onRollNodsA.bind(this));                       //nods d' armure
         html.find('.jetdenodse').click(this._onRollNodsE.bind(this));                       //nods d'énergie
+
+        
         
         //navigation fiche pj
 
-        let generale = document.getElementById("generale");
-        let armure = document.getElementById("armure");
-        let ia = document.getElementById("ia");
-        let iai = document.getElementById("iai");
-        let historique = document.getElementById("historique");
-        let combat = document.getElementById("combat1");
+        var generale = document.getElementById("generale");
+        var armure = document.getElementById("armure");
+        var ia = document.getElementById("ia");
+        var iai = document.getElementById("iai");
+        var historique = document.getElementById("historique");
+        var combat = document.getElementById("combat1");
 
 
-        let tab1 = document.getElementById("tab1");
-        let tab2 = document.getElementById("tab2");
-        let tab3 = document.getElementById("tab3");
-        let tab4 = document.getElementById("tab4");
-        let tab5 = document.getElementById("tab5");
-        let tab6 = document.getElementById("tab6");
-
+        var tab1 = document.getElementById("tab1");
+        var tab2 = document.getElementById("tab2");
+        var tab3 = document.getElementById("tab3");
+        var tab4 = document.getElementById("tab4");
+        var tab5 = document.getElementById("tab5");
+        var tab6 = document.getElementById("tab6");
 
         generale.addEventListener("click", () =>{
             if(getComputedStyle(tab1).display != "block"){
@@ -347,9 +350,6 @@ export default class KnightActorSheet extends ActorSheet {
                 combat.style.color = "#3A3F44";
             }
         })
-
-  
-
     }
     getItemFromEvent = (ev) => {                                                            //repere l id de l item      
         const parent = $(ev.currentTarget).parents(".item");
@@ -362,7 +362,7 @@ export default class KnightActorSheet extends ActorSheet {
     }
     _onItemDelete(event) {                                                                  //supression d item
         const item = this.getItemFromEvent(event);
-        let d = Dialog.confirm({
+        var d = Dialog.confirm({
             title: "Suppression d'élément",
             content: "<p>Confirmer la suppression de '" + item.name + "'.</p>",
             yes: () => this.actor.deleteOwnedItem(item.id),
@@ -382,7 +382,7 @@ export default class KnightActorSheet extends ActorSheet {
         character.initiative = masquemax;
         var forminit = "3D6+"+Number(masquemax);
         var texte = "Initiative";
-        let roll = new Roll(forminit);
+        var roll = new Roll(forminit);
         roll.roll().toMessage({
             speaker: ChatMessage.getSpeaker({ actor: this.actor }),
             flavor: texte
@@ -447,13 +447,13 @@ export default class KnightActorSheet extends ActorSheet {
             var modstyJ = 0;
             var modstyD = 0;
             var modstyR = 0;
-            var texte="Avec ce style, le personnage utilise deux armes de contact, deux armes de tir ou une de chaque, dans chacune de ses mains. Un chevalier peut par exemple posséder un ceste de répulsion dans une main et un pistolet de service dans l’autre. Les armes utilisées dans ce style doivent être des armes à une main (c’està-dire que l’effet deux mains n’est pas précisé dans leur profil). Bonus : Le personnage peut effectuer une première attaque avec l’arme dans sa main directrice (à déterminer avec le MJ) puis une autre avec son autre main. Les deux attaques successives comptent comme une seule action de combat, mais le PJ doit effectuer un test pour chaque attaque et peut toucher de cette façon deux créatures différentes. Malus : À toutes ses attaques, le personnage lance 3 dés en moins lors du jet effectué, au contact comme au tir.";
+            var texte="Avec ce style, le personnage utilise deux armes de contact, deux armes de tir ou une de chaque, dans chacune de ses mains. Un chevalier peut par exemple posséder un ceste de répulsion dans une main et un pistovar de service dans l’autre. Les armes utilisées dans ce style doivent être des armes à une main (c’està-dire que l’effet deux mains n’est pas précisé dans leur profil). Bonus : Le personnage peut effectuer une première attaque avec l’arme dans sa main directrice (à déterminer avec le MJ) puis une autre avec son autre main. Les deux attaques successives comptent comme une seule action de combat, mais le PJ doit effectuer un test pour chaque attaque et peut toucher de cette façon deux créatures différentes. Malus : À toutes ses attaques, le personnage lance 3 dés en moins lors du jet effectué, au contact comme au tir.";
         }
         else if (stycom=="Akimbo"){
             var modstyJ = 0;
             var modstyD = 0;
             var modstyR = 0;
-            var texte="Le style akimbo consiste à avoir dans les mains les deux mêmes armes pour s’en servir en même temps, peu importe le type d’arme du moment que celle-ci se tient à une main. Ainsi, pour utiliser ce style, le personnage doit par exemple utiliser un pistolet de service – ou encore une épée bâtarde (en version à une main) – dans chaque main. Les armes doivent être identiques mais peuvent posséder des améliorations ou des munitions différentes. Si les options ou les munitions des armes varient, il faut choisir l’une des deux armes comme étant l’arme principale, tous les effets de cette arme s’appliquent. Tous les effets de l’autre arme sont ignorés et elle vient juste ajouter ses dés de dégâts aux dégâts de l’arme principale (ou la moitié, arrondie à l’inférieur, de ses dés de violence à ceux de l’arme principale). Bonus : Un chevalier peut frapper ou tirer de ses deux armes en même temps. Ainsi, lorsqu’il détermine les dégâts, il cumule puis utilise les dés de dégâts indiqués sur les armes utilisées. Pour les dés de violence, le MJ utilise tous ceux indiqués sur une des armes et y ajoute la moitié des dés de violence de l’autre arme (arrondie à l’entier supérieur). Les bonus fixes ne sont pas cumulés (on utilise une seule fois les bonus fixes). Malus : À chacune de ses attaques, le personnage lance 3 dés en moins, au contact comme au tir.";
+            var texte="Le style akimbo consiste à avoir dans les mains les deux mêmes armes pour s’en servir en même temps, peu importe le type d’arme du moment que celle-ci se tient à une main. Ainsi, pour utiliser ce style, le personnage doit par exemple utiliser un pistovar de service – ou encore une épée bâtarde (en version à une main) – dans chaque main. Les armes doivent être identiques mais peuvent posséder des améliorations ou des munitions différentes. Si les options ou les munitions des armes varient, il faut choisir l’une des deux armes comme étant l’arme principale, tous les effets de cette arme s’appliquent. Tous les effets de l’autre arme sont ignorés et elle vient juste ajouter ses dés de dégâts aux dégâts de l’arme principale (ou la moitié, arrondie à l’inférieur, de ses dés de violence à ceux de l’arme principale). Bonus : Un chevalier peut frapper ou tirer de ses deux armes en même temps. Ainsi, lorsqu’il détermine les dégâts, il cumule puis utilise les dés de dégâts indiqués sur les armes utilisées. Pour les dés de violence, le MJ utilise tous ceux indiqués sur une des armes et y ajoute la moitié des dés de violence de l’autre arme (arrondie à l’entier supérieur). Les bonus fixes ne sont pas cumulés (on utilise une seule fois les bonus fixes). Malus : À chacune de ses attaques, le personnage lance 3 dés en moins, au contact comme au tir.";
         }
 
 
@@ -847,7 +847,7 @@ export default class KnightActorSheet extends ActorSheet {
         var nbdod = tab[1];
         var texte = tab[2];
         
-        let roll = new Roll(nbdd);
+        var roll = new Roll(nbdd);
 
         roll.roll().toMessage({
             speaker: ChatMessage.getSpeaker({ actor: this.actor }),
@@ -875,9 +875,9 @@ export default class KnightActorSheet extends ActorSheet {
         var devio = item.data.data.violence;
         var viopur = item.data.data.special.bonvio.degpur;
 
-        let roll1 = new Roll(nbdd);
-        let roll2 = new Roll(dedeg+"d6+"+degpur+"+"+degf);
-        let roll3 = new Roll(devio+"d6+"+viopur);
+        var roll1 = new Roll(nbdd);
+        var roll2 = new Roll(dedeg+"d6+"+degpur+"+"+degf);
+        var roll3 = new Roll(devio+"d6+"+viopur);
         roll1.roll().toMessage({
             speaker: ChatMessage.getSpeaker({ actor: this.actor} ),
             flavor: texte + nbdod
@@ -907,9 +907,9 @@ export default class KnightActorSheet extends ActorSheet {
         var devio = item.data.data.violence;
         var viopur = item.data.data.special.bonvio.degpur;
 
-        let roll1 = new Roll(nbdd);
-        let roll2 = new Roll(dedeg+"d6+"+degpur);
-        let roll3 = new Roll(devio+"d6+"+viopur);
+        var roll1 = new Roll(nbdd);
+        var roll2 = new Roll(dedeg+"d6+"+degpur);
+        var roll3 = new Roll(devio+"d6+"+viopur);
         roll1.roll().toMessage({
             speaker: ChatMessage.getSpeaker({ actor: this.actor} ),
             flavor: texte + nbdod
@@ -940,9 +940,9 @@ export default class KnightActorSheet extends ActorSheet {
 
         var degf = force + forceOD
 
-        let roll1 = new Roll(nbdd);
-        let roll2 = new Roll(4+'D6+'+degf)
-        let roll3 = new Roll(4+'D6')
+        var roll1 = new Roll(nbdd);
+        var roll2 = new Roll(4+'D6+'+degf)
+        var roll3 = new Roll(4+'D6')
 
         roll1.roll().toMessage({
             speaker: ChatMessage.getSpeaker({ actor: this.actor} ),
@@ -974,8 +974,8 @@ export default class KnightActorSheet extends ActorSheet {
 
         var degf = force + forceOD
 
-        let roll2 = new Roll(2+'D6+'+degf)
-        let roll3 = new Roll(5+'D6')
+        var roll2 = new Roll(2+'D6+'+degf)
+        var roll3 = new Roll(5+'D6')
 
         roll1.roll().toMessage({
             speaker: ChatMessage.getSpeaker({ actor: this.actor} ),
@@ -1006,9 +1006,9 @@ export default class KnightActorSheet extends ActorSheet {
         var forceOD = Number(character.attributs.Chair.competence.Force.od)
 
         var degf = force + forceOD
-        let roll1 = new Roll(nbdd);
-        let roll2 = new Roll(4+'D6+'+degf)
-        let roll3 = new Roll(4+'D6')
+        var roll1 = new Roll(nbdd);
+        var roll2 = new Roll(4+'D6+'+degf)
+        var roll3 = new Roll(4+'D6')
 
         roll1.roll().toMessage({
             speaker: ChatMessage.getSpeaker({ actor: this.actor} ),
@@ -1039,9 +1039,9 @@ export default class KnightActorSheet extends ActorSheet {
         var forceOD = Number(character.attributs.Chair.competence.Force.od)
 
         var degf = force + forceOD
-        let roll1 = new Roll(nbdd);
-        let roll2 = new Roll(6+'D6+'+degf)
-        let roll3 = new Roll(4+'D6')
+        var roll1 = new Roll(nbdd);
+        var roll2 = new Roll(6+'D6+'+degf)
+        var roll3 = new Roll(4+'D6')
 
         roll1.roll().toMessage({
             speaker: ChatMessage.getSpeaker({ actor: this.actor} ),
@@ -1072,9 +1072,9 @@ export default class KnightActorSheet extends ActorSheet {
         var forceOD = Number(character.attributs.Chair.competence.Force.od)
 
         var degf = force + forceOD
-        let roll1 = new Roll(nbdd);
-        let roll2 = new Roll(4+'D6+'+degf)
-        let roll3 = new Roll(6+'D6')
+        var roll1 = new Roll(nbdd);
+        var roll2 = new Roll(4+'D6+'+degf)
+        var roll3 = new Roll(6+'D6')
 
         roll1.roll().toMessage({
             speaker: ChatMessage.getSpeaker({ actor: this.actor} ),
@@ -1105,9 +1105,9 @@ export default class KnightActorSheet extends ActorSheet {
         var forceOD = Number(character.attributs.Chair.competence.Force.od)
 
         var degf = force + forceOD
-        let roll1 = new Roll(nbdd);
-        let roll2 = new Roll(5+'D6+'+degf)
-        let roll3 = new Roll(5+'D6')
+        var roll1 = new Roll(nbdd);
+        var roll2 = new Roll(5+'D6+'+degf)
+        var roll3 = new Roll(5+'D6')
 
         roll1.roll().toMessage({
             speaker: ChatMessage.getSpeaker({ actor: this.actor} ),
@@ -1138,9 +1138,9 @@ export default class KnightActorSheet extends ActorSheet {
         var forceOD = Number(character.attributs.Chair.competence.Force.od)
 
         var degf = force + forceOD
-        let roll1 = new Roll(nbdd);
-        let roll2 = new Roll(7+'D6+'+degf)
-        let roll3 = new Roll(5+'D6')
+        var roll1 = new Roll(nbdd);
+        var roll2 = new Roll(7+'D6+'+degf)
+        var roll3 = new Roll(5+'D6')
 
         roll1.roll().toMessage({
             speaker: ChatMessage.getSpeaker({ actor: this.actor} ),
@@ -1171,9 +1171,9 @@ export default class KnightActorSheet extends ActorSheet {
         var forceOD = Number(character.attributs.Chair.competence.Force.od)
 
         var degf = force + forceOD
-        let roll1 = new Roll(nbdd);
-        let roll2 = new Roll(5+'D6+'+degf)
-        let roll3 = new Roll(7+'D6')
+        var roll1 = new Roll(nbdd);
+        var roll2 = new Roll(5+'D6+'+degf)
+        var roll3 = new Roll(7+'D6')
 
         roll1.roll().toMessage({
             speaker: ChatMessage.getSpeaker({ actor: this.actor} ),
@@ -1204,9 +1204,9 @@ export default class KnightActorSheet extends ActorSheet {
         var forceOD = Number(character.attributs.Chair.competence.Force.od)
 
         var degf = force + forceOD
-        let roll1 = new Roll(nbdd);
-        let roll2 = new Roll(6+'D6+'+degf)
-        let roll3 = new Roll(6+'D6')
+        var roll1 = new Roll(nbdd);
+        var roll2 = new Roll(6+'D6+'+degf)
+        var roll3 = new Roll(6+'D6')
 
         roll1.roll().toMessage({
             speaker: ChatMessage.getSpeaker({ actor: this.actor} ),
@@ -1237,9 +1237,9 @@ export default class KnightActorSheet extends ActorSheet {
         var forceOD = Number(character.attributs.Chair.competence.Force.od)
 
         var degf = force + forceOD
-        let roll1 = new Roll(nbdd);
-        let roll2 = new Roll(7+'D6+'+degf)
-        let roll3 = new Roll(9+'D6')
+        var roll1 = new Roll(nbdd);
+        var roll2 = new Roll(7+'D6+'+degf)
+        var roll3 = new Roll(9+'D6')
 
         roll1.roll().toMessage({
             speaker: ChatMessage.getSpeaker({ actor: this.actor} ),
@@ -1270,9 +1270,9 @@ export default class KnightActorSheet extends ActorSheet {
         var forceOD = Number(character.attributs.Chair.competence.Force.od)
 
         var degf = force + forceOD
-        let roll1 = new Roll(nbdd);
-        let roll2 = new Roll(8+'D6+'+degf)
-        let roll3 = new Roll(8+'D6')
+        var roll1 = new Roll(nbdd);
+        var roll2 = new Roll(8+'D6+'+degf)
+        var roll3 = new Roll(8+'D6')
 
         roll1.roll().toMessage({
             speaker: ChatMessage.getSpeaker({ actor: this.actor} ),
@@ -1303,9 +1303,9 @@ export default class KnightActorSheet extends ActorSheet {
         var forceOD = Number(character.attributs.Chair.competence.Force.od)
 
         var degf = force + forceOD
-        let roll1 = new Roll(nbdd);
-        let roll2 = new Roll(10+'D6+'+degf)
-        let roll3 = new Roll(12+'D6')
+        var roll1 = new Roll(nbdd);
+        var roll2 = new Roll(10+'D6+'+degf)
+        var roll3 = new Roll(12+'D6')
 
         roll1.roll().toMessage({
             speaker: ChatMessage.getSpeaker({ actor: this.actor} ),
@@ -1336,9 +1336,9 @@ export default class KnightActorSheet extends ActorSheet {
         var forceOD = Number(character.attributs.Chair.competence.Force.od)
 
         var degf = force + forceOD
-        let roll1 = new Roll(nbdd);
-        let roll2 = new Roll(11+'D6+'+degf)
-        let roll3 = new Roll(11+'D6')
+        var roll1 = new Roll(nbdd);
+        var roll2 = new Roll(11+'D6+'+degf)
+        var roll3 = new Roll(11+'D6')
 
         roll1.roll().toMessage({
             speaker: ChatMessage.getSpeaker({ actor: this.actor} ),

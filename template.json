@@ -405,7 +405,7 @@
                     "etat": ""
                     },
                 "artillerie":{
-                    "etat": false
+                    "etat": ""
                     },
                 "assasin":{
                     "etat": "",
@@ -594,7 +594,7 @@
                     "etat": ""
                     },
                 "artillerie":{
-                    "etat": false
+                    "etat": ""
                     },
                 "assasin":{
                     "etat": "",
@@ -773,6 +773,7 @@
             "niv5": ""
         },
         "meta-armure": {
+            "choix":"",
             "slots": {
                 "tete": "",
                 "brasgauche": "",
@@ -787,9 +788,12 @@
                 "od3": "",
                 "od4": ""
             },
-            "pointdarmure": "", 
+            "pointdarmure": "",
+            "pointdarmureb": "", 
             "pointdenergie": "",
+            "pointdenergieb": "",
             "champdeforce": "",
+            "champdeforceb": "",
             "egide":"",
             "description": "",
             "capacite": "",
