@@ -1,0 +1,23 @@
+{
+    "name": "Knight",
+    "title": "Knight",
+    "description": "Knight pour foundry VTT",
+    "version": "0.12.14",
+    "minimumCoreVersion": "0.7.9",
+    "compatibleCoreVersion": "0.8.9",
+    "templateVersion": 31,
+    "author": "Sphins (J'peuxpasj'ai JDR!!)",
+    "esmodules": ["module/knight.js"],
+    "styles": ["css/knight.css"],
+    "scripts": [],
+    "packs": [],
+    "languages": [],
+    "gridDistance": 1,
+    "gridUnits": "m",
+    "primaryTokenAttribute": "",
+    "secondaryTokenAttribute": "",
+    "url": "",
+    "manifest": "",
+    "download": "",
+    "license": "LICENSE.txt"
+}

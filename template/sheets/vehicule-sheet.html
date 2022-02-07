@@ -1,0 +1,59 @@
+<form class="{{cssClass}}" autocompvare="off">
+    <img src="{{item.img}}" data-edit="img" title="{{item.name}}" height="128" width="128" />
+    <h1><input name="name" type="text" value="{{item.name}}" placeholder="Name" /></h1>
+
+    <label>Déscription
+        <input name="data.description" type="text" value="{{data.description}}" placeholder="" />
+    </label>
+
+    <!-- défense réaction -->
+
+    <li>
+        <label>Défense
+            <input name="data.defense" type="text" value="{{data.defense}}" placeholder="" />
+        </label>
+
+        <label>Réaction
+            <input name="data.reaction" type="text" value="{{data.reaction}}" placeholder="" />
+        </label>
+    </li>
+
+    <!-- Stat -->
+
+    <li>
+        <label>Manoeuvrabilité
+            <input name="data.manoeuvrabilite" type="text" value="{{data.manoeuvrabilite}}" placeholder="" />
+        </label>
+
+        <label>Vitesse
+            <input name="data.vitesse" type="text" value="{{data.vitesse}}" placeholder="" />
+        </label>
+
+        <label>Equipage
+            <input name="data.equipage" type="text" value="{{data.equipage}}" placeholder="" />
+        </label>
+    </li>
+
+    <!-- armure energie CDF -->
+
+    <li>
+
+        <label>Armure
+            <input name="data.armureact" type="text" value="{{data.armureact}}" placeholder="" />
+            <input name="data.armuremax" type="text" value="{{data.armuremax}}" placeholder="" />
+        </label>
+
+        <label>Energie
+            <input name="data.energieact" type="text" value="{{data.energieact}}" placeholder="" />
+            <input name="data.energiemax" type="text" value="{{data.energiemax}}" placeholder="" />
+        </label>
+
+        <label>Champs de force
+            <input name="data.cdf" type="text" value="{{data.cdf}}" placeholder="" />
+        </label>
+
+    </li>
+
+
+
+</form>

@@ -1,0 +1,96 @@
+<body>
+    <!-- attribut et competence -->
+    <div >
+        {{#each actor.data.data.attributs as |attribut attnom|}}
+        <label >{{attnom}}</label>
+        <input  name="data.attributs.{{attnom}}.valeur" type="number" value="{{attribut.valeur}}" />
+        <ul>
+            {{#each attribut.competence as |competences cmpnom|}}
+            <li >
+                <label >{{cmpnom}}</label>
+                <input  name="data.attributs.{{attnom}}.competence.{{cmpnom}}.valeur" type="number"
+                    value="{{competences.valeur}}" />
+                <label >OD</label>
+                <input  name="data.attributs.{{attnom}}.competence.{{cmpnom}}.od" type="number"
+                    value="{{competences.od}}" />
+            </li>
+            {{/each}}
+        </ul>
+        {{/each}}
+    </div>
+
+
+    <!-- carte d'identité -->
+
+    <div >
+        <row>
+            <label >Surnom</label>
+            <input  name="data.surnom1" type="text" value="{{actor.data.data.surnom1}}" />
+        </row>
+        <row>
+            <label >Age</label>
+            <input  name="data.age" type="text" value="{{actor.data.data.age}}" />
+        </row>
+        <row>
+            <label >Archetype</label>
+            <input  name="data.archetype" type="text" value="{{actor.data.data.archetype}}" />
+
+            <row>
+                <label >Haut fait</label>
+                <input  name="data.hautfait" type="text" value="{{actor.data.data.hautfait}}" />
+            </row>
+            <row>
+                <label >Meta-armure</label>
+                {{#each actor.data.data.metaarmure as |items key|}}
+                <p>{{items.name}}</p>
+                {{/each}}
+            </row>
+
+            <row>
+                <label >Section</label>
+                <select  name="data.sectiondorigine" value="{{sectiondorigine}}">
+                    {{#select actor.data.data.sectiondorigine}}
+                    <option value="0"></option>
+                    <option value="Ogre">Ogre</option>
+                    <option value="Dragon">Dragon</option>
+                    <option value="Giant">Giant</option>
+                    <option value="Gargoyle">Gargoyle</option>
+                    <option value="Korringan">Korringan</option>
+                    <option value="Tarasque">Tarasque</option>
+                    <option value="Griffon">Griffon</option>
+                    <option value="Cyclope">Cyclope</option>
+                    <option value="Kraken">Kraken</option>
+                    <option value="Personnel">personnel</option>
+                    {{/select}}
+                </select>
+            </row>
+            <row>
+                <label >Blason</label>
+                <input  name="data.blason" type="text" value="{{actor.data.data.blason}}" />
+            </row>
+
+    </div>
+
+    <!-- Motivation -->
+
+    <div >
+        <label>Motivation majeur
+            <ul>
+                <textarea rows=1 name="data.motivationmajeur">{{actor.data.data.motivationmajeur}}</textarea>
+            </ul>
+        </label>
+
+        <label>Motivation mineur
+            <ul>
+                <textarea rows=1 name="data.mo1">{{actor.data.data.mo1}}</textarea>
+
+                <textarea rows=1 name="data.mo2">{{actor.data.data.mo2}}</textarea>
+
+                <textarea rows=1 name="data.mo3">{{actor.data.data.mo3}}</textarea>
+
+                <textarea rows=1 name="data.mo4">{{actor.data.data.mo4}}</textarea>
+
+            </ul>
+        </label>
+    </div>
+</body>

@@ -1,0 +1,83 @@
+select, textarea, input, form, body, h1, input[type="number"] {
+    background: #3A3F44;
+    color: #edf0f3;
+    border: 1px solid #edf0f3
+}
+
+#chat-controls .roll-type-select, .directory .directory-header .header-search input {
+    color: #edf0f3;
+    background: #3A3F44;
+}
+
+form .notes, form .hint, form .form-group .form-fields > label.checkbox, form .form-group .form-fields, .tox:not(.tox-tinymce-inline) .tox-editor-header {
+    color: #edf0f3;
+    background: #3A3F44;
+}
+
+.chat-message .message-header {
+    color: #edf0f3;
+}
+
+form h1.form-header, form h2.form-header, form h3.form-header{
+    color: #edf0f3;
+}
+
+.window-app .window-content {
+    color: #edf0f3;
+    background-color: #3A3F44;
+    background-image: unset;
+}
+
+input[type="checkbox"].effet {
+    display: none;
+  }
+  input[type="checkbox"].effet + label {
+    max-width: 150px;
+    min-width: 149px;
+    border-radius:3px;
+    color: #f89406;
+    background-color: transparent;
+    border: 1px solid #edf0f3;
+    padding: 7px;
+    transition: all 0.5s ease-in-out;
+  }
+  input[type="checkbox"].effet.demoyes:hover + label {
+    background-color: #f89406;
+    border-color: #edf0f3;
+    color: #3A3F44;
+  }
+  input[type="checkbox"].effet.demoyes:checked + label {
+    background-color: #f89406;
+    border-color: #edf0f3;
+    color: #3A3F44;
+  }
+
+#sidebar {
+    color:#f89406;
+}
+
+input[type="text"]{
+    background-color: #3A3F44;
+    color: #edf0f3;
+    border: 1px solid #edf0f3
+}
+.form-fields{ 
+    background-color: #edf0f3;
+}
+
+.app,
+.chat-message,
+#chat-form textarea {
+    background: #3A3F44;
+    color: #edf0f3;
+}
+
+.editable {
+    background: #3A3F44;
+    background-image: url(image/Knight.png);
+    background-position: top right;
+    background-repeat: no-repeat;
+    background-size: 80%;
+    
+}
+

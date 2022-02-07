@@ -1,0 +1,86 @@
+<form class="{{cssClass}}" autocompvare="off">
+    <img src="{{item.img}}" data-edit="img" title="{{item.name}}" height="128" width="128" />
+    <h1><input name="name" type="text" value="{{item.name}}" placeholder="Name" /></h1>
+
+
+
+    <select name="data.choix" value="{{choix}}">
+        {{#select data.data.choix}}
+        <option value="0"></option>
+        <option value="barbarian">Barbarian</option>
+        <option value="bard">Bard</option>
+        <option value="berserk">Berserk</option>
+        <option value="druid">Druid</option>
+        <option value="monk">Monk</option>
+        <option value="necromancer">Necromancer</option>
+        <option value="paladin">Paladin</option>
+        <option value="priest">Priest</option>
+        <option value="psion">Psion</option>
+        <option value="ranger">Ranger</option>
+        <option value="Rogue">Rogue</option>
+        <option value="shaman">Shaman</option>
+        <option value="sorcerer">Sorcerer</option>
+        <option value="warlock">Warlock</option>
+        <option value="warior">Warior</option>
+        <option value="wizard">Wizard</option>
+        <option value="personalisé">Personalisé</option>
+        {{/select}}
+    </select>
+
+
+    <div id="meta01" class="tab" style="display:none">
+        {{>"systems/Knight/template/sheets/meta-armure/personalisable.html"}}
+    </div>
+    <div id="meta02" class="tab" style="display:none">
+        {{>"systems/Knight/template/sheets/meta-armure/barbarian.html"}}
+    </div>
+    <div id="meta03" class="tab" style="display:none">
+        {{>"systems/Knight/template/sheets/meta-armure/bard.html"}}
+    </div>
+    <div id="meta04" class="tab" style="display:none">
+        {{>"systems/Knight/template/sheets/meta-armure/berserk.html"}}
+    </div>
+    <div id="meta05" class="tab" style="display:none">
+        {{>"systems/Knight/template/sheets/meta-armure/druid.html"}}
+    </div>
+    <div id="meta06" class="tab" style="display:none">
+        {{>"systems/Knight/template/sheets/meta-armure/monk.html"}}
+    </div>
+    <div id="meta07" class="tab" style="display:none">
+        {{>"systems/Knight/template/sheets/meta-armure/necromancer.html"}}
+    </div>
+    <div id="meta08" class="tab" style="display:none">
+        {{>"systems/Knight/template/sheets/meta-armure/paladin.html"}}
+    </div>
+    <div id="meta09" class="tab" style="display:none">
+        {{>"systems/Knight/template/sheets/meta-armure/priest.html"}}
+    </div>
+    <div id="meta10" class="tab" style="display:none">
+        {{>"systems/Knight/template/sheets/meta-armure/psion.html"}}
+    </div>
+    <div id="meta11" class="tab" style="display:none">
+        {{>"systems/Knight/template/sheets/meta-armure/ranger.html"}}
+    </div>
+    <div id="meta12" class="tab" style="display:none">
+        {{>"systems/Knight/template/sheets/meta-armure/rogue.html"}}
+    </div>
+    <div id="meta13" class="tab" style="display:none">
+        {{>"systems/Knight/template/sheets/meta-armure/shaman.html"}}
+    </div>
+    <div id="meta14" class="tab" style="display:none">
+        {{>"systems/Knight/template/sheets/meta-armure/sorcerer.html"}}
+    </div>
+    <div id="meta15" class="tab" style="display:none">
+        {{>"systems/Knight/template/sheets/meta-armure/warlock.html"}}
+    </div>
+    <div id="meta16" class="tab" style="display:none">
+        {{>"systems/Knight/template/sheets/meta-armure/warmaster.html"}}
+    </div>
+    <div id="meta17" class="tab" style="display:none">
+        {{>"systems/Knight/template/sheets/meta-armure/warrior.html"}}
+    </div>
+    <div id="meta18" class="tab" style="display:none">
+        {{>"systems/Knight/template/sheets/meta-armure/wizard.html"}}
+    </div>
+
+</form>
