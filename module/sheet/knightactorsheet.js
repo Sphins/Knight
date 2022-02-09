@@ -217,16 +217,16 @@ export default class KnightActorSheet extends ActorSheet {
                 tab6.style.display = "none";
 
                 generale.style.background = "#f89406";
-                generale.style.color = "#3A3F44";
-                armure.style.background = "#3A3F44";
+                generale.style.color = "#333";
+                armure.style.background = "#333";
                 armure.style.color = "#f89406";
-                ia.style.background = "#3A3F44";
+                ia.style.background = "#333";
                 ia.style.color = "#f89406";
-                iai.style.background = "#3A3F44";
+                iai.style.background = "#333";
                 iai.style.color = "#f89406";
-                historique.style.background = "#3A3F44";
+                historique.style.background = "#333";
                 historique.style.color = "#f89406";
-                combat.style.background = "#3A3F44";
+                combat.style.background = "#333";
                 combat.style.color = "#f89406";
             }
         })
@@ -240,17 +240,17 @@ export default class KnightActorSheet extends ActorSheet {
                 tab5.style.display = "none";
                 tab6.style.display = "none";
 
-                generale.style.background = "#3A3F44";
+                generale.style.background = "#333";
                 generale.style.color = "#f89406";
                 armure.style.background = "#f89406";
-                armure.style.color = "#3A3F44";
-                ia.style.background = "#3A3F44";
+                armure.style.color = "#333";
+                ia.style.background = "#333";
                 ia.style.color = "#f89406";
-                iai.style.background = "#3A3F44";
+                iai.style.background = "#333";
                 iai.style.color = "#f89406";
-                historique.style.background = "#3A3F44";
+                historique.style.background = "#333";
                 historique.style.color = "#f89406";
-                combat.style.background = "#3A3F44";
+                combat.style.background = "#333";
                 combat.style.color = "#f89406";
             }
         })
@@ -264,17 +264,17 @@ export default class KnightActorSheet extends ActorSheet {
                 tab5.style.display = "none";
                 tab6.style.display = "none";
 
-                generale.style.background = "#3A3F44";
+                generale.style.background = "#333";
                 generale.style.color = "#f89406";
-                armure.style.background = "#3A3F44";
+                armure.style.background = "#333";
                 armure.style.color = "#f89406";
                 ia.style.background = "#f89406";
-                ia.style.color = "#3A3F44";
-                iai.style.background = "#3A3F44";
+                ia.style.color = "#333";
+                iai.style.background = "#333";
                 iai.style.color = "#f89406";
-                historique.style.background = "#3A3F44";
+                historique.style.background = "#333";
                 historique.style.color = "#f89406";
-                combat.style.background = "#3A3F44";
+                combat.style.background = "#333";
                 combat.style.color = "#f89406";
             }
         })
@@ -288,17 +288,17 @@ export default class KnightActorSheet extends ActorSheet {
                 tab5.style.display = "none";
                 tab6.style.display = "none";
 
-                generale.style.background = "#3A3F44";
+                generale.style.background = "#333";
                 generale.style.color = "#f89406";
-                armure.style.background = "#3A3F44";
+                armure.style.background = "#333";
                 armure.style.color = "#f89406";
-                ia.style.background = "#3A3F44";
+                ia.style.background = "#333";
                 ia.style.color = "#f89406";
                 iai.style.background = "#f89406";
-                iai.style.color = "#3A3F44";
-                historique.style.background = "#3A3F44";
+                iai.style.color = "#333";
+                historique.style.background = "#333";
                 historique.style.color = "#f89406";
-                combat.style.background = "#3A3F44";
+                combat.style.background = "#333";
                 combat.style.color = "#f89406";
             }
         })
@@ -312,17 +312,17 @@ export default class KnightActorSheet extends ActorSheet {
                 tab4.style.display = "none";
                 tab6.style.display = "none";
 
-                generale.style.background = "#3A3F44";
+                generale.style.background = "#333";
                 generale.style.color = "#f89406";
-                armure.style.background = "#3A3F44";
+                armure.style.background = "#333";
                 armure.style.color = "#f89406";
-                ia.style.background = "#3A3F44";
+                ia.style.background = "#333";
                 ia.style.color = "#f89406";
-                iai.style.background = "#3A3F44";
+                iai.style.background = "#333";
                 iai.style.color = "#f89406";
                 historique.style.background = "#f89406";
-                historique.style.color = "#3A3F44";
-                combat.style.background = "#3A3F44";
+                historique.style.color = "#333";
+                combat.style.background = "#333";
                 combat.style.color = "#f89406";
             }
         })
@@ -336,18 +336,18 @@ export default class KnightActorSheet extends ActorSheet {
                 tab4.style.display = "none";
                 tab5.style.display = "none";
 
-                generale.style.background = "#3A3F44";
+                generale.style.background = "#333";
                 generale.style.color = "#f89406";
-                armure.style.background = "#3A3F44";
+                armure.style.background = "#333";
                 armure.style.color = "#f89406";
-                ia.style.background = "#3A3F44";
+                ia.style.background = "#333";
                 ia.style.color = "#f89406";
-                iai.style.background = "#3A3F44";
+                iai.style.background = "#333";
                 iai.style.color = "#f89406";
-                historique.style.background = "#3A3F44";
+                historique.style.background = "#333";
                 historique.style.color = "#f89406";
                 combat.style.background = "#f89406";
-                combat.style.color = "#3A3F44";
+                combat.style.color = "#333";
             }
         })
     }

@@ -1,30 +1,30 @@
 select, textarea, input, form, body, h1, input[type="number"] {
-    background: #3A3F44;
-    color: #edf0f3;
-    border: 1px solid #edf0f3
+    background: #333;
+    color: #e4e4e4;
+    border: 1px solid #e4e4e4
 }
 
 #chat-controls .roll-type-select, .directory .directory-header .header-search input {
-    color: #edf0f3;
-    background: #3A3F44;
+    color: #e4e4e4;
+    background: #333;
 }
 
 form .notes, form .hint, form .form-group .form-fields > label.checkbox, form .form-group .form-fields, .tox:not(.tox-tinymce-inline) .tox-editor-header {
-    color: #edf0f3;
-    background: #3A3F44;
+    color: #e4e4e4;
+    background: #333;
 }
 
 .chat-message .message-header {
-    color: #edf0f3;
+    color: #e4e4e4;
 }
 
 form h1.form-header, form h2.form-header, form h3.form-header{
-    color: #edf0f3;
+    color: #e4e4e4;
 }
 
 .window-app .window-content {
-    color: #edf0f3;
-    background-color: #3A3F44;
+    color: #e4e4e4;
+    background-color: #333;
     background-image: unset;
 }
 
@@ -35,49 +35,124 @@ input[type="checkbox"].effet {
     max-width: 150px;
     min-width: 149px;
     border-radius:3px;
-    color: #f89406;
+    color: #ffbb5c;
     background-color: transparent;
-    border: 1px solid #edf0f3;
+    border: 1px solid #dee2e6;
     padding: 7px;
     transition: all 0.5s ease-in-out;
   }
   input[type="checkbox"].effet.demoyes:hover + label {
-    background-color: #f89406;
-    border-color: #edf0f3;
-    color: #3A3F44;
+    background-color: #ffbb5c;
+    border-color: #dee2e6;
+    color: #333;
   }
   input[type="checkbox"].effet.demoyes:checked + label {
-    background-color: #f89406;
-    border-color: #edf0f3;
-    color: #3A3F44;
+    background-color: #ffbb5c;
+    border-color: #dee2e6;
+    color: #333;
   }
 
 #sidebar {
-    color:#f89406;
+    color:#ffbb5c;
 }
 
 input[type="text"]{
-    background-color: #3A3F44;
+    background-color: #333;
     color: #edf0f3;
-    border: 1px solid #edf0f3
+    border: 1px solid #e4e4e4
 }
 .form-fields{ 
-    background-color: #edf0f3;
+    background-color: #e4e4e4;
 }
 
 .app,
 .chat-message,
 #chat-form textarea {
-    background: #3A3F44;
-    color: #edf0f3;
+    background: #333;
+    color: #e4e4e4;
 }
 
 .editable {
-    background: #3A3F44;
+    background: #333;
     background-image: url(image/Knight.png);
     background-position: top right;
     background-repeat: no-repeat;
-    background-size: 80%;
-    
+    background-size: 80%; 
+}
+
+form {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+
+ .border {
+     border: 1px solid #dee2e6;
+     
+ }
+ .textc {
+    text-align: center;
+ }
+
+ .flexv {
+     display: flex ;
+     align-items: center;
+     justify-content:space-around;
+ }
+
+ .flexh {
+    display: flex ;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+ .padgd{
+     padding:0px 10px;
+ }
+ .pad10{
+    padding: 10px;
+ }
+ .mar10{
+    margin: 10px;
+ }
+ .label50 {
+    display:flexbox;
+    max-width: 50px;
+}
+.label100 {
+    display:flexbox;
+    width: 100px;
+}
+.label200 {
+    display:flexbox;
+    max-width: 200px;
+}
+.label300 {
+    display:flexbox;
+    max-width: 300px;
+}
+
+.main-title{
+    color: #e4e4e4;
+    background-color: #616161 ;
+}
+.colboxb{
+    margin:10px 10px 0px 10px;
+}
+.colboxh{
+    margin:0 10px 10px 10px;
+}
+
+.flex3 {
+    display: flex ;
+    align-items: center;
+    justify-content:center;
+}
+.g50 {
+    display: flex ;
+    width: max-content ;
+    flex-direction: column;
+}
+.droite {
+    float:right;
 }
 

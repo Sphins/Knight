@@ -1,54 +1,61 @@
 <body>
     <!-- attribut et competence -->
-    <div >
+    <div class="droite">
         {{#each actor.data.data.attributs as |attribut attnom|}}
-        <label >{{attnom}}</label>
-        <input  name="data.attributs.{{attnom}}.valeur" type="number" value="{{attribut.valeur}}" />
-        <ul>
-            {{#each attribut.competence as |competences cmpnom|}}
-            <li >
-                <label >{{cmpnom}}</label>
-                <input  name="data.attributs.{{attnom}}.competence.{{cmpnom}}.valeur" type="number"
-                    value="{{competences.valeur}}" />
-                <label >OD</label>
-                <input  name="data.attributs.{{attnom}}.competence.{{cmpnom}}.od" type="number"
-                    value="{{competences.od}}" />
-            </li>
-            {{/each}}
-        </ul>
+        <div class="g50 border mar10">
+            <h2 class=" border textc main-title">{{attnom}}</h2>
+            <div class="textc">
+                <input class="label50" name="data.attributs.{{attnom}}.valeur" type="number"
+                    value="{{attribut.valeur}}" />
+            </div>
+            <ul>
+                {{#each attribut.competence as |competences cmpnom|}}
+                <li class="flexv mar10">
+                    <label class="label100 mar10">{{cmpnom}}</label>
+                    <input class="label50 mar10" name="data.attributs.{{attnom}}.competence.{{cmpnom}}.valeur"
+                        type="number" value="{{competences.valeur}}" />
+                    <label class="label100 mar10">OD</label>
+                    <input class="flexv label50 mar10" name="data.attributs.{{attnom}}.competence.{{cmpnom}}.od"
+                        type="number" value="{{competences.od}}" />
+                </li>
+                {{/each}}
+            </ul>
+        </div>
         {{/each}}
+
     </div>
 
 
     <!-- carte d'identité -->
 
-    <div >
+    <div>
+        <h2 class="padgd border textc main-title colboxb" >Carte d'identité</h2>
         <row>
-            <label >Surnom</label>
-            <input  name="data.surnom1" type="text" value="{{actor.data.data.surnom1}}" />
+            <label>Surnom</label>
+            <input name="data.surnom1" type="text" value="{{actor.data.data.surnom1}}" />
         </row>
         <row>
-            <label >Age</label>
-            <input  name="data.age" type="text" value="{{actor.data.data.age}}" />
+            <label>Age</label>
+            <input name="data.age" type="text" value="{{actor.data.data.age}}" />
         </row>
         <row>
-            <label >Archetype</label>
-            <input  name="data.archetype" type="text" value="{{actor.data.data.archetype}}" />
+            <label>Archetype</label>
+            <input name="data.archetype" type="text" value="{{actor.data.data.archetype}}" />
 
             <row>
-                <label >Haut fait</label>
-                <input  name="data.hautfait" type="text" value="{{actor.data.data.hautfait}}" />
+                <label>Haut fait</label>
+                <input name="data.hautfait" type="text" value="{{actor.data.data.hautfait}}" />
             </row>
             <row>
-                <label >Meta-armure</label>
+                <label>Meta-armure</label>
                 {{#each actor.data.data.metaarmure as |items key|}}
                 <p>{{items.name}}</p>
                 {{/each}}
             </row>
 
             <row>
-                <label >Section</label>
-                <select  name="data.sectiondorigine" value="{{sectiondorigine}}">
+                <label>Section</label>
+                <select name="data.sectiondorigine" value="{{sectiondorigine}}">
                     {{#select actor.data.data.sectiondorigine}}
                     <option value="0"></option>
                     <option value="Ogre">Ogre</option>
@@ -65,15 +72,15 @@
                 </select>
             </row>
             <row>
-                <label >Blason</label>
-                <input  name="data.blason" type="text" value="{{actor.data.data.blason}}" />
+                <label>Blason</label>
+                <input name="data.blason" type="text" value="{{actor.data.data.blason}}" />
             </row>
 
     </div>
 
     <!-- Motivation -->
 
-    <div >
+    <div>
         <label>Motivation majeur
             <ul>
                 <textarea rows=1 name="data.motivationmajeur">{{actor.data.data.motivationmajeur}}</textarea>
