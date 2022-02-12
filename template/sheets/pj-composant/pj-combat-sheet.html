@@ -1,137 +1,153 @@
 <body>
     <!--Nods-->
-    <div>
-        <table >
+    <div class="g50 droite colboxh">
+        <table class="border">
             <tr>
-                <th colspan=3>Nods</th>
+                <th colspan=3>
+                    <h2 class="main-title l301">Nods</h2>
+                </th>
             </tr>
             <tr>
                 <th>Soins</th>
                 <td>
-                    <input  name="data.nods.soins.sact" type="number"
+                    <input class="label50 mar10" name="data.nods.soins.sact" type="number"
                         value="{{actor.data.data.nods.soins.sact}}" />
                     /
-                    <input  name="data.nods.soins.smax" type="number"
+                    <input class="label50 mar10" name="data.nods.soins.smax" type="number"
                         value="{{actor.data.data.nods.soins.smax}}" />
                 </td>
-                <td><a class="jetdenodss"><i class="fas fa-dice"></i></a></td>
+                <td><a class="jetdenodss label50"><i class="fas fa-dice"></i></a></td>
             </tr>
             <tr>
                 <th>Armure</th>
                 <td>
-                    <input  name="data.nods.armure.aact" type="number"
+                    <input class="label50 mar10" name="data.nods.armure.aact" type="number"
                         value="{{actor.data.data.nods.armure.aact}}" />
                     /
-                    <input  name="data.nods.armure.amax" type="number"
+                    <input class="label50 mar10" name="data.nods.armure.amax" type="number"
                         value="{{actor.data.data.nods.armure.amax}}" />
                 </td>
-                <td><a class="jetdenodsa"><i class="fas fa-dice"></i></a></td>
+                <td><a class="jetdenodsa label50"><i class="fas fa-dice"></i></a></td>
             </tr>
             <tr>
                 <th>Energie</th>
                 <td>
-                    <input  name="data.nods.energie.eact" type="number"
+                    <input class="label50 mar10" name="data.nods.energie.eact" type="number"
                         value="{{actor.data.data.nods.energie.eact}}" />
                     /
-                    <input  name="data.nods.energie.emax" type="number"
+                    <input class="label50 mar10" name="data.nods.energie.emax" type="number"
                         value="{{actor.data.data.nods.energie.emax}}" />
                 </td>
-                <td><a class="jetdenodse"><i class="fas fa-dice"></i></a></td>
+                <td><a class="jetdenodse label50"><i class="fas fa-dice"></i></a></td>
             </tr>
 
         </table>
     </div>
     <!--heroisme-->
-    <div >
-        <div >
-            <label >Point d'héroisme</label>
-            <input  name="data.heroisme.hact" type="number" value="{{actor.data.data.heroisme.hact}}" />
-            <label >/6</label>
-        </div>
-        <!--style de combat-->
-        <label>
-            Style de combat
-        </label>
-        <select name="data.stycom" value="{{actor.data.data.stycom}}">
-            {{#select actor.data.data.stycom}}
-            <option value="Standard">Standard</option>
-            <option value="Agressif">Agressif</option>
-            <option value="Defensif">Défensif</option>
-            <option value="Couvert">Mise à couvert</option>
-            <option value="precis">Précis</option>
-            <option value="Pilonnage">Pilonnage</option>
-            <option value="Puissant">Puissant</option>
-            <option value="Suppression">Suppression</option>
-            <option value="Ambidextere">Ambidextere</option>
-            <option value="Akimbo">Akimbo</option>
-            {{/select}}
-        </select>
-        <div>
+    <div class="g50 border mar10">
+        <h2 class="padgd border textc main-title l301">Héroisme</h2>
+        <row class="flexv pad10">
+            <label class="label200 mar10">Point d'héroisme</label>
+            <input class="label50 mar10" name="data.heroisme.hact" type="number"
+                value="{{actor.data.data.heroisme.hact}}" />
+            <label class="label50 mar10">/6</label>
+        </row>
+    </div>
+    <!--style de combat-->
+    <div class="g50 border mar10">
+        <h2 class="padgd border textc main-title l301">Style de combat</h2>
+        <div class=" pad10">
+            <select name="data.stycom" value="{{actor.data.data.stycom}}">
+                {{#select actor.data.data.stycom}}
+                <option value="Standard">Standard</option>
+                <option value="Agressif">Agressif</option>
+                <option value="Defensif">Défensif</option>
+                <option value="Couvert">Mise à couvert</option>
+                <option value="precis">Précis</option>
+                <option value="Pilonnage">Pilonnage</option>
+                <option value="Puissant">Puissant</option>
+                <option value="Suppression">Suppression</option>
+                <option value="Ambidextere">Ambidextere</option>
+                <option value="Akimbo">Akimbo</option>
+                {{/select}}
+            </select>
+
             <textarea rows=5 name="data.stycomt">{{actor.data.data.stycomt}}</textarea>
         </div>
     </div>
     <!--tableau arme de contact-->
-    <table>
-        <tr>
-            <th colspan=5>Arme de contact</th>
-        </tr>
-        <tr>
-            <th>Arme</th>
-            <th>Dégats</th>
-            <th>Violence</th>
-            <th>Portée</th>
-            <th></th>
-        </tr>
-        {{#each actor.data.data.arme_de_contact as |item key|}}
-        <tr  data-item-id={{item._id}}>
-            <td><img src="{{item.img}}" data-edit="img" title="{{item.name}}" height="32" width="32" />{{item.name}}
-            </td>
+    <div class="colboxh">
+        <table class="border ">
+            <tr>
+                <th colspan=5>
+                    <h2 class=" textc main-title">Arme de contact</h2>
+                </th>
+            </tr>
+            <tr>
+                <th class="textc">Arme</th>
+                <th class="textc">Dégats</th>
+                <th class="textc">Violence</th>
+                <th class="textc">Portée</th>
+                <th class="textc"></th>
+            </tr>
+            {{#each actor.data.data.arme_de_contact as |item key|}}
+            <tr data-item-id={{item._id}}>
+                <td class="textc"><img src="{{item.img}}" data-edit="img" title="{{item.name}}" height="32"
+                        width="32" />{{item.name}}
+                </td>
 
-            <td>{{item.data.degats}}D6 +{{item.data.special.bondeg.degpur}}</td>
-            <td>{{item.data.violence}}D6 +{{item.data.special.bonvio.degpur}}</td>
-            <td>{{item.data.portee}}</td>
-            <td >
-                <a class="jetdataccac"><i class="fas fa-dice"></i></a>
-                <a class="item-edit" title="Edit Item"><i class="fas fa-edit"></i></a>
-                <a class="item-devare" title="Devare Item"><i class="fas fa-trash"></i></a>
-            </td>
+                <td class="textc">{{item.data.degats}}D6 +{{item.data.special.bondeg.degpur}}</td>
+                <td class="textc">{{item.data.violence}}D6 +{{item.data.special.bonvio.degpur}}</td>
+                <td class="textc">{{item.data.portee}}</td>
+                <td class="textc">
+                    <a class="jetdataccac"><i class="fas fa-dice"></i></a>
+                    <a class="item-edit" title="Edit Item"><i class="fas fa-edit"></i></a>
+                    <a class="item-devare" title="Devare Item"><i class="fas fa-trash"></i></a>
+                </td>
 
-        </tr>
-        {{/each}}
-    </table>
+            </tr>
+            {{/each}}
+        </table>
+    </div>
     <!--tableau arme a distance-->
-    <table>
-        <tr>
-            <th colspan=5>Arme à distance</th>
-        </tr>
-        <tr>
-            <th>Arme</th>
-            <th>Dégats</th>
-            <th>Violence</th>
-            <th>Portée</th>
-            <th></th>
-        </tr>
-        {{#each actor.data.data.arme_à_distance as |item key|}}
-        <tr  data-item-id={{item._id}}>
-            <td><img src="{{item.img}}" data-edit="img" title="{{item.name}}" height="32" width="32" />{{item.name}}
-            </td>
+    <div class="colboxh">
+        <table class="border ">
+            <tr>
+                <th colspan=5>
+                    <h2 class=" textc main-title">Arme à distance</h2>
+                </th>
+            </tr>
+            <tr>
+                <th class="textc">Arme</th>
+                <th class="textc">Dégats</th>
+                <th class="textc">Violence</th>
+                <th class="textc">Portée</th>
+                <th class="textc"></th>
+            </tr>
+            {{#each actor.data.data.arme_à_distance as |item key|}}
+            <tr data-item-id={{item._id}}>
+                <td class="textc"><img src="{{item.img}}" data-edit="img" title="{{item.name}}" height="32"
+                        width="32" />{{item.name}}
+                </td>
 
-            <td>{{item.data.degats}}D6 +{{item.data.special.bondeg.degpur}}</td>
-            <td>{{item.data.violence}}D6 +{{item.data.special.bonvio.degpur}}</td>
-            <td>{{item.data.portee}}</td>
-            <td >
-                <a class="jetdatacdis"><i class="fas fa-dice"></i></a>
-                <a class="item-edit" title="Edit Item"><i class="fas fa-edit"></i></a>
-                <a class="item-devare" title="Devare Item"><i class="fas fa-trash"></i></a>
-            </td>
+                <td class="textc">{{item.data.degats}}D6 +{{item.data.special.bondeg.degpur}}</td>
+                <td class="textc">{{item.data.violence}}D6 +{{item.data.special.bonvio.degpur}}</td>
+                <td class="textc">{{item.data.portee}}</td>
+                <td class="textc">
+                    <a class="jetdatacdis"><i class="fas fa-dice"></i></a>
+                    <a class="item-edit" title="Edit Item"><i class="fas fa-edit"></i></a>
+                    <a class="item-devare" title="Devare Item"><i class="fas fa-trash"></i></a>
+                </td>
 
-        </tr>
-        {{/each}}
-    </table>
+            </tr>
+            {{/each}}
+        </table>
+    </div>
     <!--tableau arme improvisé-->
-    <table>
+    <div class="colboxh">
+    <table class="border ">
         <tr>
-            <th colspan=6>Arme improvisée</th>
+            <th colspan=6> <h2 class=" textc main-title">Arme improvisée</h2></th>
         </tr>
         <tr>
             <th>OD requis</th>
@@ -147,7 +163,7 @@
             <td>{{actor.data.data.armeimpr.val4}}D6</td>
             <td>{{actor.data.data.armeimpr.val4}}D6</td>
             <td>3</td>
-            <td >
+            <td>
                 <a class="jetdatacimp1"><i class="fas fa-dice"></i></a>
             </td>
         </tr>
@@ -158,7 +174,7 @@
             <td>{{actor.data.data.armeimpr.val2}}D6</td>
             <td>{{actor.data.data.armeimpr.val5}}D6</td>
             <td>1</td>
-            <td >
+            <td>
                 <a class="jetdatacimp2"><i class="fas fa-dice"></i></a>
             </td>
         </tr>
@@ -169,7 +185,7 @@
             <td>{{actor.data.data.armeimpr.val4}}D6</td>
             <td>{{actor.data.data.armeimpr.val4}}D6</td>
             <td>2</td>
-            <td >
+            <td>
                 <a class="jetdatacimp3"><i class="fas fa-dice"></i></a>
             </td>
         </tr>
@@ -180,7 +196,7 @@
             <td>{{actor.data.data.armeimpr.val6}}D6</td>
             <td>{{actor.data.data.armeimpr.val4}}D6</td>
             <td>3</td>
-            <td >
+            <td>
                 <a class="jetdatacimp4"><i class="fas fa-dice"></i></a>
             </td>
         </tr>
@@ -191,7 +207,7 @@
             <td>{{actor.data.data.armeimpr.val4}}D6</td>
             <td>{{actor.data.data.armeimpr.val6}}D6</td>
             <td>1</td>
-            <td >
+            <td>
                 <a class="jetdatacimp5"><i class="fas fa-dice"></i></a>
             </td>
         </tr>
@@ -202,7 +218,7 @@
             <td>{{actor.data.data.armeimpr.val5}}D6</td>
             <td>{{actor.data.data.armeimpr.val5}}D6</td>
             <td>2</td>
-            <td >
+            <td>
                 <a class="jetdatacimp6"><i class="fas fa-dice"></i></a>
             </td>
         </tr>
@@ -213,7 +229,7 @@
             <td>{{actor.data.data.armeimpr.val7}}D6</td>
             <td>{{actor.data.data.armeimpr.val5}}D6</td>
             <td>3</td>
-            <td >
+            <td>
                 <a class="jetdatacimp7"><i class="fas fa-dice"></i></a>
             </td>
         </tr>
@@ -224,7 +240,7 @@
             <td>{{actor.data.data.armeimpr.val5}}D6</td>
             <td>{{actor.data.data.armeimpr.val7}}D6</td>
             <td>1</td>
-            <td >
+            <td>
                 <a class="jetdatacimp8"><i class="fas fa-dice"></i></a>
             </td>
         </tr>
@@ -235,7 +251,7 @@
             <td>{{actor.data.data.armeimpr.val6}}D6</td>
             <td>{{actor.data.data.armeimpr.val6}}D6</td>
             <td>2</td>
-            <td >
+            <td>
                 <a class="jetdatacimp9"><i class="fas fa-dice"></i></a>
             </td>
         </tr>
@@ -246,7 +262,7 @@
             <td>{{actor.data.data.armeimpr.val7}}D6</td>
             <td>{{actor.data.data.armeimpr.val9}}D6</td>
             <td>1</td>
-            <td >
+            <td>
                 <a class="jetdatacimp10"><i class="fas fa-dice"></i></a>
             </td>
         </tr>
@@ -257,7 +273,7 @@
             <td>{{actor.data.data.armeimpr.val8}}D6</td>
             <td>{{actor.data.data.armeimpr.val8}}D6</td>
             <td>2</td>
-            <td >
+            <td>
                 <a class="jetdatacimp11"><i class="fas fa-dice"></i></a>
             </td>
         </tr>
@@ -268,7 +284,7 @@
             <td>{{actor.data.data.armeimpr.val10}}D6</td>
             <td>{{actor.data.data.armeimpr.val12}}D6</td>
             <td>1</td>
-            <td >
+            <td>
                 <a class="jetdatacimp12"><i class="fas fa-dice"></i></a>
             </td>
         </tr>
@@ -279,10 +295,11 @@
             <td>{{actor.data.data.armeimpr.val11}}D6</td>
             <td>{{actor.data.data.armeimpr.val11}}D6</td>
             <td>2</td>
-            <td >
+            <td>
                 <a class="jetdatacimp13"><i class="fas fa-dice"></i></a>
             </td>
         </tr>
 
     </table>
+</div>
 </body>

@@ -26,11 +26,14 @@ export default class KnightItemSheet extends ItemSheet {
     if (meta == "personalisé") {
       meta01.style.display = "block";
     }
+    else{
+      meta01.style.display = "none";
+    }
     if (meta == "barbarian") {
 
-      var armt = Number(60) + Number(item.pointdarmureb);
-      var enrt = Number(60) + Number(item.pointdenergieb);
-      var cdft = Number(12) + Number(item.champdeforceb);
+      var armt = 60 + item.pointdarmureb;
+      var enrt = 60 + item.pointdenergieb;
+      var cdft = 12 + item.champdeforceb;
 
 
       item.slots.tete = 5;
@@ -51,7 +54,10 @@ export default class KnightItemSheet extends ItemSheet {
 
       meta02.style.display = "block";
     }
-    if (meta == "bard") {
+    else{
+      meta02.style.display = "none";
+    }
+    if (meta == "Bard") {
 
       var armt = Number(40) + Number(item.pointdarmureb);
       var enrt = Number(80) + Number(item.pointdenergieb);
@@ -68,7 +74,7 @@ export default class KnightItemSheet extends ItemSheet {
       item.overdrives.od1 = "Déplacement";
       item.overdrives.od2 = "Aura";
       item.overdrives.od3 = "Parole";
-      item.overdrives.od4 = "Dexterité";
+      item.overdrives.od4 = "Dextérité";
 
       item.pointdarmure = armt;
       item.pointdenergie = enrt;

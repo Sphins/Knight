@@ -1,36 +1,43 @@
 <!--slots-->
 
-<div>
-    <label>Slots</label>
+<div class="droite g50 border colboxh">
+    <h2 class="padgd border textc main-title l301">Slots</h2>
     <ul>
         {{#each actor.data.data.metaarmure as |items key|}}
-        <label>Tête</label>
-        <label >{{items.data.slots.tete}}</label>
-
-        <label >Bras gauche</label>
-        <label >{{items.data.slots.brasgauche}}</label>
-
-        <label >Bras droit</label>
-        <label >{{items.data.slots.brasdroit}}</label>
-
-        <label >Torse</label>
-        <label >{{items.data.slots.torse}}</label>
-
-        <label >Jambe gauche</label>
-        <label >{{items.data.slots.jambegauche}}</label>
-
-        <label >Jambe droite</label>
-        <label >{{items.data.slots.jambedroite}}</label>
-
+        <row class="flexv pad10">
+        <label class="label100 mar10">Tête</label>
+        <label class="label100 mar10" >{{items.data.slots.tete}}</label>
+        </row>
+        <row class="flexv pad10">
+        <label class="label100 mar10" >Bras gauche</label>
+        <label class="label100 mar10" >{{items.data.slots.brasgauche}}</label>
+        </row>
+        <row class="flexv pad10">
+        <label class="label100 mar10" >Bras droit</label>
+        <label  class="label100 mar10">{{items.data.slots.brasdroit}}</label>
+        </row>
+        <row class="flexv pad10">
+        <label class="label100 mar10" >Torse</label>
+        <label class="label100 mar10" >{{items.data.slots.torse}}</label>
+         </row>
+        <row class="flexv pad10">
+        <label class="label100 mar10">Jambe gauche</label>
+        <label class="label100 mar10" >{{items.data.slots.jambegauche}}</label>
+        </row>
+        <row class="flexv pad10">
+        <label class="label100 mar10" >Jambe droite</label>
+        <label class="label100 mar10" >{{items.data.slots.jambedroite}}</label>
+        </row>
         {{/each}}
     </ul>
 </div>
 
 <!--type armure-->
 
-<div >
+<div  class="g50 border colboxh">
+    <h2 class="padgd border textc main-title l301">Meta-Armure</h2>
     {{#each actor.data.data.metaarmure as |item key|}}
-    <div  data-item-id={{item._id}}>
+    <div  class="flexv" data-item-id={{item._id}}>
         <img src="{{item.img}}" data-edit="img" title="{{item.name}}" height="32" width="32" />
         <label >{{item.name}}</label>
         <a class="item-edit inline" title="Edit Item"><i class="fas fa-edit"></i></a>
@@ -41,25 +48,22 @@
 
 <!--overdrive-->
 
-<div >
-    <label>Overdrive</label>
-    <ul>
+<div class="g50 border colboxh" >
+    <h2 class="padgd border textc main-title l301">Overdrive</h2>
         {{#each actor.data.data.metaarmure as |items key|}}
-        <label >{{items.data.overdrives.od1}}</label>
+        <label  class="label100 mar10">{{items.data.overdrives.od1}}</label>
 
-        <label >{{items.data.overdrives.od2}}</label>
+        <label  class="label100 mar10">{{items.data.overdrives.od2}}</label>
 
-        <label >{{items.data.overdrives.od3}}</label>
+        <label  class="label100 mar10">{{items.data.overdrives.od3}}</label>
 
-        <label >{{items.data.overdrives.od4}}</label>
+        <label  class="label100 mar10">{{items.data.overdrives.od4}}</label>
         {{/each}}
-    </ul>
-
 </div>
 
-<div >
+<div class="flexh droite border colboh pad10" >
 
-    <h3 >Déscription</h3>
+    <h2 class="padgd border textc main-title">Description</h2>
 
     {{#each actor.data.data.metaarmure as |items key|}}
     <p>{{items.data.description}}</p>
@@ -67,9 +71,9 @@
 
 </div>
 
-<div >
+<div class="flexh droite border colboh pad10" >
 
-    <h3 >Capacité</h3>
+    <h2 class="padgd border textc main-title">Capacité</h2>
 
     {{#each actor.data.data.metaarmure as |items key|}}
     <p>{{items.data.capacite}}</p>

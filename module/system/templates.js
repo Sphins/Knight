@@ -23,7 +23,6 @@ export const preloadHandlebarsTemplates = async function () {
         "systems/Knight/template/sheets/meta-armure-sheet.html",
         "systems/Knight/template/sheets/meta-armure/personalisable.html",
         "systems/Knight/template/sheets/meta-armure/barbarian.html",
-        "systems/Knight/template/sheets/meta-armure/bard.html",
         "systems/Knight/template/sheets/meta-armure/berserk.html",
         "systems/Knight/template/sheets/meta-armure/druid.html",
         "systems/Knight/template/sheets/meta-armure/monk.html",

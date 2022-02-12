@@ -1,97 +1,123 @@
 <!--tableau experience-->
 
-<table >
-    <tr>
-        <th colspan=3>Experience</th>
-    </tr>
-    <th >Actuel</th>
-    <th >Utilisé</th>
-    <th >Total</th>
-    </tr>
-    <tr>
-        <td><input  name="data.expa" type="text" value="{{actor.data.data.expa}}" /></td>
-        <td><input  name="data.expu" type="text" value="{{actor.data.data.expu}}" /></td>
-        <td><input  name="data.expt" type="text" value="{{actor.data.data.expt}}" /></td>
-    </tr>
+<div class="colboxh gauche">
+    <table class="border">
+        <tr>
+            <th colspan=3>
+                <h2 class="l301 textc main-title">Experience</h2>
+            </th>
+        </tr>
+        <th>Actuel</th>
+        <th>Utilisé</th>
+        <th>Total</th>
+        </tr>
+        <tr>
+            <td><input class="label50" name="data.expa" type="text" value="{{actor.data.data.expa}}" /></td>
+            <td><input class="label50" type="text" value="{{actor.data.data.expu}}" /></td>
+            <td><input class="label50" type="text" value="{{actor.data.data.expt}}" /></td>
+        </tr>
 
-</table>
+    </table>
+</div>
 
 <!--tableau pg-->
+<div class="colboxh droite">
+    <table class="border">
+        <tr>
+            <th colspan=3>
+                <h2 class="l301 textc main-title">PG</h2>
+            </th>
+        </tr>
+        <tr>
+            <th>Actuel</th>
+            <th>Utilisé</th>
+            <th>Total</th>
+        </tr>
+        <tr>
+            <td><input class="label50" name="data.pga" type="text" value="{{actor.data.data.pga}}" /></td>
+            <td><input class="label50" name="data.pgu" type="text" value="{{actor.data.data.pgu}}" /></td>
+            <td><input class="label50" name="data.pgt" type="text" value="{{actor.data.data.pgt}}" /></td>
+        </tr>
 
-<table >
-    <tr>
-        <th colspan=3>PG</th>
-    </tr>
-    <tr>
-        <th >Actuel</th>
-        <th >Utilisé</th>
-        <th >Total</th>
-    </tr>
-    <tr>
-        <td><input  name="data.pga" type="text" value="{{actor.data.data.pga}}" /></td>
-        <td><input  name="data.pgu" type="text" value="{{actor.data.data.pgu}}" /></td>
-        <td><input  name="data.pgt" type="text" value="{{actor.data.data.pgt}}" /></td>
-    </tr>
-
-</table>
-
+    </table>
+</div>
 <!--atout-->
 
-<div >
-    <h3 >Atout</h3>
-    <textarea rows=3 name="data.avant.av1">{{actor.data.data.avant.av1}}</textarea>
-
-    <textarea rows=3 name="data.avant.av2">{{actor.data.data.avant.av2}}</textarea>
-
-    <textarea rows=3 name="data.avant.av3">{{actor.data.data.avant.av3}}</textarea>
-
-    <textarea rows=3 name="data.avant.av4">{{actor.data.data.avant.av4}}</textarea>
+<div class="colboxh droite border">
+    <h2 class="textc main-title l301">Atout</h2>
+    <div class="pad10">
+        <textarea class="l300" rows=3 name="data.avant.av1">{{actor.data.data.avant.av1}}</textarea>
+    </div>
+    <div class="pad10">
+        <textarea class="l300" rows=3 name="data.avant.av2">{{actor.data.data.avant.av2}}</textarea>
+    </div>
+    <div class="pad10">
+        <textarea class="l300" rows=3 name="data.avant.av3">{{actor.data.data.avant.av3}}</textarea>
+    </div>
+    <div class="pad10">
+        <textarea class="l300" rows=3 name="data.avant.av4">{{actor.data.data.avant.av4}}</textarea>
+    </div>
 </div>
 
 <!--Inconvénients-->
 
-<div >
-    <h3 >Inconvénients</h3>
-    <textarea rows=3 name="data.incon.in1">{{actor.data.data.incon.in1}}</textarea>
-
-    <textarea rows=3 name="data.incon.in2">{{actor.data.data.incon.in2}}</textarea>
-
-    <textarea rows=3 name="data.incon.in3">{{actor.data.data.incon.in3}}</textarea>
-
-    <textarea rows=3 name="data.incon.in4">{{actor.data.data.incon.in4}}</textarea>
+<div class="colboxh gauche border">
+    <h2 class="textc main-title l301">Inconvénients</h2>
+    <div class="pad10">
+        <textarea class="l300" rows=3 name="data.incon.in1">{{actor.data.data.incon.in1}}</textarea>
+    </div>
+    <div class="pad10">
+        <textarea class="l300" rows=3 name="data.incon.in2">{{actor.data.data.incon.in2}}</textarea>
+    </div>
+    <div class="pad10">
+        <textarea class="l300" rows=3 name="data.incon.in3">{{actor.data.data.incon.in3}}</textarea>
+    </div>
+    <div class="pad10">
+        <textarea class="l300" rows=3 name="data.incon.in4">{{actor.data.data.incon.in4}}</textarea>
+    </div>
 </div>
 
 <!--Langues-->
 
-<div >
-    <h3 >Langues</h3>
-    <textarea rows=3 name="data.langues">{{actor.data.data.langues}}</textarea>
+<div class="colboxh droite border">
+    <h2 class="textc main-title l301">Langues</h2>
+    <div class="pad10">
+        <textarea class="l300" rows=3 name="data.langues">{{actor.data.data.langues}}</textarea>
+    </div>
 </div>
 
 <!--Contact-->
 
-<div >
-    <h3 >Contact</h3>
-    <textarea rows=3 name="data.contact.cnote">{{actor.data.data.contact.cnote}}</textarea>
+<div class="colboxh gauche border">
+    <h2 class="textc main-title l301">Contact</h2>
+    <div class="pad10">
+        <textarea class="l300" rows=3 name="data.contact.cnote">{{actor.data.data.contact.cnote}}</textarea>
+    </div>
 </div>
 
 <!--Notes-->
 
-<div >
-    <h3 >Notes</h3>
-    <textarea rows=3 name="data.noteh">{{actor.data.data.noteh}}</textarea>
+<div class="colboxh droite border">
+    <h2 class="textc main-title l301">Notes</h2>
+    <div class="pad10">
+        <textarea class="l300" rows=3 name="data.noteh">{{actor.data.data.noteh}}</textarea>
+    </div>
 </div>
 
 <!--Blessures graves-->
 
-<div >
-    <h3 >Blessures graves</h3>
-    <textarea rows=3 name="data.blesgr">{{actor.data.data.blesgr}}</textarea>
+<div class="colboxh gauche border">
+    <h2 class="textc main-title l301">Blessures graves</h2>
+    <div class="pad10">
+        <textarea class="l300" rows=3 name="data.blesgr">{{actor.data.data.blesgr}}</textarea>
+    </div>
 </div>
 
 <!--Traumas-->
 
-<div >
-    <h3 >Traumas</h3>
-    <textarea rows=3 name="data.traumas">{{actor.data.data.traumas}}</textarea>
+<div class="colboxh droite border">
+    <h2 class="textc main-title l301">Traumas</h2>
+    <div class="pad10">
+        <textarea class="l300" rows=3 name="data.traumas">{{actor.data.data.traumas}}</textarea>
+    </div>
 </div>

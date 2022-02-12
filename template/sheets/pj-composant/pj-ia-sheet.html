@@ -1,38 +1,48 @@
 <!--identité IA-->
-<div>
-    <h3>Identité</h3>
-    <label>Code de fabrication</label>
-    <input name="data.iacdf" type="text" value="{{actor.data.data.iacdf}}" />
-
-    <label>Surnom</label>
-    <input name="data.iasurnom" type="text" value="{{actor.data.data.iasurnom}}" />
+<div class="gauche border colboxh">
+    <h2 class="padgd border textc main-title l301">Identité</h2>
+    <row class="flexv pad10">
+        <label class="label100 mar10">Code de fabrication</label>
+        <input class="label200" name="data.iacdf" type="text" value="{{actor.data.data.iacdf}}" />
+    </row>
+    <row class="flexv pad10">
+        <label class="label100 mar10">Surnom</label>
+        <input class="label200" name="data.iasurnom" type="text" value="{{actor.data.data.iasurnom}}" />
+    </row>
 </div>
 
 <!--caractère-->
 
-<div>
-    <h3>Caractère</h3>
-    <textarea rows=4 name="data.iacarac">{{actor.data.data.iacarac}}</textarea>
-
+<div class="droite border colboxh">
+    <h2 class="padgd border textc main-title l301">Caractère</h2>
+    <div class="pad10">
+        <textarea class="l300" rows=7 name="data.iacarac">{{actor.data.data.iacarac}}</textarea>
+    </div>
 </div>
 
 <!--Atout-->
 
-<div>
-    <h3>Atout</h3>
-    <textarea rows=4 name="data.iaatout">{{actor.data.data.iaatout}}</textarea>
+<div class="gauche border colboxh">
+    <h2 class="padgd border textc main-title l301">Atout</h2>
+    <div class="pad10">
+        <textarea class="l300" rows=5 name="data.iaatout">{{actor.data.data.iaatout}}</textarea>
+    </div>
 </div>
 
 <!--Notes-->
 
-<div>
-    <h3>Notes</h3>
-    <textarea rows=4 name="data.ianote">{{actor.data.data.ianote}}</textarea>
+<div class="droite border colboxh">
+    <h2 class="padgd border textc main-title l301">Notes</h2>
+    <div class="pad10">
+        <textarea class="l300" rows=5 name="data.ianote">{{actor.data.data.ianote}}</textarea>
+    </div>
 </div>
 
 <!--Handicap-->
 
-<div>
-    <h3>Handicap</h3>
-    <textarea rows=4 name="data.iahand">{{actor.data.data.iahand}}</textarea>
+<div class="gauche border colboxh">
+    <h2 class="padgd border textc main-title l301">Handicap</h2>
+    <div class="pad10">
+        <textarea class="l300" rows=5 name="data.iahand">{{actor.data.data.iahand}}</textarea>
+    </div>
 </div>
