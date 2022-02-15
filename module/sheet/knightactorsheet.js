@@ -353,6 +353,7 @@ export default class KnightActorSheet extends ActorSheet {
     }
     getItemFromEvent = (ev) => {                                                            //repere l id de l item      
         const parent = $(ev.currentTarget).parents(".item");
+        console.log(parent);
         return this.actor.items.get(parent.data("itemId"));
     }
     _onItemEdit(event) {                                                                    //edition d item

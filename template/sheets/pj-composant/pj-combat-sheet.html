@@ -91,7 +91,7 @@
                 <th class="textc"></th>
             </tr>
             {{#each actor.data.data.arme_de_contact as |item key|}}
-            <tr data-item-id={{item._id}}>
+            <tr class="item" data-item-id={{item._id}}>
                 <td class="textc"><img src="{{item.img}}" data-edit="img" title="{{item.name}}" height="32"
                         width="32" />{{item.name}}
                 </td>
@@ -125,7 +125,7 @@
                 <th class="textc"></th>
             </tr>
             {{#each actor.data.data.arme_à_distance as |item key|}}
-            <tr data-item-id={{item._id}}>
+            <tr class="item" data-item-id={{item._id}}>
                 <td class="textc"><img src="{{item.img}}" data-edit="img" title="{{item.name}}" height="32"
                         width="32" />{{item.name}}
                 </td>

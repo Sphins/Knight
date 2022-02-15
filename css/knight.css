@@ -86,6 +86,7 @@ form {
 
 td, th {
     text-align: center;
+    max-height: fit-content;
 }
 
 
