@@ -1,0 +1,102 @@
+.label100 {
+    width: 100px;
+    margin: 10PX;
+    max-width: 100px;
+    min-width: 99px
+}
+
+.label300 {
+    display: block;
+    width: 150px;
+    float: left;
+}
+
+.defense {
+    border: 10px rgba(0, 0, 0, 0.609) double;
+    border-radius: 15px;
+    padding: 10px;
+    margin: 10PX;
+    min-width: 300px;
+}
+
+.jetdecss {
+    border: 10px rgba(0, 0, 0, 0.609) double;
+    border-radius: 15px;
+    padding: 10px;
+    margin: 10PX;
+    min-width: 300px;
+}
+
+.cdi {
+    border: 10px rgba(0, 0, 0, 0.609) double;
+    border-radius: 15px;
+    padding: 10px;
+    margin: 10PX;
+    min-width: 100px;
+    width: 47%;
+    order: 3
+}
+
+.motivation {
+    border: 10px rgba(0, 0, 0, 0.609) double;
+    border-radius: 15px;
+    padding: 10px;
+    margin: 10PX;
+    min-width: 100px;
+    width: 47%;
+    order: 4
+}
+
+.gestion {
+    border: 10px rgba(0, 0, 0, 0.609) double;
+    border-radius: 15px;
+    padding: 10px;
+    margin: 10PX;
+    min-width: 100px;
+    width: 47%;
+    order: 1
+}
+
+.attributs {
+    border: 10px rgba(0, 0, 0, 0.609) double;
+    border-radius: 15px;
+    padding: 10px;
+    margin: 10PX;
+    min-width: 100px;
+    width: 47%;
+    float: right;
+    order: 2
+}
+
+.competence {
+    display: flex;
+}
+
+.champ1 {
+    max-width: 30px;
+    min-width: 29px
+}
+
+.champ2 {
+    max-width: 150px;
+    min-width: 149px
+}
+
+.champ3 {
+    max-height: 10px;
+}
+
+.app,
+.chat-message,
+#chat-form textarea {
+    background: rgba(255, 255, 255, 0.6);
+    color: #000000
+}
+
+.window-app .window-content {
+    background: rgba(255, 255, 255, 1);
+    background-image: url(image/LOGO2.png);
+    background-position: top right;
+    background-repeat: no-repeat;
+    background-size: 25%;
+}

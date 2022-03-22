@@ -1,0 +1,206 @@
+<form class="{{cssClass}}" autocomplete="off">
+
+    <img src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="128" width="128" />
+
+    <h1><input name="name" type="text" value="{{actor.name}}" placeholder="Name" /></h1>
+
+    <!-- défense réaction init -->
+
+    <div class=defense>
+        <label class=label100>Défense</label>
+        <input class="champ2" name="data.defense" type="number" value="{{data.defense}}" />
+
+        <label class=label100>Réaction</label>
+        <input class="champ2" name="data.reaction" type="number" value="{{data.reaction}}" />
+
+        <label class=label100>Initiative</label>
+        <input class="champ2" name="data.initiative" type="text" value="{{data.initiative}}" />
+
+    </div>
+
+    <!--jet de dé-->
+
+    <div class=jetdecss>
+        <label>Jet de dé</label>
+        <select name="data.valeurde1" value="{{valeurde1}}" data-liste1="liste1" id="liste1">
+            <option value="0"></option>
+            <option value="{{data.attributs.Chair.competence.Deplacement.valeur}}">Déplacement</option>
+            <option value="{{data.attributs.Chair.competence.Force.valeur}}">Force</option>
+            <option value="{{data.attributs.Chair.competence.Endurance.valeur}}">Endurance</option>
+            <option value="{{data.attributs.Bete.competence.Hargne.valeur}}">Hargne</option>
+            <option value="{{data.attributs.Bete.competence.Combat.valeur}}">Combat</option>
+            <option value="{{data.attributs.Bete.competence.Instinct.valeur}}">Instinct</option>
+            <option value="{{data.attributs.Machine.competence.Tir.valeur}}">Tir</option>
+            <option value="{{data.attributs.Machine.competence.Savoir.valeur}}">Savoir</option>
+            <option value="{{data.attributs.Machine.competence.Technique.valeur}}">Technique</option>
+            <option value="{{data.attributs.Dame.competence.Aura.valeur}}">Aura</option>
+            <option value="{{data.attributs.Dame.competence.Parole.valeur}}">Parole</option>
+            <option value="{{data.attributs.Dame.competence.Sangfroid.valeur}}">Sangfroid</option>
+            <option value="{{data.attributs.Masque.competence.Discretion.valeur}}">Discretion</option>
+            <option value="{{data.attributs.Masque.competence.Dexterite.valeur}}">Dexterite</option>
+            <option value="{{data.attributs.Masque.competence.Perception.valeur}}">Perception</option>
+        </select>
+        <select name="liste2" value="{{valeurde2}}" data-liste2="liste2">
+            <option value="0"></option>
+            <option value="{{data.attributs.Chair.competence.Deplacement.valeur}}">Déplacement</option>
+            <option value="{{data.attributs.Chair.competence.Force.valeur}}">Force</option>
+            <option value="{{data.attributs.Chair.competence.Endurance.valeur}}">Endurance</option>
+            <option value="{{data.attributs.Bete.competence.Hargne.valeur}}">Hargne</option>
+            <option value="{{data.attributs.Bete.competence.Combat.valeur}}">Combat</option>
+            <option value="{{data.attributs.Bete.competence.Instinct.valeur}}">Instinct</option>
+            <option value="{{data.attributs.Machine.competence.Tir.valeur}}">Tir</option>
+            <option value="{{data.attributs.Machine.competence.Savoir.valeur}}">Savoir</option>
+            <option value="{{data.attributs.Machine.competence.Technique.valeur}}">Technique</option>
+            <option value="{{data.attributs.Dame.competence.Aura.valeur}}">Aura</option>
+            <option value="{{data.attributs.Dame.competence.Parole.valeur}}">Parole</option>
+            <option value="{{data.attributs.Dame.competence.Sangfroid.valeur}}">Sangfroid</option>
+            <option value="{{data.attributs.Masque.competence.Discretion.valeur}}">Discretion</option>
+            <option value="{{data.attributs.Masque.competence.Dexterite.valeur}}">Dexterite</option>
+            <option value="{{data.attributs.Masque.competence.Perception.valeur}}">Perception</option>
+        </select>
+        <select name="liste3" value="{{valeurde3}}" data-liste2="liste3">
+            <option value="0"></option>
+            <option value="{{data.attributs.Chair.competence.Deplacement.valeur}}">Déplacement</option>
+            <option value="{{data.attributs.Chair.competence.Force.valeur}}">Force</option>
+            <option value="{{data.attributs.Chair.competence.Endurance.valeur}}">Endurance</option>
+            <option value="{{data.attributs.Bete.competence.Hargne.valeur}}">Hargne</option>
+            <option value="{{data.attributs.Bete.competence.Combat.valeur}}">Combat</option>
+            <option value="{{data.attributs.Bete.competence.Instinct.valeur}}">Instinct</option>
+            <option value="{{data.attributs.Machine.competence.Tir.valeur}}">Tir</option>
+            <option value="{{data.attributs.Machine.competence.Savoir.valeur}}">Savoir</option>
+            <option value="{{data.attributs.Machine.competence.Technique.valeur}}">Technique</option>
+            <option value="{{data.attributs.Dame.competence.Aura.valeur}}">Aura</option>
+            <option value="{{data.attributs.Dame.competence.Parole.valeur}}">Parole</option>
+            <option value="{{data.attributs.Dame.competence.Sangfroid.valeur}}">Sangfroid</option>
+            <option value="{{data.attributs.Masque.competence.Discretion.valeur}}">Discretion</option>
+            <option value="{{data.attributs.Masque.competence.Dexterite.valeur}}">Dexterite</option>
+            <option value="{{data.attributs.Masque.competence.Perception.valeur}}">Perception</option>
+        </select>
+        <select name="liste4" value="{{valeurde4}}" data-liste2="liste4">
+            <option value="0"></option>
+            <option value="{{data.attributs.Chair.competence.Deplacement.valeur}}">Déplacement</option>
+            <option value="{{data.attributs.Chair.competence.Force.valeur}}">Force</option>
+            <option value="{{data.attributs.Chair.competence.Endurance.valeur}}">Endurance</option>
+            <option value="{{data.attributs.Bete.competence.Hargne.valeur}}">Hargne</option>
+            <option value="{{data.attributs.Bete.competence.Combat.valeur}}">Combat</option>
+            <option value="{{data.attributs.Bete.competence.Instinct.valeur}}">Instinct</option>
+            <option value="{{data.attributs.Machine.competence.Tir.valeur}}">Tir</option>
+            <option value="{{data.attributs.Machine.competence.Savoir.valeur}}">Savoir</option>
+            <option value="{{data.attributs.Machine.competence.Technique.valeur}}">Technique</option>
+            <option value="{{data.attributs.Dame.competence.Aura.valeur}}">Aura</option>
+            <option value="{{data.attributs.Dame.competence.Parole.valeur}}">Parole</option>
+            <option value="{{data.attributs.Dame.competence.Sangfroid.valeur}}">Sangfroid</option>
+            <option value="{{data.attributs.Masque.competence.Discretion.valeur}}">Discretion</option>
+            <option value="{{data.attributs.Masque.competence.Dexterite.valeur}}">Dexterite</option>
+            <option value="{{data.attributs.Masque.competence.Perception.valeur}}">Perception</option>
+        </select>
+        <label>Bonus/malus</label>
+        <input class="champ1" name="data.bonusmalus" type="number" value="{{data.bonusmalus}}" />
+        <a class="jetde"><i class="fas fa-dice"></i></a>
+    </div>
+    <!-- attribut et competence -->
+    <div class=attributs>
+        {{#each data.attributs as |attribut attnom|}}
+        <label class=label100>{{attnom}}</label>
+        <input class="champ1" name="data.attributs.{{attnom}}.valeur" type="number" value="{{attribut.valeur}}" />
+        <ul>
+            {{#each attribut.competence as |competences cmpnom|}}
+            <li class=competence>
+                <label class=label100>{{cmpnom}}</label>
+                <input class="champ1" name="data.attributs.{{attnom}}.competence.{{cmpnom}}.valeur" type="number" value="{{competences.valeur}}" />
+                <label class=label100>OD</label>
+                <input class="champ1" name="data.attributs.{{attnom}}.competence.{{cmpnom}}.od" type="number" value="{{competences.od}}" />
+            </li>
+            {{/each}}
+        </ul>
+        {{/each}}
+    </div>
+
+    <!-- score de combat -->
+    <div class=gestion>
+        <label class=label300>Santé</label>
+        <input class="champ1" name="data.santeact" type="number" value="{{data.santeact}}" />
+        <label>/</label>
+        <input class="champ1" name="data.santemax" type="number" value="{{data.santemax}}" />
+        <BR />
+        <label class=label300>Espoire</label>
+        <input class="champ1" name="data.espoireact" type="number" value="{{data.espoireact}}" />
+        <input class="champ1" name="data.espoiremax" type="number" value="{{data.espoiremax}}" />
+        <input class="champ1" name="data.espoirmod" type="number" value="{{data.espoirmod}}" />
+        <BR />
+        <label class=label300>Armure</label>
+        <input class="champ1" name="data.armureact" type="number" value="{{data.armureact}}" /> {{#each actor.data.metaarmure as |items key|}}
+        <label>/{{items.data.pointdarmure}}</label>
+        </tr>
+        {{/each}}
+        <BR />
+        <label class=label300>Energie</label>
+        <input class="champ1" name="data.energieact" type="number" value="{{data.energieact}}" /> {{#each actor.data.metaarmure as |items key|}}
+        <label>/{{items.data.pointdenergie}}</label>
+        </tr>
+        {{/each}}
+        <BR />
+        <label class=label300>Champs de force</label> {{#each actor.data.metaarmure as |items key|}}
+        <label>{{items.data.champdeforce}}</label>
+        </tr>
+        {{/each}}
+        <BR />
+    </div>
+    <!-- carte d'identité -->
+
+    <div class=cdi>
+        <label class=label300>Surnom</label>
+        <input class="champ2" name="data.surnom1" type="text" value="{{data.surnom1}}" />
+        <BR />
+
+        <label class=label300>Age</label>
+        <input class="champ2" name="data.age" type="text" value="{{data.age}}" />
+        <BR />
+
+        <label class=label300>Archetype</label>
+        <input class="champ2" name="data.archetype" type="text" value="{{data.archetype}}" />
+        <BR />
+
+        <label class=label300>Haut fait</label>
+        <input class="champ2" name="data.hautfait" type="text" value="{{data.hautfait}}" />
+        <BR />
+
+        <label class=label300>Meta-armure</label> {{#each actor.data.metaarmure as |items key|}}
+        <p>{{items.name}}</p>
+        </tr>
+        {{/each}}
+        <BR />
+
+        <label class=label300>Section d'origine</label>
+        <input class="champ2" name="data.sectiondorigine" type="text" value="{{data.sectiondorigine}}" />
+        <BR />
+
+        <label class=label300>Blason</label>
+        <input class="champ2" name="data.blason" type="text" value="{{data.blason}}" />
+
+    </div>
+
+    <!-- Motivation -->
+
+    <div class=motivation>
+        <label>Motivation majeur
+                    <ul>
+                        <textarea rows=1 name="data.motivationmajeur">{{data.motivationmajeur}}</textarea>
+                    </ul>
+                </label>
+
+        <label>Motivation mineur
+                    <ul>
+                        <textarea rows=1 name="data.mo1">{{data.mo1}}</textarea>
+
+                        <textarea rows=1 name="data.mo2">{{data.mo2}}</textarea>
+
+                        <textarea rows=1 name="data.mo3">{{data.mo3}}</textarea>
+
+                        <textarea rows=1 name="data.mo4">{{data.mo4}}</textarea>
+                
+                    </ul>
+                </label>
+    </div>
+
+</form>

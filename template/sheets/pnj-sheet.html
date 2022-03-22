@@ -1,0 +1,113 @@
+<form class="{{cssClass}}" autocomplete="off">
+
+    <img src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="128" width="128" />
+
+    <h1><input name="name" type="text" value="{{actor.name}}" placeholder="Name" /></h1>
+
+
+
+    <!-- défense réaction init -->
+
+    <p class=defense>
+        <label>Défense
+        <input name="data.defense" type="text" value="{{data.defense}}" placeholder=""/>
+    </label>
+
+        <label>Réaction
+        <input name="data.reaction" type="text" value="{{data.reaction}}" placeholder=""/>
+    </label>
+
+        <label>Initiative
+        <input name="data.initiative" type="text" value="{{data.initiative}}" placeholder=""/>
+    </label>
+    </p>
+
+    <!-- carte d'identité -->
+
+    <p class=cdi>
+        <label>Surnom
+        <input name="data.surnom" type="text" value="{{data.surnom}}" placeholder=""/>
+    </label>
+
+        <label>Age
+        <input name="data.age" type="text" value="{{data.age}}" placeholder=""/>
+    </label>
+
+        <label>Archetype
+        <input name="data.archetype" type="text" value="{{data.archetype}}" placeholder=""/>
+    </label>
+
+        <label>Haut fait
+        <input name="data.hautfait" type="text" value="{{data.hautfait}}" placeholder=""/>
+    </label>
+
+        <label>Meta-armure
+        <input name="data.hautfait" type="text" value="{{data.hautfait}}" placeholder=""/>
+    </label>
+
+        <label>Type
+            <input name="data.tipe" type="text" value="{{data.tipe}}" placeholder=""/>
+        </label>
+    </p>
+
+    <!-- tactique -->
+
+    <li>
+        <label>Tactique
+        <input name="data.tactique" type="text" value="{{data.tactique}}" placeholder=""/>
+    </label>
+    </li>
+
+    <!-- score de combat -->
+
+    <li>
+        <label>Santé
+            <input name="data.santeact" type="text" value="{{data.santeact}}" placeholder=""/>
+            <input name="data.santemax" type="text" value="{{data.santemax}}" placeholder=""/>
+        </label>
+
+        <label>Bouclier
+            <input name="data.bouclieract" type="text" value="{{data.bouclieract}}" placeholder=""/>
+            <input name="data.boucliermax" type="text" value="{{data.boucliermax}}" placeholder=""/>
+        </label>
+
+        <label>Armure
+            <input name="data.armureact" type="text" value="{{data.armureact}}" placeholder=""/>
+            <input name="data.armuremax" type="text" value="{{data.armuremax}}" placeholder=""/>
+        </label>
+
+        <label>Energie
+            <input name="data.energieact" type="text" value="{{data.energieact}}" placeholder=""/>
+            <input name="data.energiemax" type="text" value="{{data.energiemax}}" placeholder=""/>
+        </label>
+
+        <label>Champs de force
+            <input name="data.cdf" type="text" value="{{data.cdf}}" placeholder=""/>
+        </label>
+    </li>
+    <!-- attribut et aspect exceptionnels -->
+    <li>
+        {{#each data.attributs as |attribut attnom|}}
+        <div>
+            <label>{{attnom}}</label>
+            <input name="data.attributs.{{attnom}}.valeur" type="text" value="{{attribut.valeur}}" placeholder="" />
+            <ul>
+                {{#each attribut.aspectex as |aspectexe aspnom|}}
+                <li>
+                    <label>{{aspnom}}</label>
+                    <input name="data.attributs.{{attnom}}.competence.{{aspnom}}.valeur" type="text" value="{{aspectexe.valeur}}" placeholder="" />
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+        {{/each}}
+    </li>
+    <!-- point faibles -->
+
+    <li>
+        <label>Points Faibles
+    <input name="data.pointsfaible" type="text" value="{{data.pointsfaible}}" placeholder=""/>
+</label>
+    </li>
+
+</form>
